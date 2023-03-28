@@ -1,3 +1,34 @@
+<?php 
+    if(isset($_POST['submit'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $host = "localhost:3306";
+        $user = "root";
+        $passwd = "";
+        $db = "webfinal";
+        $conn = new mysqli($host, $user, $passwd, $db);
+
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $stmt = $conn->prepare("SELECT * FROM account WHERE UserName = ? AND Password = ?");
+        $stmt->bind_param("ss", $username, $password);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows == 1) {
+            header('Location: ../../home.html');
+            exit();
+        } else {
+            $error = "Error Username or Password. Please try again!";
+        }
+        $stmt->close();
+        $conn->close();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,25 +52,31 @@
         </nav>
     </header>
     <div class="wrapper">
-        <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
         <div class="form-box login">
             <h2>Login</h2>
-            <form  id="loginForm" action="../../home.html" method="post">
+            <form  id="loginForm" action="" method="post">
                 <div class="input-box" >
                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                    <input name="username" type="text"  id="content">
+                    <input type="text" name="username">
                     <label >UserName</label>
                 </div>
                 <div class="input-box" >
                     <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                    <input  name="password" type="password"  id="content2">
+                    <input  name="password" type="password">
                     <label >Password</label>
                 </div>
+
+                <?php 
+                    if(isset($error) && !empty($error)){ 
+                ?>
+                <div class="error"><?php echo $error; ?></div>
+                <?php } ?>
+
                 <div class="remember-forgot">
                     <label><input type="checkbox">Remember me?</label>
                     <a href="#">Forgot Password?</a>
                 </div>
-                <button type="submit" class="btn" name = "submit">Login</button>
+                <button type="submit" class="btn" name = "submit" id="submit-btn">Login</button>
                 <div class="login-register">
                     <p>Don't have a account?
                         <a href="#" class="register-link">Register</a>
@@ -79,41 +116,5 @@
 </body>
 </html>
 <script src="script.js"></script>
-<script>
-        const form = document.getElementById('loginForm');
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
-        });
-</script>
-<?php
-if (isset($_POST['submit'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
 
-    $host = "localhost:9999";
-    $user = "root";
-    $passwd = "";
-    $db = "webfinal";
-    $conn = new mysqli($host, $user, $passwd, $db);
 
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    $stmt = $conn->prepare("SELECT UserName, Password FROM account WHERE UserName = ? AND Password = ?");
-    $stmt->bind_param("ss", $username, $password);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows != 1) {
-        echo`<script>
-        const form = document.getElementById('loginForm');
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
-        });
-        </script>`;
-    }
-    $stmt->close();
-    $conn->close();
-}
-?>
