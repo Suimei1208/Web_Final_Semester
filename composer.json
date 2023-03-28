@@ -1,0 +1,6 @@
+{
+    "name": "test/captcha",
+    "require": {
+        "anhskohbo/no-captcha": "^3.1"
+    }
+}
