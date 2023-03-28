@@ -24,7 +24,7 @@
         <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
         <div class="form-box login">
             <h2>Login</h2>
-            <form  id="loginForm">
+            <form  id="loginForm" action="../../home.html" method="post">
                 <div class="input-box" >
                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
                     <input name="username" type="text"  id="content">
@@ -39,7 +39,7 @@
                     <label><input type="checkbox">Remember me?</label>
                     <a href="#">Forgot Password?</a>
                 </div>
-                <button type="submit" class="btn">Login</button>
+                <button type="submit" class="btn" name = "submit">Login</button>
                 <div class="login-register">
                     <p>Don't have a account?
                         <a href="#" class="register-link">Register</a>
@@ -79,12 +79,18 @@
 </body>
 </html>
 <script src="script.js"></script>
+<script>
+        const form = document.getElementById('loginForm');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+        });
+</script>
 <?php
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $host = "192.168.0.107:3306";
+    $host = "localhost:9999";
     $user = "root";
     $passwd = "";
     $db = "webfinal";
@@ -100,7 +106,12 @@ if (isset($_POST['submit'])) {
     $result = $stmt->get_result();
 
     if ($result->num_rows != 1) {
-        echo'<script>login.js</script>';
+        echo`<script>
+        const form = document.getElementById('loginForm');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+        });
+        </script>`;
     }
     $stmt->close();
     $conn->close();
