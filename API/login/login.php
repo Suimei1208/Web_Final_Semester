@@ -28,7 +28,6 @@
         $conn->close();
     }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -116,5 +115,3 @@
 </body>
 </html>
 <script src="script.js"></script>
-
-
