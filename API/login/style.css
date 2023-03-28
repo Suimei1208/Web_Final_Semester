@@ -89,11 +89,7 @@ body{
     backdrop-filter: blur(20px);
     box-shadow:  0 0 30px rgba(0, 0, 0, .5);
     overflow: hidden;
-    transform:  scale(0);
     transition: transform .5s ease, height .2s ease;
-}
-.wrapper.active-popup{
-    transform:  scale(1);
 }
 .wrapper .form-box{  
     padding: 40px;
@@ -118,21 +114,6 @@ body{
     position: absolute;
     transition: none;
     transform: translateX(400px);
-}
-.wrapper .icon-close{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 45px;
-    height: 45px;
-    background: #162938;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom-left-radius: 20px;
-    cursor: pointer;
-    z-index: 1;
 }
 .input-box{
     position: relative;
@@ -218,4 +199,11 @@ body{
 }
 .login-register p a:hover{
     text-decoration: underline;
+}
+.error {
+    color: red;
+    font-weight: 500;
+    margin-bottom: 1px;
+    width: 500px;
+    height: 40px;
 }
