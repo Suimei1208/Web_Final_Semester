@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:  border-box;
+    font-family: 'Poppins', sans-serif;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.logo{
+    font-size: 2em;
+    color: #000000;
+    user-select: none;
+}.navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 400;
+    margin-left: 40px;
+}
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #070707;
+    border-radius: 5px;
+    bottom: -6px;
+    transform: scaleX(0);
+    transition: transform .5s;
+    transform-origin: right;
+}
+.navigation a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+.navigation .btnLogin-popup{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius:  6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+.navigation .btnLogin-popup:hover{
+    background: #fff;
+    color:  #162938;
+}
+.login-card {
+    width: 377px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #e8e8e8;
+    box-shadow: 2px 2px 10px #ccc; 
+    display: block;
+  }
+  
+.card-header {
+    text-align: center;
+    margin-bottom: 20px
+}
+
+.card-header .log {
+    margin: 0;
+    font-size: 24px;
+    color: black;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.main_div {
+    text-align: center;
+    --color: #3992e6;
+    position: relative;
+    z-index: 1;
+}
+
+.main_div::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    top: -7px;
+    left: 100px;
+    z-index: -5;
+    border-top: 3px solid var(--color);
+    border-left: 3px solid var(--color);
+    transition: 0.5s;
+}
+
+.main_div::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 10px;
+    background: transparent;
+    bottom: -7px;
+    right: 100px;
+    z-index: -7;
+    border-right: 3px solid var(--color);
+    border-bottom: 3px solid var(--color);
+    transition: 0.5s;
+}
+
+.main_div:hover::before {
+    width: 40%;
+    height: 100%;
+}
+
+.main_div:hover::after {
+    width: 40%;
+    height: 100%;
+}
+
+.main_div button {
+    padding: 0.7em 2em;
+    font-size: 16px;
+    background: #222222;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+p{
+    text-align: center;
+}
+p a{
+    margin-right: auto;
+    font-size: 16px;
+    text-align: center;
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+}
+p a:hover{
+    text-decoration: underline;
+}
+.error {
+    color: red;
+    font-weight: 500;
+    width: 500px;
+    height: 40px;
+    font-size: 16px;
+}
