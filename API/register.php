@@ -12,27 +12,32 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $stmt = $conn->prepare("SELECT * FROM account WHERE UserName = ?");
-        $stmt->bind_param("s", $username_dk);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        if ($result->num_rows == 1) {
-            $error = "Username already exists. Please try again!";
-        } else {
-            if (isset($_POST['terms'])) {
-                $stmt_1 = $conn->prepare("INSERT INTO account VALUES (?, ?, ?, ?)");
-                $stmt_1->bind_param("ssss", $username_dk, $password_dk, $email, $phone);
-                $stmt_1->execute();
-                
-                header('Location: action.html');
-                exit();
-            } else {
-                $error = "You must agree to the terms and conditions to register";
-            }
+        if($username_dk === "" || $password_dk === "" || $email === "" || $phone ===""){
+            $error = "You must to fill in all required information.";
         }
-        $stmt->close();
-        $conn->close();
+        else{
+            $stmt = $conn->prepare("SELECT * FROM account WHERE UserName = ?");
+            $stmt->bind_param("s", $username_dk);
+            $stmt->execute();
+            $result = $stmt->get_result();
+    
+            if ($result->num_rows == 1) {
+                $error = "Username already exists. Please try again!";
+            } else {
+                if (isset($_POST['terms'])) {
+                    $stmt_1 = $conn->prepare("INSERT INTO account VALUES (?, ?, ?, ?)");
+                    $stmt_1->bind_param("ssss", $username_dk, $password_dk, $email, $phone);
+                    $stmt_1->execute();
+                    
+                    header('Location: action.html');
+                    exit();
+                } else {
+                    $error = "You must agree to the terms and conditions to register";
+                }
+            }
+            $stmt->close();
+            $conn->close();
+        }
     }
 ?>
 <!DOCTYPE html>
