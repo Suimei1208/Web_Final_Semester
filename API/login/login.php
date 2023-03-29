@@ -1,4 +1,6 @@
 <?php 
+    session_start();
+                    
     if(isset($_POST['submit'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -24,9 +26,39 @@
         $stmt->close();
         $conn->close();
     }
+    if(isset($_POST['dk'])){
+        $username_dk = $_POST['username_dk'];
+        $password_dk = $_POST['password_dk'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+
+        require_once('connect.php');
+        $conn = connect();
+
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $stmt = $conn->prepare("SELECT * FROM account WHERE UserName = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows == 1) {
+            $error1 = "Username already exists. Please try again!";
+        } else {
+            if (isset($_POST['terms'])) {
+                $stmt_1 = $conn->prepare("INSERT INTO account VALUES (?, ?, ?, ?)");
+                $stmt_1->bind_param("ssss", $username_dk, $password_dk, $email, $phone);
+                $stmt_1->execute();
+            } else {
+                $error1 = "You must agree to the terms and conditions to register";
+            }
+        }
+        $stmt->close();
+        $conn->close();
+    }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -86,26 +118,38 @@
 
         <div class="form-box register">
             <h2>Registration</h2>
-            <form action="#">
+            <form method="post">
                 <div class="input-box">
                     <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                    <input type="text" required>
+                    <input type="text" required name="username_dk">
                     <label >Username</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                    <input type="email" required>
+                    <input type="email" required name="email">
                     <label >Email</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                    <input type="password" required>
+                    <input type="password" required name="password_dk">
                     <label >Password</label>
                 </div>
-                <div class="remember-forgot">
-                    <label><input type="checkbox">I agree to the term & conditons</label>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="text" required name="phone">
+                    <label >Phone</label>
                 </div>
-                <button type="submit" class="btn">Register</button>
+
+                <?php 
+                    if(isset($error1) && !empty($error1)){ 
+                ?>
+                <div class="error"><?php echo $error1; ?></div>
+                <?php } ?>       
+
+                <div class="remember-forgot">
+                    <label><input type="checkbox" name="terms[]" value="ok">I agree to the term & conditons</label>
+                </div>
+                <button type="submit" class="btn re" name="dk" id ="re_btn">Register</button>
                 <div class="login-register">
                     <p>Already have a account?<a href="#" class="login-link">Login</a></p>
                 </div>
