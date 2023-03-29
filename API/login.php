@@ -72,7 +72,7 @@
             </div>
           
             <p>Don't have a account?
-                <a href="#" class="register-link">Register</a>
+                <a href="register.php" class="register-link">Register</a>
             </p>        
         </form>
       </div>   
