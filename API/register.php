@@ -24,6 +24,9 @@
                 $stmt_1 = $conn->prepare("INSERT INTO account VALUES (?, ?, ?, ?)");
                 $stmt_1->bind_param("ssss", $username_dk, $password_dk, $email, $phone);
                 $stmt_1->execute();
+                
+                header('Location: action.html');
+                exit();
             } else {
                 $error = "You must agree to the terms and conditions to register";
             }
@@ -45,7 +48,7 @@
     <header>
         <h2 class="logo">Logo</h2>
         <nav class="navigation">
-            <a href="../../home.html">Home</a>
+            <a href="../home.html">Home</a>
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Contact</a>
