@@ -203,7 +203,8 @@ body{
 .error {
     color: red;
     font-weight: 500;
-    margin-bottom: 1px;
+    margin-bottom: 10px;
     width: 500px;
     height: 40px;
+    font-size: 15px;
 }

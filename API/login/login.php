@@ -3,11 +3,8 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $host = "localhost:3306";
-        $user = "root";
-        $passwd = "";
-        $db = "webfinal";
-        $conn = new mysqli($host, $user, $passwd, $db);
+        require_once('connect.php');
+        $conn = connect();
 
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -28,8 +25,6 @@
         $conn->close();
     }
 ?>
-
-
 
 
 
