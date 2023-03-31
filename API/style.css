@@ -111,8 +111,8 @@ label {
 }
 
 input.lg[type="text"],[type="password"]{
-    margin-left: 30px;
-    width: 250px;
+    margin-left: 10px;
+    width: 270px;
     height: auto;
     padding: 10px 10px;
     font-size: 16px;
@@ -122,8 +122,8 @@ input.lg[type="text"],[type="password"]{
     transition: 0.5s;
 }
 input.lg{
-    margin-left: 30px;
-    width: 250px;
+    margin-left: 10px;
+    width: 270px;
 }
 input[type="text"],[type="password"]{
     margin-left: 10px;
