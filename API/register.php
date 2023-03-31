@@ -13,7 +13,7 @@
         }
 
         if($username_dk === "" || $password_dk === "" || $email === "" || $phone ===""){
-            $error = "You must to fill in all required information.";
+            $error1 = "You must to fill in all required information.";
         }
         else{
             $stmt = $conn->prepare("SELECT * FROM account WHERE UserName = ?");
@@ -22,7 +22,7 @@
             $result = $stmt->get_result();
     
             if ($result->num_rows == 1) {
-                $error = "Username already exists. Please try again!";
+                $error1 = "Username already exists. Please try again!";
             } else {
                 if (isset($_POST['terms'])) {
                     $stmt_1 = $conn->prepare("INSERT INTO account VALUES (?, ?, ?, ?)");
@@ -32,7 +32,7 @@
                     header('Location: action.html');
                     exit();
                 } else {
-                    $error = "You must agree to the terms and conditions to register";
+                    $error1 = "You must agree to the terms and conditions to register";
                 }
             }
             $stmt->close();
@@ -67,13 +67,13 @@
             <label for="username">Username:</label1>
                 <div class="form-group">
                         <img src="./Những thức rác linh tinh/user.gif" alt="">
-                        <input  name="username" id="username" type="text">
+                        <input  name="username_dk" id="username" type="text">
                 </div>
 
                 <label for="password">Password:</label>
                 <div class="form-group">
                     <img src="./Những thức rác linh tinh/pass.gif" alt="">
-                    <input name="password" id="password" type="password">
+                    <input name="password_dk" id="password" type="password">
                 </div>
             <label>Email:</label>
             <div class="form-group">
@@ -86,9 +86,9 @@
                 <input  name="phone" id="phone" type="text">
             </div>
             <?php 
-                    if(isset($error) && !empty($error)){ 
+                    if(isset($error1) && !empty($error1)){ 
                 ?>
-                <div class="error"><?php echo $error; ?></div>
+                <div class="error1"><?php echo $error1; ?></div>
             <?php } ?>
 
             <div class="remember-forgot">
@@ -106,6 +106,7 @@
                 <a href="login.php" class="register-link">Login</a>
             </p>    
         </form>
-      </div>    
+      </div>  
+        
 </body>
 </html>
