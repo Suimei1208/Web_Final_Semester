@@ -44,21 +44,22 @@
             <a href="#">Contact</a>
         </nav>
     </header>
-    <div class="login-card">
+    <main>
+        <div class="login-card">
         <div class="card-header">
           <div class="log">Login</div>
         </div>
         <form method="post">
+            <label for="username">Username:</label1>
             <div class="form-group">
-                <label for="username">Username:</label>
-                <input  name="username" id="username" type="text">
+                    <img src="./Những thức rác linh tinh/user.gif" alt="">
+                    <input  name="username" id="username" type="text">
             </div>
-
+            <label for="password">Password:</label>
             <div class="form-group">
-                <label for="password">Password:</label>
+                <img src="./Những thức rác linh tinh/pass.gif" alt="">
                 <input name="password" id="password" type="password">
             </div>
-
             <?php 
                     if(isset($error) && !empty($error)){ 
                 ?>
@@ -75,6 +76,7 @@
                 <a href="register.php" class="register-link">Register</a>
             </p>        
         </form>
-      </div>   
+      </div>
+    </main>   
 </body>
 </html>

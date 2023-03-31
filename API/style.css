@@ -75,9 +75,9 @@ body{
     width: 377px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #ffffff;
     border-radius: 10px;
-    background-color: #e8e8e8;
+    background-color: #ffffff;
     box-shadow: 2px 2px 10px #ccc; 
     display: block;
 }
@@ -105,22 +105,27 @@ body{
 .form-group {
     margin-bottom: 15px;
 }
-
 label {
     font-size: 18px;
     margin-bottom: 5px;
 }
 
-input[type="text"], input[type="password"] {
-    width: 100%;
-    padding: 12px 20px;
+input[type="text"],[type="password"]{
+    margin-left: 30px;
+    width: 250px;
+    height: auto;
+    padding: 10px 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid #000000;
+    border-radius: 5px;
     box-sizing: border-box;
     transition: 0.5s;
 }
-
+img{
+    width: 10%;
+    border-radius: 50%;
+    margin-bottom: -10px;
+}
 input[type="submit"] {
     width: 100%;
     background-color: #333;
@@ -183,9 +188,16 @@ input[type="submit"] {
     justify-content: space-between;
     margin-top: 15px; 
 }
-.remember-forgot label input{
-    margin-right: 3px;
+.remember-forgot label{
+    margin-right: 50px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+.remember-forgot input{
     accent-color: #162938;
+    width: 5%;
 }
 .remember-forgot a{
     color: #162938;

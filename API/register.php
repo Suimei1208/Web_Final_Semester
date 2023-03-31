@@ -64,23 +64,25 @@
           <div class="log">Register</div>
         </div>
         <form method="post">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input  name="username_dk" id="username" type="text">
-            </div>
+            <label for="username">Username:</label1>
+                <div class="form-group">
+                        <img src="./Những thức rác linh tinh/user.gif" alt="">
+                        <input  name="username" id="username" type="text">
+                </div>
 
-            <div class="form-group">
                 <label for="password">Password:</label>
-                <input name="password_dk" id="password" type="password">
-            </div>
-
+                <div class="form-group">
+                    <img src="./Những thức rác linh tinh/pass.gif" alt="">
+                    <input name="password" id="password" type="password">
+                </div>
+            <label>Email:</label>
             <div class="form-group">
-                <label>Email:</label>
+                <img src="./Những thức rác linh tinh/email.gif" alt="">
                 <input name="email" id="email" type="text">
             </div>
-
+            <label>Phone number:</label>
             <div class="form-group">
-                <label>Phone number:</label>
+                <img src="./Những thức rác linh tinh/phone.gif" alt="">
                 <input  name="phone" id="phone" type="text">
             </div>
             <?php 
@@ -90,7 +92,8 @@
             <?php } ?>
 
             <div class="remember-forgot">
-                <label><input type="checkbox" name="terms[]">I agree to the term & conditons</label>
+                <input type="checkbox" name="terms[]">
+                <label>I agree to the term & conditons</label>
             </div>
 
             <div class="form-group">
