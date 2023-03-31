@@ -66,23 +66,23 @@
         <form method="post">
             <label for="username">Username:</label1>
                 <div class="form-group">
-                        <img src="./Những thức rác linh tinh/user.gif" alt="">
+                        <img src="../gif/user.gif" alt="">
                         <input  name="username_dk" id="username" type="text">
                 </div>
 
                 <label for="password">Password:</label>
                 <div class="form-group">
-                    <img src="./Những thức rác linh tinh/pass.gif" alt="">
+                    <img src="../gif/pass.gif" alt="">
                     <input name="password_dk" id="password" type="password">
                 </div>
             <label>Email:</label>
             <div class="form-group">
-                <img src="./Những thức rác linh tinh/email.gif" alt="">
+                <img src="../gif/email.gif" alt="">
                 <input name="email" id="email" type="text">
             </div>
             <label>Phone number:</label>
             <div class="form-group">
-                <img src="./Những thức rác linh tinh/phone.gif" alt="">
+                <img src="../gif/phone.gif" alt="">
                 <input  name="phone" id="phone" type="text">
             </div>
             <?php 

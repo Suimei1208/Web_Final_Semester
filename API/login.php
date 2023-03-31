@@ -52,12 +52,12 @@
         <form method="post">
             <label for="username">Username:</label1>
             <div class="form-group">
-                    <img src="./Những thức rác linh tinh/user.gif" alt="">
+                    <img src="../gif/user.gif" alt="">
                     <input class ="lg" name="username" id="username" type="text">
             </div>
             <label for="password">Password:</label>
             <div class="form-group">
-                <img src="./Những thức rác linh tinh/pass.gif" alt="">
+                <img src="../gif/pass.gif" alt="">
                 <input class ="lg" name="password" id="password" type="password">
             </div>
             <?php 
