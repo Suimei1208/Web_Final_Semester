@@ -25,17 +25,20 @@ body{
     background-size: cover;
     background-position: center;
 }
+h2{
+  margin-left: -60px;
+}
 .logo{
     font-size: 2em;
     color: #ffff;
     user-select: none;
 }.navigation a{
     position: relative;
-    font-size: 1.1em;
-    color: #ffff;
+    font-size: 0.9em;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 400;
-    margin-left: 40px;
+    margin-left: 30px;
 }
 .navigation a::after{
     content: '';
@@ -58,7 +61,7 @@ body{
     width: 130px;
     height: 50px;
     background: transparent;
-    border: 2px solid #fff;
+    border: 2px solid #ffffff;
     outline: none;
     border-radius:  6px;
     cursor: pointer;
@@ -73,27 +76,29 @@ body{
     color:  #ffffff;
 }
 
-/* .search {
+ .search{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
     text-align: center;
+    
   }
   
   .search__input {
     font-family: inherit;
     font-size: inherit;
-    background-color: #f4f2f2;
+    background-color: #ffffff;
     border: none;
     color: #646464;
-    padding: 0.7rem 1rem;
+    padding: 0.3rem 1rem;
+    /* padding: 0.7rem 1rem; */
     border-radius: 30px;
-    width: 12em;
+    width: 17em;
     transition: all ease-in-out .5s;
-    margin-right: -2rem;
+    /* margin-right: 1rem; */
   }
   
-  .search__input:hover, .search__input:focus {
+   .search__input:hover, .search__input:focus {
     box-shadow: 0 0 1em #00000013;
   }
   
@@ -111,18 +116,12 @@ body{
     background-color: #f0eeee;
   }
   
-  .search__button {
+  /* .search__button {
     border: none;
-    background-color: #f4f2f2;
-    margin-top: .1em;
+    background-color: #000000;
+    margin-top: 0.9em;
   }
   
   .search__button:hover {
     cursor: pointer;
-  }
-  
-  .search__icon {
-    height: 1.3em;
-    width: 1.3em;
-    fill: #b4b4b4;
   } */
