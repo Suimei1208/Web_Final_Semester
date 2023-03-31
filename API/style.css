@@ -204,7 +204,8 @@ input[type="submit"] {
     margin-top: 15px; 
 }
 .remember-forgot label{
-    margin-right: 50px;
+    margin-right: 85px;
+    margin-bottom: -2px;
     position: relative;
     justify-content: center;
     align-items: center;
