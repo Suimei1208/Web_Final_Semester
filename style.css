@@ -9,7 +9,7 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 100px;
+    padding: 0 20px 0 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,6 +22,9 @@ body{
     background-size: cover;
     background-position: center;
     background-color: #0B2447;
+}
+main{
+  width: 100%;
 }
 .logo{
   width: 4%;
@@ -77,33 +80,33 @@ body{
   color: white;
 }
 .poster{
-  width: 175%;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 30px;
   height: 30rem;
   left: 50%;
   right: 50%;
 }
 h2{
   position: absolute;
-  top: 15%;
+  top: 10%;
   left: 20%;
   font-size: 30px;
 }
 .main_poster_header{
   position: absolute;
-  top: 20%;
+  top: 15%;
   left: 20%;
-}.main_poster_header span{
-  color: #fffb00;
 }
 .content{
   position: absolute;
-  top: 25%;
+  top: 18%;
   left: 20%;
 }
 .content1{
   color: crimson;
   position: absolute;
-  top: 30%;
+  top: 21%;
   left: 20%;
 }.content1 span{
   color: rgb(255, 255, 255);
@@ -111,7 +114,7 @@ h2{
 .content2{
   color: crimson;
   position: absolute;
-  top: 33%;
+  top: 24%;
   left: 20%;
 }
 .content2 span{
@@ -125,24 +128,8 @@ h2{
   background-color: red;
   width: 7%;
   border-radius: 5px;
-  top: 50%;
+  top: 40%;
   left: 20%;
 }
-/* .search__input:hover,.search__input:focus {
-  box-shadow: 0 0 1em #00000013;
-}
 
-.search__input:focus {
-  outline: none;
-  background-color: #ffffff;
-}
-
-.search__input::-webkit-input-placeholder {
-  font-weight: 100;
-  color: #ccc;
-}
-
-.search__input:focus+.search__button {
-  background-color: #f0eeee;
-} */
   
