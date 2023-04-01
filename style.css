@@ -17,16 +17,15 @@ header{
 }
 body{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     background-size: cover;
     background-position: center;
+    background-color: #0B2447;
 }
 .logo{
-    margin-left: -60px;
-    font-size: 2em;
-    color: #ffff;
-    user-select: none;
+  width: 4%;
+  margin-left: -80px;
 }
 .navigation a{
     position: relative;
@@ -73,6 +72,61 @@ body{
   border: none;
   outline: none;
   font-size: 15px;
+}
+.poster_header{
+  color: white;
+}
+.poster{
+  width: 175%;
+  height: 30rem;
+  left: 50%;
+  right: 50%;
+}
+h2{
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  font-size: 30px;
+}
+.main_poster_header{
+  position: absolute;
+  top: 20%;
+  left: 20%;
+}.main_poster_header span{
+  color: #fffb00;
+}
+.content{
+  position: absolute;
+  top: 25%;
+  left: 20%;
+}
+.content1{
+  color: crimson;
+  position: absolute;
+  top: 30%;
+  left: 20%;
+}.content1 span{
+  color: rgb(255, 255, 255);
+}
+.content2{
+  color: crimson;
+  position: absolute;
+  top: 33%;
+  left: 20%;
+}
+.content2 span{
+  color: rgb(255, 255, 255);
+}
+.play{
+  color: #ffffff;
+  position: absolute;
+  padding: 10px;
+  margin-right: -50%;
+  background-color: red;
+  width: 7%;
+  border-radius: 5px;
+  top: 50%;
+  left: 20%;
 }
 /* .search__input:hover,.search__input:focus {
   box-shadow: 0 0 1em #00000013;
