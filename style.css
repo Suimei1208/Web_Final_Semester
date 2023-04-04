@@ -77,11 +77,12 @@ main{
   outline: none;
   font-size: 15px;
 }
-/* .container{
+ .container{
   width: 100%;
-  height: 500px;
+  height: 50px;
   border-radius: 10px;
 }
+/*
 .poster_header{
   color: white;
   width: 100%;
@@ -106,8 +107,8 @@ h2{
   position: absolute;
   top: 15%;
   left: 20%;
-}
-.content{
+}*/
+/* .content{
   position: absolute;
   top: 18%;
   left: 20%;
@@ -128,7 +129,7 @@ h2{
 }
 .content2 span{
   color: rgb(255, 255, 255);
-}
+}*/
 .play{
   color: #ffffff;
   position: absolute;
@@ -140,11 +141,12 @@ h2{
   top: 35%;
   left: 20%;
   cursor: pointer;
-} */
+} 
 .img-slider{
-  padding-top: 5%;
+  padding-top: 10px;
+  left: 70px;
   position: relative;
-  width: 800px;
+  width: 700px;
   height: 500px;
   margin: 10px;
   background: #0B2447;
@@ -163,6 +165,7 @@ h2{
 .img-slider .slide img{
   z-index: 1;
   width: 190%;
+  height: 450px;
   border-radius: 5px;
 }
 .img-slider .slide .info{
@@ -172,10 +175,13 @@ h2{
 }
 .img-slider .slide .info h2{
   color: #ffffff;
-  font-size: 45px;
+  font-size: 30px;
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 2px;
+}
+.img-slider .slide .info span{
+  color: #ffffff;
 }
 .img-slider .slide .info p{
   color: #ffffff;
@@ -185,12 +191,15 @@ h2{
   padding:10px;
   border-radius: 4px;
 }
+.img-slider .slide .info .Au{
+  color: red;
+}
 .img-slider .radio-btn{
   z-index: 2;
   position: absolute;
   display: flex;
-  bottom: 30px;
-  left: 50%;
+  bottom: 60px;
+  left: 150%;
   transform: translateX(-50%);
 }
 .img-slider .radio-btn .btn{
