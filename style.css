@@ -141,7 +141,7 @@ main{
   cursor: pointer;
 }
 .img-slider .radio-btn .btn.active{
-  background: #2696E9;
+  background: #E91010;
   box-shadow: 0 0 2px rgba(0,0,0,0.5);
 }
 @media(max-width: 820px){
