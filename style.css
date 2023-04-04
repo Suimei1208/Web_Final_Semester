@@ -14,11 +14,12 @@ header{
     justify-content: space-between;
     align-items: center;
     background-color: #000000;
+    z-index: 9999;
 }
 body{
-    display: flex;
-    /* justify-content: center;
-    align-items: center; */
+  display: flex;
+  justify-content: center;
+    align-items: center; 
     background-size: cover;
     background-position: center;
     background-color: #0B2447;
@@ -136,7 +137,7 @@ h2{
   background-color: red;
   width: 7%;
   border-radius: 5px;
-  top: 40%;
+  top: 35%;
   left: 20%;
   cursor: pointer;
 }
