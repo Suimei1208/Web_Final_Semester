@@ -1,15 +1,46 @@
-function searchMovies(event) {
-    event.preventDefault(); // prevent form from submitting and reloading the page
-    const input = document.querySelector('.search input[type="text"]');
-    const searchTerm = input.value.trim();
-    if (searchTerm) {
-      // perform search using the searchTerm variable
-      console.log(`Searching for movies with title "${searchTerm}"`);
-    } else {
-      alert('Please enter a search term'); // show an error message if the search term is empty
+var slides = document.querySelectorAll('.slide');
+var btns = document.querySelectorAll('.btn');
+let currentSlide = 1;
+
+// Javascript cho image slider
+var manualNav = function(manual){
+    slides.forEach((slide) =>{
+        slide.classList.remove('active');
+
+        btns.forEach((btn) =>{
+            btn.classList.remove('active');
+        })
+    })
+    slides[manual].classList.add('active');
+    btns[manual].classList.add('active');
+}
+btns.forEach((btn,i) => {
+    btn.addEventListener("click",() =>{
+        manualNav(i);
+        currentSlide = i;
+    })
+})
+//autoplay
+var repeat = function(activeClass){
+    let active = document.getElementsByClassName('active');
+    let i = 1;
+
+    var repeater = () =>{
+        setTimeout(function(){
+
+            slides[i].classList.add('active');
+            btns[i].classList.add('active');
+            i++;
+            if(slides.length == i ){
+                i = 0;
+            }
+            if(i >=slides.length){
+                return;
+            }
+            repeater();
+        },5000);
+
     }
-  }
-  
-  const form = document.querySelector('.search form');
-  form.addEventListener('submit', searchMovies);
-  
+    repeater();
+}
+repeat();
