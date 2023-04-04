@@ -29,10 +29,9 @@
         </nav>
     </header>
     <main>
-        <div class="container">
+        <!-- <div class="container">
             <div class="poster_header">
                 <img src="./img/tenkinoko1.png" alt="" class="poster">
-                <!-- <img src="./img/doctor1.jpg" alt="" class="poster"> -->
                 <div class="content0">
                     <h2>Weathering with you</h2>
                     <div style="color: #fffb00">
@@ -53,15 +52,98 @@
                         <i class="fa-solid fa-play"></i> WATCH</div>
                     </button>
                 </div>
-                <div class="radio-btn">
-                    <div class="sliders">
-                        <input type="radio" name="radio_btn" id="radio1">
-                        <input type="radio" name="radio_btn" id="radio2">
-                        <input type="radio" name="radio_btn" id="radio3">
-                        <input type="radio" name="radio_btn" id="radio4">
-                        <input type="radio" name="radio_btn" id="radio5">
-                    </div>
+        </div> -->
+        <div class="img-slider">
+            <div class="slide active">
+                <img src="./img/doctor1.jpg" alt="">
+                <div class="info">
+                    <h2>Slide 01</h2>
+                    <p>A high-school boy who has run away to Tokyo befriends a girl who appears to be able to manipulate the weather.</p>
                 </div>
+            </div>
+            <div class="slide">
+                <img src="./img/tenkinoko1.png" alt="">
+                <div class="info">
+                    <h2>Slide 02</h2>
+                    <p>A high-school boy who has run away to Tokyo befriends a girl who appears to be able to manipulate the weather.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="./img/doctor1.jpg" alt="">
+                <div class="info">
+                    <h2>Slide 03</h2>
+                    <p>A high-school boy who has run away to Tokyo befriends a girl who appears to be able to manipulate the weather.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="./img/tenkinoko1.png" alt="">
+                <div class="info">
+                    <h2>Slide 04</h2>
+                    <p>A high-school boy who has run away to Tokyo befriends a girl who appears to be able to manipulate the weather.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="./img/doctor1.jpg" alt="">
+                <div class="info">
+                    <h2>Slide 05</h2>
+                    <p>A high-school boy who has run away to Tokyo befriends a girl who appears to be able to manipulate the weather.</p>
+                </div>
+            </div>
+            <div class="radio-btn">
+                <div class="btn active"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+            </div>
         </div>
     </main>
+    <script type="text/javascript">
+        var slides = document.querySelectorAll('.slide');
+        var btns = document.querySelectorAll('.btn');
+        let currentSlide = 1;
+
+        // Javascript cho image slider
+        var manualNav = function(manual){
+            slides.forEach((slide) =>{
+                slide.classList.remove('active');
+
+                btns.forEach((btn) =>{
+                    btn.classList.remove('active');
+                })
+            })
+            slides[manual].classList.add('active');
+            btns[manual].classList.add('active');
+        }
+        btns.forEach((btn,i) => {
+            btn.addEventListener("click",() =>{
+                manualNav(i);
+                currentSlide = i;
+            })
+        })
+        //autoplay
+        var repeat = function(activeClass){
+            let active = document.getElementsByClassName('active');
+            let i = 1;
+
+            var repeater = () =>{
+                setTimeout(function(){
+
+                    slides[i].classList.add('active');
+                    btns[i].classList.add('active');
+                    i++;
+                    if(slides.length == i ){
+                        i = 0;
+                    }
+                    if(i >=slides.length){
+                        return;
+                    }
+                    repeater();
+                },5000);
+
+            }
+            repeater();
+        }
+        repeat();
+    </script>
 </body>
