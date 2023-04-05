@@ -251,3 +251,49 @@ h2{
 .play:hover{
   background-color: rgb(206, 28, 28);
 }
+.update{
+  display: flex;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.cell{
+  /* border: 1px solid #ffffff; */
+  padding-bottom: 10px;
+  margin-top: 1px;
+  text-align: center;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.cell .user-info .title{
+  margin-top: 8px;
+  font-weight: bold;
+  display: block;
+}
+.cell .user-info .position{
+  font-size: 14px;
+  font-weight: lighter;
+
+}
+.cell img{
+  width: 70%;
+  border-radius: 8px ;
+}
+.footer{
+  justify-content: center;
+  background-color: #50577A;
+  color: white;
+  margin-top: 15px;
+  text-align: center;
+  border-radius: 5px;
+  padding: 20px;
+}
+.footer .footer1 i{
+  font-size: 25px;
+  padding: 5px 10px 20px;
+}
+.footer .footer2 a{
+  font-size: 25px;
+  padding: 20px ;
+  text-decoration: none;
+  color: white;
+}
