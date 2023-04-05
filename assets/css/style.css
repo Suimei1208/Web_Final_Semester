@@ -280,6 +280,9 @@ h2{
   max-height: 700px;
   max-width: 600%;
 }
+.cell .user-info{
+  color: #ffffff;
+}
 .footer{
   justify-content: center;
   background-color: #50577A;

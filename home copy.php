@@ -57,7 +57,7 @@
                         $p['actor'] = "Updating.....";
                     }
 
-                    if ($count == 6) {
+                    if ($count >= 6) {
                         break;
                     }
                     elseif($count ==1){            
@@ -134,8 +134,9 @@
         foreach($flims as $p){
             $count++;
             if($count===5) break;
-    ?>
-        
+            if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
+            if($p['name_flim'] == null) $p['name_flim'] = 'Bị vấp phải cứt rồi isekai!';
+    ?>     
             <div class="cell">
                 <img src="./assets/img/<?=$p['poster_small']?>"/>
                 <div class="user-info">
@@ -148,6 +149,79 @@
         }
         ?>
     </div>
+    
+    <div class="update">
+    <?php
+        $count = 0;
+        foreach($flims as $p){
+            $count++;
+            if($count <5) continue;
+            if($count===9) break;
+            if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
+            if($p['name_flim'] == null) $p['name_flim'] = 'Bị vấp phải cứt rồi isekai!';
+    ?>     
+            <div class="cell">
+                <img src="./assets/img/<?=$p['poster_small']?>"/>
+                <div class="user-info">
+                    <span class="title"><?=$p['name_flim']?></p>
+                    <span class="position">View: 10,000,000</p>
+                </div>
+            </div>
+        
+        <?php             
+        }
+        ?>
+    </div>
+
+    <div class="update">
+    <?php
+        $count = 0;
+        foreach($flims as $p){
+            $count++;
+            if($count <9) continue;
+            if($count===13) break;
+            if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
+            if($p['name_flim'] == null) $p['name_flim'] = 'Bị vấp phải cứt rồi isekai!';
+    ?>     
+            <div class="cell">
+                <img src="./assets/img/<?=$p['poster_small']?>"/>
+                <div class="user-info">
+                    <span class="title"><?=$p['name_flim']?></p>
+                    <span class="position">View: 10,000,000</p>
+                </div>
+            </div>
+        
+        <?php             
+        }
+        ?>
+    </div>
+
+    <div class="update">
+    <?php
+        $count = 0;
+        foreach($flims as $p){
+            $count++;
+            if($count <13) continue;
+            if($count===17) break;
+            if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
+            if($p['name_flim'] == null) $p['name_flim'] = 'Bị vấp phải cứt rồi isekai!';
+    ?>     
+            <div class="cell">
+                <img src="./assets/img/<?=$p['poster_small']?>"/>
+                <div class="user-info">
+                    <span class="title"><?=$p['name_flim']?></p>
+                    <span class="position">View: 10,000,000</p>
+                </div>
+            </div>
+        
+        <?php             
+        }
+        ?>
+    </div>
+
+    <?php
+        include 'component/footer.php';
+    ?>
     </main>
     <script src="assets/js/script.js">     
     </script>
