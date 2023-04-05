@@ -17,6 +17,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,23 +26,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- <header>
-        <img src="assets/img/LOGOMOUNT.png" alt="" class="logo">
-        <nav class="navigation">
-            <a href="#">HOME</a>
-            <a href="#">GENRES</a>
-            <a href="#">TV SERIES</a>
-            <a href="#">MOVIE</a>
-            <a href="#">TOP FILMS</a>
-            <a href="#">NEW FILMS</a>
-            <a href="#">ADVANCED SEARCH</a>
-            <a href="#" class="search">
-                <input type="text" class="search__input" placeholder="Search film name">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </a>
-            <a href="./login.php">LOGIN</a>
-        </nav>
-    </header> -->
     <?php
         include 'component/header.php';
     ?>
@@ -82,9 +66,10 @@
                         <p class="INFO">Author: <span class="col-while"><?=$p['director']?></span></p>
                         <p class="INFO">Actor: <span class="col-while"> <?=$p['actor']?></span></p>
                         <p class="INFO">Genres: <span class="col-while"> <?=$p['genre']?></span></p>
+                        <input type="button" class="play" class="fa-solid fa-play" value="WATCH">
                     </div>             
                 </div>
-                <input type="button" class="play" class="fa-solid fa-play" value="WATCH">
+                
             </div>
             <?php
                     }
@@ -110,9 +95,9 @@
                         <p class="INFO">Author: <span class="col-while"><?=$p['director']?></span></p>
                         <p class="INFO">Actor: <span class="col-while"> <?=$p['actor']?></span></p>
                         <p class="INFO">Genres: <span class="col-while"> <?=$p['genre']?></span></p>
+                        <input type="button" class="play" class="fa-solid fa-play" value="WATCH">
                     </div>               
                 </div>
-                <input type="button" class="play" class="fa-solid fa-play" value="WATCH">
             </div>
             <?php
                     }
