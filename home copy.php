@@ -130,7 +130,7 @@
             $count++;
             if($count===5) break;
             if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-            if($p['name_flim'] == null) $p['name_flim'] = 'Bị vấp phải cứt rồi isekai!';
+            if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
     ?>     
             <div class="cell">
                 <img src="./assets/img/<?=$p['poster_small']?>"/>
@@ -153,7 +153,7 @@
             if($count <5) continue;
             if($count===9) break;
             if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-            if($p['name_flim'] == null) $p['name_flim'] = 'Bị vấp phải cứt rồi isekai!';
+            if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
     ?>     
             <div class="cell">
                 <img src="./assets/img/<?=$p['poster_small']?>"/>
@@ -176,13 +176,13 @@
             if($count <9) continue;
             if($count===13) break;
             if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-            if($p['name_flim'] == null) $p['name_flim'] = 'Bị vấp phải cứt rồi isekai!';
+            if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
     ?>     
             <div class="cell">
                 <img src="./assets/img/<?=$p['poster_small']?>"/>
                 <div class="user-info">
                     <span class="title"><?=$p['name_flim']?></p>
-                    <span class="position">View: 10,000,000</p>
+                    <span class="position">View: <?=number_format($p['view'])?></p>
                 </div>
             </div>
         
@@ -199,13 +199,13 @@
             if($count <13) continue;
             if($count===17) break;
             if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-            if($p['name_flim'] == null) $p['name_flim'] = 'Bị vấp phải cứt rồi isekai!';
+            if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
     ?>     
             <div class="cell">
                 <img src="./assets/img/<?=$p['poster_small']?>"/>
                 <div class="user-info">
                     <span class="title"><?=$p['name_flim']?></p>
-                    <span class="position">View: 10,000,000</p>
+                    <span class="position">View: <?=number_format($p['view'])?></p>
                 </div>
             </div>
         
