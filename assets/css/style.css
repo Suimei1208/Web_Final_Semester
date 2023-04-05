@@ -30,6 +30,7 @@ main{
   margin-left: -80px;
 }
 .navigation a{
+    margin: 10px;
     position: relative;
     font-size: 0.9em;
     color: #ffffff;
@@ -54,6 +55,70 @@ main{
     transform-origin: left;
     transform: scaleX(1);
 }
+/*menu của genres*/
+.navigation .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  margin-top: 10px;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  background-color: #D8D4D4;
+  min-width: 200px;
+  padding: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  transition: all 500s ease-out 5s;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.row a {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+.dropbtn {
+  position: relative;
+  font-size: 0.9em;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 400;
+  margin-left: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover {
+  color: #ccc;
+}
+
+.dropdown-content a:hover {
+  background-color: #58428a;
+}
+
+
 .search {
   font-family: inherit;
   font-size: inherit;
@@ -290,22 +355,47 @@ h2{
 .cell .user-info{
   color: #ffffff;
 }
-.footer{
+.footer {
   justify-content: center;
   background-color: #50577A;
   color: white;
   margin-top: 15px;
   text-align: center;
   border-radius: 5px;
-  padding: 20px;
+  padding: 35px;
 }
-.footer .footer1 i{
+
+.footer .footer1 i {
   font-size: 25px;
   padding: 5px 10px 20px;
 }
-.footer .footer2 a{
+
+.footer .footer2 a {
   font-size: 25px;
-  padding: 20px ;
+  /* padding: 20px ; */
   text-decoration: none;
   color: white;
+  position: relative;
+  /* border: 1px solid #ffffff; */
+  margin: 20px;
 }
+
+.footer .footer2 a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 5px;
+  bottom: -6px;
+  transform: scaleX(0);
+  transition: transform .5s;
+  transform-origin: right;
+}
+
+.footer .footer2 a:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
