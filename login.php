@@ -3,7 +3,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        require_once('connect.php');
+        require_once('API/connect.php');
         $conn = connect();
 
         if ($conn->connect_error) {
@@ -16,7 +16,7 @@
         $result = $stmt->get_result();
 
         if ($result->num_rows == 1) {
-            header('Location: ../home.html');
+            header('Location: ./home.html');
             exit();
         } else {
             $error = "Error Username or Password. Please try again!";
@@ -32,13 +32,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style_lg_re.css">
 </head>
 <body>
     <header>
         <h2 class="logo">Logo</h2>
         <nav class="navigation">
-            <a href="../home.html">Home</a>
+            <a href="./home.html">Home</a>
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Contact</a>
@@ -52,12 +52,12 @@
         <form method="post">
             <label for="username">Username:</label1>
             <div class="form-group">
-                    <img src="../gif/user.gif" alt="">
+                    <img src="assets/gif/user.gif" alt="">
                     <input class ="lg" name="username" id="username" type="text">
             </div>
             <label for="password">Password:</label>
             <div class="form-group">
-                <img src="../gif/pass.gif" alt="">
+                <img src="assets/gif/pass.gif" alt="">
                 <input class ="lg" name="password" id="password" type="password">
             </div>
             <?php 

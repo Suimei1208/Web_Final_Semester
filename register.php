@@ -5,7 +5,7 @@
         $email = $_POST['email'];
         $phone = $_POST['phone'];
 
-        require_once('connect.php');
+        require_once('API/connect.php');
         $conn = connect();
 
         if ($conn->connect_error) {
@@ -47,13 +47,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style_lg_re.css">
 </head>
 <body>
     <header>
         <h2 class="logo">Logo</h2>
         <nav class="navigation">
-            <a href="../home.html">Home</a>
+            <a href="./home.html">Home</a>
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Contact</a>
@@ -66,23 +66,23 @@
         <form method="post">
             <label for="username">Username:</label1>
                 <div class="form-group">
-                        <img src="../gif/user.gif" alt="">
+                        <img src="assets/gif/user.gif" alt="">
                         <input  name="username_dk" id="username" type="text">
                 </div>
 
                 <label for="password">Password:</label>
                 <div class="form-group">
-                    <img src="../gif/pass.gif" alt="">
+                    <img src="assets/gif/pass.gif" alt="">
                     <input name="password_dk" id="password" type="password">
                 </div>
             <label>Email:</label>
             <div class="form-group">
-                <img src="../gif/email.gif" alt="">
+                <img src="assets/gif/email.gif" alt="">
                 <input name="email" id="email" type="text">
             </div>
             <label>Phone number:</label>
             <div class="form-group">
-                <img src="../gif/phone.gif" alt="">
+                <img src="assets/gif/phone.gif" alt="">
                 <input  name="phone" id="phone" type="text">
             </div>
             <?php 
