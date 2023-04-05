@@ -1,6 +1,6 @@
 <?php
         $rows = 4;
-        $cols = 1;
+        $cols = 4;
         $count = 0;
         foreach($flims as $p){
             if ($count % $cols == 0) {
@@ -24,7 +24,7 @@
                 }
         }
             ?>
-
+count($products)
 
 
 
@@ -48,3 +48,28 @@
         }
         ?>
     </div>
+
+
+
+     <table>
+                  <?php 
+                  $genre = getGenres();
+                  $rows = count($genre);
+                  $cols = count($genre);
+                  $count = 0;
+                  foreach($genre as $p){
+                    if ($count % $cols == 0) {
+                      echo '<tr><div class="row">';
+                    }
+                ?>              
+                        <td><a href="#"><?=$p['genre']?></a></td>
+                <?php 
+                    $count++;
+                    if ($count % $cols == 0) {
+                        echo "</div></tr>";
+                    }
+                    if ($count == $rows * $cols) {
+                        break;
+                    }
+                  }?>
+                  </table>
