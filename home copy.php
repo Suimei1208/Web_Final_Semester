@@ -122,7 +122,9 @@
             </div>
         </div>
     </div>
-    
+    <div class="update content">
+        <strong class="up">Upcoming:</strong>
+    </div>
     <div class="update">
     <?php
         $count = 0;

@@ -408,3 +408,10 @@ h2{
   transform: scaleX(1);
 }
 
+.up{
+  font-size: 35px;
+  color: #ffffff;
+  text-decoration: underline;
+  text-align: right;
+}
+
