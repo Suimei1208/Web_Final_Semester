@@ -32,7 +32,6 @@ main{
 .navigation a{
     margin: 10px;
     position: relative;
-    font-size: 0.9em;
     color: #ffffff;
     text-decoration: none;
     font-weight: 400;
@@ -43,7 +42,7 @@ main{
     position: absolute;
     left: 0;
     width: 100%;
-    height: 3px;
+    height: 5px;
     background: #ffffff;
     border-radius: 5px;
     bottom: -6px;
@@ -85,6 +84,7 @@ main{
 .row a {
   display: block;
   padding: 5px 10px;
+  text-align: center;
   text-decoration: none;
   color: #333;
   border: none;
@@ -100,7 +100,6 @@ main{
 
 .dropbtn {
   position: relative;
-  font-size: 0.9em;
   color: #ffffff;
   text-decoration: none;
   font-weight: 400;
@@ -108,6 +107,17 @@ main{
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.dropbtn::before{
+  content:"";
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 100%;
+  /* background-color: #E91010; */
+  top: 20px;
+  left: 5px;
 }
 
 .dropbtn:hover {
