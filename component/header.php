@@ -4,7 +4,7 @@
         <img src="assets/img/LOGOMOUNT.png" alt="" class="logo">
         <nav class="navigation">
             <a href="#">HOME</a>
-            <a href="#">GENRES</a>
+
             <a href="#">TV SERIES</a>
             <a href="#">MOVIE</a>
             <a href="#">TOP FILMS</a>

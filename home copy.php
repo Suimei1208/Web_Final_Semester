@@ -11,7 +11,7 @@
     $year = '';
     $content = '';
     $director = '';
-    $genre ='';
+    $genre = getGenres();
     $flims = showFlims();
 ?>
 <!DOCTYPE html>
