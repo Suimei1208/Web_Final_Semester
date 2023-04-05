@@ -8,7 +8,7 @@
     }
     function showFlims(){
         $conn = connect();
-        $sql = "SELECT * FROM flims";
+        $sql = "SELECT * FROM films";
         $result = mysqli_query($conn, $sql);
 
         if(mysqli_num_rows($result)>0){

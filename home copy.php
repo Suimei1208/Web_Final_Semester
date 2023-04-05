@@ -10,7 +10,7 @@
     $time = '';
     $year = '';
     $content = '';
-    $author = '';
+    $director = '';
     $genre ='';
     $flims = showFlims();
 ?>
@@ -28,7 +28,7 @@
     <header>
         <img src="./img/LOGOMOUNT.png" alt="" class="logo">
         <nav class="navigation">
-            <a href="../home.html">HOME</a>
+            <a href="#">HOME</a>
             <a href="#">GENRES</a>
             <a href="#">TV SERIES</a>
             <a href="#">MOVIE</a>
@@ -49,6 +49,10 @@
                 $count = 0;
                 foreach($flims as $p){
                     $count++;
+                    if($p['actor'] === null){
+                        $p['actor'] = "Updating.....";
+                    }
+
                     if ($count == 6) {
                         break;
                     }
@@ -71,10 +75,12 @@
                             </div>
                         </div>
                         <p class="col-while"><?=$p['content']?></p>
-                        <p class="INFO">Author: <span class="col-while"><?=$p['author']?></span></p>
+                        <p class="INFO">Author: <span class="col-while"><?=$p['director']?></span></p>
+                        <p class="INFO">Actor: <span class="col-while"> <?=$p['actor']?></span></p>
                         <p class="INFO">Genres: <span class="col-while"> <?=$p['genre']?></span></p>
-                    </div>               
+                    </div>             
                 </div>
+                <input type="button" class="play" class="fa-solid fa-play" value="WATCH">
             </div>
             <?php
                     }
@@ -97,10 +103,12 @@
                             </div>
                         </div>
                         <p class="col-while"><?=$p['content']?></p>
-                        <p class="INFO">Author: <span class="col-while"><?=$p['author']?></span></p>
+                        <p class="INFO">Author: <span class="col-while"><?=$p['director']?></span></p>
+                        <p class="INFO">Actor: <span class="col-while"> <?=$p['actor']?></span></p>
                         <p class="INFO">Genres: <span class="col-while"> <?=$p['genre']?></span></p>
                     </div>               
                 </div>
+                <input type="button" class="play" class="fa-solid fa-play" value="WATCH">
             </div>
             <?php
                     }
