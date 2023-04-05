@@ -127,6 +127,27 @@
             </div>
         </div>
     </div>
+    
+    <div class="update">
+    <?php
+        $count = 0;
+        foreach($flims as $p){
+            $count++;
+            if($count===5) break;
+    ?>
+        
+            <div class="cell">
+                <img src="./assets/img/<?=$p['poster_small']?>"/>
+                <div class="user-info">
+                    <span class="title"><?=$p['name_flim']?></p>
+                    <span class="position">View: 10,000,000</p>
+                </div>
+            </div>
+        
+        <?php             
+        }
+        ?>
+    </div>
     </main>
     <script src="assets/js/script.js">     
     </script>

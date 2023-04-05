@@ -1,0 +1,50 @@
+<?php
+        $rows = 4;
+        $cols = 1;
+        $count = 0;
+        foreach($flims as $p){
+            if ($count % $cols == 0) {
+                echo '<div class="update">';
+            }
+    ?>
+            <div class="cell">
+                <img src="./assets/img/<?=$p['poster_small']?>"/>
+                <div class="user-info">
+                    <span class="title"><?=$p['name_flim']?></p>
+                    <span class="position">View: 10,000,000</p>
+                </div>
+            </div>
+            <?php 
+                $count++;
+                if ($count % $cols == 0) {
+                    echo "</div>";
+                }
+                if ($count == $rows * $cols) {
+                    break;
+                }
+        }
+            ?>
+
+
+
+
+<div class="update">
+    <?php
+        $count = 0;
+        foreach($flims as $p){
+            $count++;
+            if($count===5) break;
+    ?>
+        
+            <div class="cell">
+                <img src="./assets/img/<?=$p['poster_small']?>"/>
+                <div class="user-info">
+                    <span class="title"><?=$p['name_flim']?></p>
+                    <span class="position">View: 10,000,000</p>
+                </div>
+            </div>
+        
+        <?php             
+        }
+        ?>
+    </div>

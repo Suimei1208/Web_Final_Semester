@@ -274,9 +274,11 @@ h2{
   font-weight: lighter;
 
 }
-.cell img{
+.cell img {
   width: 70%;
-  border-radius: 8px ;
+  border-radius: 8px;
+  max-height: 700px;
+  max-width: 600%;
 }
 .footer{
   justify-content: center;
