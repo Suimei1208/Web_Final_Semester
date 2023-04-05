@@ -254,18 +254,21 @@ h2{
   display: flex;
   margin-left: 10%;
   margin-right: 10%;
+  justify-content: center;
 }
-.cell{
-  /* border: 1px solid #ffffff; */
+.cell{  
   padding-bottom: 10px;
   margin-top: 1px;
   text-align: center;
   border-radius: 8px;
+  line-height: 25px;
   transition: 0.3s;
 }
 .cell .user-info .title{
-  margin-top: 8px;
+  margin-bottom: 10px;
   font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 25px;
   display: block;
 }
 .cell .user-info .position{
@@ -274,10 +277,15 @@ h2{
 
 }
 .cell img {
-  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 50px;
+  width: 300px;
   border-radius: 8px;
-  max-height: 700px;
+  /* max-height: 700px; */
   max-width: 600%;
+  height: 450px;
+  margin: 30px;
 }
 .cell .user-info{
   color: #ffffff;
