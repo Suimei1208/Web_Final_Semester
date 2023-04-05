@@ -188,13 +188,12 @@ main{
   color: #ffffff;
   font-size: 45px;
   text-transform: uppercase;
-  font-weight: 800;
-  letter-spacing: 2px;
+  font-weight: 700;
 }
 .img-slider .slide .info p{
   background: rgba(0,0,0,0,0.1);
   font-size: 20px;
-  width: 60%;
+  width: 80%;
   padding-top:10px;
   border-radius: 4px;
 }
@@ -314,7 +313,7 @@ h2{
   text-align: right;
   width: 140px;
   border-radius: 10px;
-  top: 77%;
+  top: 85%;
   background-image: url("../icon/play-solid.svg");
   background-position: 15px 50%;
   background-repeat: no-repeat;
