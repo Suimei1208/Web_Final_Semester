@@ -283,7 +283,7 @@ h2{
   width: 300px;
   border-radius: 8px;
   /* max-height: 700px; */
-  max-width: 600%;
+  /* max-width: 600%; */
   height: 450px;
   margin: 30px;
 }
