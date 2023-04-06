@@ -93,3 +93,6 @@ Số hàng = ceil(Tổng số phần tử / Số cột)
 Trong đó, hàm ceil là hàm làm tròn lên.
 
 Ví dụ, nếu có 20 phần tử, số cột sẽ là ceil(sqrt(20)) = 5 và số hàng sẽ là ceil(20/5) = 4. Bảng sẽ được chia thành 4 hàng và 5 cột.
+
+
+SELECT * FROM films WHERE genre LIKE '%Drama%';
