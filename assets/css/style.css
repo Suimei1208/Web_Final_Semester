@@ -55,77 +55,69 @@ main{
     transform: scaleX(1);
 }
 /*menu của genres*/
-.navigation .dropdown {
+.dropdown {
   position: relative;
   display: inline-block;
 }
-
 .dropdown-content {
-  margin-top: 10px;
+  margin-top: 15px;
   display: none;
   position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1;
   background-color: #D8D4D4;
-  min-width: 200px;
-  padding: 10px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 0px 0px 5px 5px;
-  transition: all 500s ease-out 5s;
+  z-index: 1;
+}
+.dropbtn{
+  top: 6px;
+}
+.dropdown-content table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
-}
-
-.row a {
-  display: block;
-  padding: 5px 10px;
-  text-align: center;
-  text-decoration: none;
-  color: #333;
-  border: none;
-  border-radius: 4px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  white-space: nowrap;
+.dropdown-content td {
+  padding: 5px;
 }
 
 .dropdown:hover .dropdown-content {
-  display: flex;
-}
-
-.dropbtn {
-  position: relative;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 400;
-  margin-left: 30px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.dropbtn::before{
-  content:"";
-  position: absolute;
   display: block;
-  height: 20px;
-  width: 100%;
-  /* background-color: #E91010; */
-  top: 20px;
-  left: 5px;
 }
 
-.dropbtn:hover {
-  color: #ccc;
+/* Genre table styling */
+.dropdown-content table tr:not(:last-child) {
+  border-bottom: 1px solid #D8D4D4;
+}
+.dropdown-content table tr:nth-child(odd) {
+  background-color: #D8D4D4;
 }
 
-.dropdown-content a:hover {
-  background-color: #58428a;
+.dropdown-content table tr:nth-child(even) {
+  background-color: #D8D4D4;
+}
+
+.dropdown-content table td {
+  width: 14.28%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.dropdown-content table td a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+}
+.dropdown-content table td:first-child a {
+  border-top-left-radius: 10px;
+}
+
+.dropdown-content table td:last-child a {
+  border-top-right-radius: 10px;
+}
+.dropdown-content table td a:hover {
+  background-color: #6c52ff;
 }
 
 
