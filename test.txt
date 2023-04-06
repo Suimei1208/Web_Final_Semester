@@ -55,7 +55,7 @@ count($products)
                   <?php 
                   $genre = getGenres();
                   $rows = count($genre);
-                  $cols = count($genre);
+                  $cols = 8;
                   $count = 0;
                   foreach($genre as $p){
                     if ($count % $cols == 0) {
@@ -88,7 +88,7 @@ count($products)
 
 Nếu số phần tử không chia hết cho số cột hoặc số hàng thì có thể dùng công thức sau để tính số cột và số hàng:
 
-Số cột = ceil(sqrt(Tổng số phần tử))
+Số cột = 8
 Số hàng = ceil(Tổng số phần tử / Số cột)
 Trong đó, hàm ceil là hàm làm tròn lên.
 

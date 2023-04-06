@@ -4,7 +4,39 @@
         <img src="assets/img/LOGOMOUNT.png" alt="" class="logo">
         <nav class="navigation">
             <a href="#">HOME</a>
+            <div class="dropdown">
+                <table class="dropdown-table">
+                    <tr>
+                        <td>
+                            <a href="" class="dropbtn">GENRES</a>
+                            <div class="dropdown-content">
+                                <table>
+                                <?php 
+                                    $rows = count($genre);
+                                    $cols = 7;
+                                    $count = 0;
+                                    foreach($genre as $p){
+                                        if ($count % $cols == 0) {
+                                        echo '<tr>';
+                                        }
+                                    ?>              
+                                            <td><a href="#"><?=$p['genre']?></a></td>
+                                    <?php 
+                                        $count++;
+                                        if ($count % $cols == 0) {
+                                            echo "</tr>";
+                                        }
+                                        if ($count == $rows * $cols) {
+                                            break;
+                                        }
+                                    }?>
 
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
             <a href="#">TV SERIES</a>
             <a href="#">MOVIE</a>
             <a href="#">TOP FILMS</a>
