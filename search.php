@@ -32,7 +32,7 @@
 
     <main style="margin-top: 80px;">
     <div class="update content">
-        <strong class="up">Upcoming:</strong>
+        <strong class="up">Search for: NTR</strong>
     </div>
     <div class="update">
     <?php
