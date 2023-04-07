@@ -16,7 +16,7 @@
         $result = $stmt->get_result();
 
         if ($result->num_rows == 1) {
-            header('Location: ./home.html');
+            header('Location: /home.html');
             exit();
         } else {
             $error = "Error Username or Password. Please try again!";
@@ -38,7 +38,7 @@
     <header>
         <h2 class="logo">Logo</h2>
         <nav class="navigation">
-            <a href="./home.html">Home</a>
+            <a href="../home.html">Home</a>
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Contact</a>

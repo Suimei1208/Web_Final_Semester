@@ -46,7 +46,7 @@
                 <input type="text" class="search__input" placeholder="Search film name">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </a>
-            <a href="./login.php">LOGIN</a>
+            <a href="login.php">LOGIN</a>
         </nav>
     </header>
 </body>
