@@ -11,8 +11,12 @@
     $year = '';
     $content = '';
     $director = '';
+    if(isset($_POST['search'])){
+        $search = $_POST['search'];
+         
+    $search_flim = getFlims($search);
     $genre = getGenres();
-    $flims = showFlims();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,12 +36,12 @@
 
     <main style="margin-top: 80px;">
     <div class="update content">
-        <strong class="up">Search for:</strong>
+        <strong class="up">Search for: </strong> 
     </div>
     <div class="update">
     <?php
         $count = 0;
-        foreach($flims as $p){
+        foreach($search_flim as $p){
             $count++;
             if($count===5) break;
             if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
@@ -59,7 +63,7 @@
     <div class="update">
     <?php
         $count = 0;
-        foreach($flims as $p){
+        foreach($search_flim as $p){
             $count++;
             if($count <5) continue;
             if($count===9) break;
@@ -82,7 +86,7 @@
     <div class="update">
     <?php
         $count = 0;
-        foreach($flims as $p){
+        foreach($search_flim as $p){
             $count++;
             if($count <9) continue;
             if($count===13) break;
@@ -105,7 +109,7 @@
     <div class="update">
     <?php
         $count = 0;
-        foreach($flims as $p){
+        foreach($search_flim as $p){
             $count++;
             if($count <13) continue;
             if($count===17) break;
@@ -132,3 +136,4 @@
     <script src="assets/js/script.js">     
     </script>
 </body>
+<?php }?>

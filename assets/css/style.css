@@ -15,6 +15,7 @@ header{
     align-items: center;
     background-color: #000000;
     z-index: 9999;
+    text-align: center;
 }
 body{
   display: flex;
@@ -25,6 +26,9 @@ body{
 main{
   width: 100%;
   
+}
+.navigation{
+  display: flex;
 }
 .logo{
   width: 4%;
@@ -69,7 +73,7 @@ main{
   padding-right: 40px;
 }
 .dropbtn{
-  top: 6px;
+  top: 8px;
 }
 .dropbtn::before{
   content:"";
@@ -184,7 +188,7 @@ main{
 }
 .img-slider .slide .info{
   position: absolute;
-  top: 70px;
+  top: 80px;
   left: -10px;
   margin-left: 300px;
 }
@@ -496,4 +500,8 @@ h2{
   color: #ffffff;
   text-decoration: underline;
   text-align: right;
+}
+.up_search{
+  font-size: 35px;
+  color: #ffffff;
 }

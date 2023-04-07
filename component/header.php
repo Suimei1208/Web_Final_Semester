@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="../assets/css/style.css">
 <body>
     <header>
-        <img src="assets/img/LOGOMOUNT.png" alt="" class="logo">
+    <img src="assets/img/LOGOMOUNT.png" alt="" class="logo">
         <nav class="navigation">
-            <a href="#">HOME</a>
+            <a href="./home copy.php">HOME</a>
             <div class="dropdown">
                 <table class="dropdown-table">
                     <tr>
@@ -36,16 +36,19 @@
                         </td>
                     </tr>
                 </table>
-            </div>
+            </div>          
+            
             <a href="#">TV SERIES</a>
             <a href="#">MOVIE</a>
             <a href="#">TOP FILMS</a>
             <a href="#">NEW FILMS</a>
             <a href="#">ADVANCED SEARCH</a>
-            <a href="#" class="search">
-                <input type="text" class="search__input" placeholder="Search film name">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </a>
+            <form action="search.php" method="post" class="he">
+                <a class="search">
+                    <input type="text" class="search__input" placeholder="Search film name" name="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+            </form>
             <a href="login.php">LOGIN</a>
         </nav>
     </header>
