@@ -1,13 +1,14 @@
 <?php 
     require_once('API/connect.php');
-    if(isset($_POST['search'])){
-        $search = $_POST['search'];
-    }
-    $search_flim = getFlims($search);
-    if(isset($search_flim)) {
-        foreach($search_flim as $flim) {
-            echo $flim['name_flim'];
-        }
-    }
-
+    if(isset($_GET['genres'])){
+        $name = $_GET['genres'];
+        $genre = "$name";
+        echo $genre;
+        $search_flim = getFlims_Genre($genre);
+        if ($search_flim) {
+            foreach($search_flim as $p){
+                echo $p['name_flim'];
+            }}
+        } 
+    
 ?>

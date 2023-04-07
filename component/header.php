@@ -20,7 +20,7 @@
                                         echo '<tr>';
                                         }
                                     ?>              
-                                            <td><a href="#"><?=$p['genre']?></a></td>
+                                            <td><a href="search.php?genres= <?=$p['genre']?> " ><?=$p['genre']?></a></td>
                                     <?php 
                                         $count++;
                                         if ($count % $cols == 0) {

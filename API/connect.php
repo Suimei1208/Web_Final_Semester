@@ -37,7 +37,24 @@
     function getFlims($name){
         $conn = connect();
         $genre = "%$name%";
-        $stmt = $conn->prepare("SELECT * FROM films WHERE name_flim LIKE ?");
+        $stmt = $conn->prepare("SELECT * FROM films WHERE name_flim LIKE ? ");
+        $stmt->bind_param("s", $genre);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if(mysqli_num_rows($result)>0){
+            $items = [];
+            while($row = mysqli_fetch_assoc($result)){
+                $items[] = $row;
+            }
+            return $items;
+        }else return false;
+        $conn->close();
+    }
+    function getFlims_Genre($name){
+        $conn = connect();
+        $genre = "%$name%";
+        $stmt = $conn->prepare("SELECT * FROM films WHERE genre LIKE ? ");
         $stmt->bind_param("s", $genre);
         $stmt->execute();
         $result = $stmt->get_result();
