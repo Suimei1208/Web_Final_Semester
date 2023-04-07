@@ -7,6 +7,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
     <header>
@@ -28,10 +29,6 @@
                                         <td><a href="#">Crime</a></td>
                                         <td><a href="#">Drama</a></td>
                                         <td><a href="#">Fantasy</a></td>
-                                        <td><a href="#">Horror</a></td>
-                                        <td><a href="#">Mystery</a></td>
-                                        <td><a href="#">Horror</a></td>
-                                        <td><a href="#">Mystery</a></td>
                                     </tr>
                                     <tr>
                                         <td><a href="#">Horror</a></td>
@@ -84,12 +81,12 @@
                 <input type="text" class="search__input" placeholder="Search film name">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </a>
-<<<<<<< Updated upstream
-            <a href="./login.php">LOGIN</a>
+            <a href="#">ABOUT</a>
+            <a href="./API/login.php"><i class="fa-solid fa-user" style="color: #ffffff;"></i> LOGIN</a>
         </nav>
     </header>
     <main>
-        <div class="container"></div>
+        <div class="container">
         <div class="img-slider">
             <div class="slide active">
                 <img src="assets/img/moon3.jpg" alt="" class="poster">
@@ -177,34 +174,8 @@
                 <div class="btn"></div>
                 <div class="btn"></div>
                 <div class="btn"></div>
-=======
-            <a href="#">ABOUT</a>
-            <a href="./API/login.php"><i class="fa-solid fa-user" style="color: #ffffff;"></i> LOGIN</a>
-        </nav>
-    </header>
-    <main>
-        <div class="container">
-            <div class="poster_header">
-                <img src="./img/Weathering4.webp" alt="" class="poster">
-                <h2>Weathering with you</h2>
-                    <div class="main_poster_header"><span><i class="fa-solid fa-star" style="color: #fffb00;"></i> 4.5/5 </span><i class="fa-regular fa-clock"></i> 112 minutes <i class="fa-regular fa-calendar"></i> 2019</div>
-                    <div class="content">A high-school boy who has run away to Tokyo befriends a girl who appears to be able to <br> manipulate the weather.</div>
-                    <div class="content1">Author: <span>Shinkai Makoto</span> </div>
-                    <div class="content2">Genres: <span> Romance,Fantasy,Drama</span></div>
-                    <button class="play">
-                        <i class="fa-solid fa-play"></i> WATCH</div>
-                    </button>
-                    
-            <div class="upcoming">
-                <h3>Upcoming movies</h3>
-                <div class="cards">
-                    <img src="./img/movie1.jpg" alt="">
-                </div>
-
->>>>>>> Stashed changes
             </div>
         </div>
-    </div>
     <div class="update content">
         <strong class="up">Upcoming:</strong>
     </div>
@@ -267,6 +238,50 @@
                 <span class="position">View: 10,000,000</p>
             </div>
         </div>
+        <!-- <div class="card-content">
+            <div class="card">
+                <div class="card-img">
+                    <img src="img/doctor1.png" alt=""></div>
+                    <div class="card-info">
+                        <h3>Card 01</h3>
+                        <p>DOCTOR HIHIiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
+                    </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="img/kmrb1.jpg" alt=""></div>
+                    <div class="card-info">
+                        <h3>Card 01</h3>
+                        <p>DOCTOR HIHIiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
+                    </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="img/doctor1.png" alt=""></div>
+                    <div class="card-info">
+                        <h3>Card 01</h3>
+                        <p>DOCTOR HIHIiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
+                    </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="img/kmrb1.jpg" alt=""></div>
+                    <div class="card-info">
+                        <h3>Card 01</h3>
+                        <p>DOCTOR HIHIiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
+                    </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="pagination">
+        <li class="page-item previous-page disable"><a class="page-link" href="#">Prev</a></li>
+        <li class="page-item current-page active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item dots"><a class="page-link" href="#">...</a></li>
+        <li class="page-item current-page"><a class="page-link" href="#">5</a></li>
+        <li class="page-item current-page"><a class="page-link" href="#">6</a></li>
+        <li class="page-item dots"><a class="page-link" href="#">...</a></li>
+        <li class="page-item current-page"><a class="page-link" href="#">10</a></li>
+        <li class="page-item next-page"><a class="page-link" href="#">Next</a></li>
     </div>
     <footer>
         <div class="footer">
@@ -289,6 +304,62 @@
         </div> 
 	</footer>
     </main>
+    <script type="text/javascript">
+        function getPageList(totalPages,page,maxLength){
+            function range(start,end){
+                return Array.from(Array(end-start + 1),(_,i)=> i +start);
+            }
+            var sideWidth = maxLength < 9 ? 1 : 2;
+            var leftWidth = (maxLength - sideWidth * 2 - 3)>>1;
+            var rightWidth = (maxLength - sideWidth *2 - 3)>>1;
+
+            if(totalPages <= maxLength){
+                return range(1,totalPages);
+            }
+
+            if(page <= maxLength - sideWidth - 1 - rightWidth){
+                return range(1,maxLength - sideWidth - 1).concat(0,range(totalPages - sideWidth + 1,totalPages));
+            }
+
+            if(page >= totalPages - sideWidth - 1 -rightWidth){
+                return range(1,sideWidth).concat(0,range(totalPages - sideWidth - 1 -rightWidth -leftWidth,totalPages));
+            }
+            return range(1,sideWidth).concat(0,range(page- leftWidth,page+rightWidth),0,range(totalPages - sideWidth +1,totalPages));
+        }
+
+        $(function(){
+            var numberOfItems = $(".update .cell").length;
+            var limitPerPage = 3;
+            var totalPages = Math.ceil(numberOfItems/limitPerPage);
+            var paginationSize = 7;
+            var currentpage;
+
+            function showPage(whichPage){
+                if(whichPage <1 || whichPage > totalPages) return false;
+                
+                currentpage = whichPage;
+
+                $(".update .card").hide().slice((currentpage - 1) *limitPerPage,currentpage +limitPerPage).show();
+                $(".pagination li").slice(1,-1).remove();
+                getPageList(totalPages,currentpage,paginationSize).forEach(item =>{
+                    $("<li>").addClass("page-item").addClass(item ? "current-page" : "dots")
+                        .toggleClass("active",item === currentpage).append($("<a>").addClass("page-link")
+                            .attr({href: "javascript:void(0)"}).text(item || "...")).insertBefore(".next-page");
+                });
+
+                $(".previous-page").toggleClass("disable",currentpage ===1);
+                $(".next-page").toggleClass("disable",currentpage ===totalPages);
+                return true;
+            }
+            $(".pagination").append(
+                $("<li>").addClass("page-item").addClass("previous-page").append($("<a>").addClass("page-link"),attr({href: "javascript:void(0)"}).text("Prev")),
+                $("<li>").addClass("page-item").addClass("next-page").append($("<a>").addClass("page-link"),attr({href: "javascript:void(0)"}).text("Next")),
+
+            );
+            $(".update").show();
+            showPage(1)
+        });
+    </script>
     <script src="assets/js/script.js">     
     </script>
 </body>
