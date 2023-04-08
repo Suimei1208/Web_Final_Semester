@@ -163,6 +163,7 @@ main{
   padding-top: 50px;
   padding-bottom: 30px;
   height: 30rem;
+  margin-bottom: -40px;
   left: 50%;
   right: 50%;
 }
@@ -454,6 +455,7 @@ h2{
 .footer {
   justify-content: center;
   background-color: #50577A;
+  /* background-color: #0B2447; */
   color: white;
   margin-top: 15px;
   text-align: center;
@@ -497,11 +499,18 @@ h2{
 
 .up{
   font-size: 35px;
+
   color: #ffffff;
   text-decoration: underline;
   text-align: right;
+  z-index: 1;
 }
 .up_search{
   font-size: 35px;
   color: #ffffff;
+}
+footer{
+  position: absolute;
+  left:0;
+  right: 0;
 }

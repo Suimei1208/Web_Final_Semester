@@ -125,15 +125,17 @@
     <div class="update content">
         <strong class="up">Upcoming:</strong>
     </div>
-    <div class="update">
-    <?php
+<?php 
+        $rows = 4;
+        $cols = 4;
         $count = 0;
         foreach($flims as $p){
-            $count++;
-            if($count===5) break;
             if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
             if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
-    ?>     
+            if ($count % $cols == 0) {
+            echo '<div class="update">';
+            }
+        ?>              
             <div class="cell">
                 <img src="./assets/img/<?=$p['poster_small']?>"/>
                 <div class="user-info">
@@ -141,85 +143,21 @@
                     <span class="position">View: <?=number_format($p['view'])?></p>
                 </div>
             </div>
-        
-        <?php             
-        }
-        ?>
-    </div>
-    
-    <div class="update">
-    <?php
-        $count = 0;
-        foreach($flims as $p){
+        <?php
             $count++;
-            if($count <5) continue;
-            if($count===9) break;
-            if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-            if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
-    ?>     
-            <div class="cell">
-                <img src="./assets/img/<?=$p['poster_small']?>"/>
-                <div class="user-info">
-                    <span class="title"><?=$p['name_flim']?></p>
-                    <span class="position">View: <?=number_format($p['view'])?></p>
-                </div>
-            </div>
-        
-        <?php             
-        }
-        ?>
-    </div>
-
-    <div class="update">
-    <?php
-        $count = 0;
-        foreach($flims as $p){
-            $count++;
-            if($count <9) continue;
-            if($count===13) break;
-            if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-            if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
-    ?>     
-            <div class="cell">
-                <img src="./assets/img/<?=$p['poster_small']?>"/>
-                <div class="user-info">
-                    <span class="title"><?=$p['name_flim']?></p>
-                    <span class="position">View: <?=number_format($p['view'])?></p>
-                </div>
-            </div>
-        
-        <?php             
-        }
-        ?>
-    </div>
-
-    <div class="update">
-    <?php
-        $count = 0;
-        foreach($flims as $p){
-            $count++;
-            if($count <13) continue;
-            if($count===17) break;
-            if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-            if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
-    ?>     
-            <div class="cell">
-                <img src="./assets/img/<?=$p['poster_small']?>"/>
-                <div class="user-info">
-                    <span class="title"><?=$p['name_flim']?></p>
-                    <span class="position">View: <?=number_format($p['view'])?></p>
-                </div>
-            </div>
-        
-        <?php             
-        }
-        ?>
-    </div>
-
+            if ($count % $cols == 0) {
+                echo "</div>";
+            }
+            if ($count == $rows * $cols) {
+                break;
+            }
+        }?>
+   
+    </main>
     <?php
         include 'component/footer.php';
-    ?>
-    </main>
-    <script src="assets/js/script.js">     
-    </script>
+?>
 </body>
+
+<script src="assets/js/script.js">     
+    </script>

@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <?php 
-        
+    <?php       
         require_once('API/connect.php');
         $conn = connect();
         if ($conn->connect_error) {
@@ -26,125 +25,69 @@
         $genre = getGenres();
         include 'component/header.php';
         if(isset($_POST['search'])){
-            $search = $_POST['search'];
-            
-            $search_flim = getFlims($search);
-            
+            $search = $_POST['search'];         
+            $search_flim = getFlims($search);    
             ?>
             <main style="margin-top: 80px;">
             <div class="update content">
                 <strong class="up">Search for: </strong> 
             </div>
-            <div class="update">
-            <?php
-                $count = 0;
-                foreach($search_flim as $p){
-                    $count++;
-                    if($count===5) break;
-                    if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-                    if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
-            ?>     
-                    <div class="cell">
-                        <img src="./assets/img/<?=$p['poster_small']?>"/>
-                        <div class="user-info">
-                            <span class="title"><?=$p['name_flim']?></p>
-                            <span class="position">View: <?=number_format($p['view'])?></p>
-                        </div>
-                    </div>
-                
-                <?php             
-                }
-                ?>
+        <?php 
+        $rows = 4;
+        $cols = 4;
+        $count = 0;
+        $total = count($search_flim);
+        foreach($search_flim as $p){
+            if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
+            if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
+            if ($count % $cols == 0) {
+            echo '<div class="update">';
+            }
+        ?>              
+            <div class="cell">
+                <img src="./assets/img/<?=$p['poster_small']?>"/>
+                <div class="user-info">
+                    <span class="title"><?=$p['name_flim']?></p>
+                    <span class="position">View: <?=number_format($p['view'])?></p>
+                </div>
             </div>
-            
-            <div class="update">
-            <?php
-                $count = 0;
-                foreach($search_flim as $p){
-                    $count++;
-                    if($count <5) continue;
-                    if($count===9) break;
-                    if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-                    if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
-            ?>     
-                    <div class="cell">
-                        <img src="./assets/img/<?=$p['poster_small']?>"/>
-                        <div class="user-info">
-                            <span class="title"><?=$p['name_flim']?></p>
-                            <span class="position">View: <?=number_format($p['view'])?></p>
-                        </div>
-                    </div>
-                
-                <?php             
-                }
-                ?>
-            </div>
-
-            <div class="update">
-            <?php
-                $count = 0;
-                foreach($search_flim as $p){
-                    $count++;
-                    if($count <9) continue;
-                    if($count===13) break;
-                    if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-                    if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
-            ?>     
-                    <div class="cell">
-                        <img src="./assets/img/<?=$p['poster_small']?>"/>
-                        <div class="user-info">
-                            <span class="title"><?=$p['name_flim']?></p>
-                            <span class="position">View: <?=number_format($p['view'])?></p>
-                        </div>
-                    </div>
-                
-                <?php             
-                }
-                ?>
-            </div>
-
-            <div class="update">
-            <?php
-                $count = 0;
-                foreach($search_flim as $p){
-                    $count++;
-                    if($count <13) continue;
-                    if($count===17) break;
-                    if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-                    if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
-            ?>     
-                    <div class="cell">
-                        <img src="./assets/img/<?=$p['poster_small']?>"/>
-                        <div class="user-info">
-                            <span class="title"><?=$p['name_flim']?></p>
-                            <span class="position">View: <?=number_format($p['view'])?></p>
-                        </div>
-                    </div>
-                
-                <?php             
-                }
-                ?>
-            </div>
-<?php   
+        <?php
+            $count++;
+            if ($count % $cols == 0) {
+                echo "</div>";
+            }
+            if ($count == $total) {
+                echo "</div>";
+            }
+            if ($count == $rows * $cols) {
+                break;
+            }
+        }       
 }
 elseif(isset($_GET['genres'])){
-    $search_flim = getFlims_Genre($_GET['genres']);
-?>
-
+    if(getFlims_Genre($_GET['genres']) == false){
+        echo'<div class="update content">
+        <strong class="up">Search for: </strong> 
+    </div>';
+    }else{
+    $search_flim = getFlims_Genre($_GET['genres']);   
     ?>
     <main style="margin-top: 80px;">
     <div class="update content">
         <strong class="up">Search for: </strong> 
     </div>
-    <div class="update">
-    <?php
+    <?php 
+        $rows = 4;
+        $cols = 4;
         $count = 0;
+        $total = count($search_flim);
         foreach($search_flim as $p){
-            $count++;
-            if($count===5) break;
             if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
             if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
-    ?>     
+            if ($count % $cols == 0) {
+            echo '<div class="update">';
+            }
+        ?>              
             <div class="cell">
                 <img src="./assets/img/<?=$p['poster_small']?>"/>
                 <div class="user-info">
@@ -152,85 +95,26 @@ elseif(isset($_GET['genres'])){
                     <span class="position">View: <?=number_format($p['view'])?></p>
                 </div>
             </div>
-        
-        <?php             
-        }
-        ?>
-    </div>
-    
-    <div class="update">
-    <?php
-        $count = 0;
-        foreach($search_flim as $p){
+        <?php
             $count++;
-            if($count <5) continue;
-            if($count===9) break;
-            if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-            if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
-    ?>     
-            <div class="cell">
-                <img src="./assets/img/<?=$p['poster_small']?>"/>
-                <div class="user-info">
-                    <span class="title"><?=$p['name_flim']?></p>
-                    <span class="position">View: <?=number_format($p['view'])?></p>
-                </div>
-            </div>
-        
-        <?php             
+            if ($count % $cols == 0) {
+                echo "</div>";
+            }
+            if ($count == $total) {
+                echo "</div>";
+            }
+            if ($count == $rows * $cols) {
+                break;
+            }
         }
-        ?>
-    </div>
-
-    <div class="update">
-    <?php
-        $count = 0;
-        foreach($search_flim as $p){
-            $count++;
-            if($count <9) continue;
-            if($count===13) break;
-            if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-            if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
-    ?>     
-            <div class="cell">
-                <img src="./assets/img/<?=$p['poster_small']?>"/>
-                <div class="user-info">
-                    <span class="title"><?=$p['name_flim']?></p>
-                    <span class="position">View: <?=number_format($p['view'])?></p>
-                </div>
-            </div>
-        
-        <?php             
-        }
-        ?>
-    </div>
-
-    <div class="update">
-    <?php
-        $count = 0;
-        foreach($search_flim as $p){
-            $count++;
-            if($count <13) continue;
-            if($count===17) break;
-            if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-            if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
-    ?>     
-            <div class="cell">
-                <img src="./assets/img/<?=$p['poster_small']?>"/>
-                <div class="user-info">
-                    <span class="title"><?=$p['name_flim']?></p>
-                    <span class="position">View: <?=number_format($p['view'])?></p>
-                </div>
-            </div>
-        
-        <?php             
-        }
-        ?>
-    </div>
-    <?php
-        }
-                include 'component/footer.php';
-            ?>
+    }}
+    ?>
             </main>
-            <script src="assets/js/script.js">     
-            </script>
+           
 </body>
+<?php 
+ include 'component/footer.php';
+?>
+<script 
+src="assets/js/script.js">     
+</script>

@@ -17,8 +17,5 @@
                 <a href="">Login</a>
                 <a href="">Register</a>
                 </div>
-        </div>
-        
-		<!-- <p id="main-text">Follow us<i class="fa-brands fa-facebook" style="color: #ffffff;"></i><i class="fa-brands fa-youtube" style="color: #ffffff;"></i><i class="fa-brands fa-twitter" style="color: #ffffff;"><i class="fa-brands fa-discord" style="color: #ffffff;"></i></i></p> -->
-        
+        </div>       
 </footer>

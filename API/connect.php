@@ -16,9 +16,12 @@
             while($row = mysqli_fetch_assoc($result)){
                 $items[] = $row;
             }
+            $conn->close();
             return $items;
-        }else return false;
-        $conn->close();
+        }else{
+            $conn->close();
+            return false;
+        }
     }
     function getGenres(){
         $conn = connect();
@@ -30,9 +33,12 @@
             while($row = mysqli_fetch_assoc($result)){
                 $items[] = $row;
             }
+            $conn->close();
             return $items;
-        }else return false;
-        $conn->close();
+        }else{
+            
+            return false;
+        }
     }
     function getFlims($name){
         $conn = connect();
@@ -47,9 +53,12 @@
             while($row = mysqli_fetch_assoc($result)){
                 $items[] = $row;
             }
+            $conn->close();
             return $items;
-        }else return false;
-        $conn->close();
+        }else{
+            $conn->close();
+            return false;
+        }
     }
     function getFlims_Genre($name){
         $conn = connect();
@@ -64,8 +73,11 @@
             while($row = mysqli_fetch_assoc($result)){
                 $items[] = $row;
             }
+            $conn->close();
             return $items;
-        }else return false;
-        $conn->close();
+        }else{
+            $conn->close();
+            return false;
+        }   
     }
 ?>
