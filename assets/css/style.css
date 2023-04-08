@@ -20,10 +20,11 @@ header{
 body{
   display: flex;
   justify-content: center;
-    align-items: center; 
+  align-items: center; 
     background-color: #0B2447;
 }
 main{
+  height: 100%;
   width: 100%;
   
 }

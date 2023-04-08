@@ -46,6 +46,11 @@ var repeat = function(activeClass){
 repeat();
 
 var headerHeight = document.querySelector('header').offsetHeight;
-var mainHeight = document.querySelector('main').offsetHeight;
-var totalHeight = headerHeight + mainHeight;
-document.querySelector('footer').style.marginTop = 100 + totalHeight + 'px';
+var mainHeight = document.querySelector('main') ? document.querySelector('main').offsetHeight : null;
+console.log(mainHeight);
+var totalHeight = headerHeight + (mainHeight || 0);
+if(mainHeight){
+    document.querySelector('footer').style.marginTop = 100+totalHeight + 'px';
+}else{
+    document.querySelector('footer').style.marginTop = 1500 + 'px';
+}
