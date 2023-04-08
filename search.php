@@ -25,7 +25,12 @@
         $genre = getGenres();
         include 'component/header.php';
         if(isset($_POST['search'])){
-            $search = $_POST['search'];         
+            $search = $_POST['search'];  
+            if(getFlims($search) == false){?>
+                <main style="margin-top: 80px;">
+                <?php include 'component/404.php';?>
+                </main>      
+            <?php }else{       
             $search_flim = getFlims($search);    
             ?>
             <main style="margin-top: 80px;">
@@ -63,7 +68,7 @@
                 break;
             }
         }       
-}
+}}
 elseif(isset($_GET['genres'])){
     if(getFlims_Genre($_GET['genres']) == false){?>
         <main style="margin-top: 80px;">
