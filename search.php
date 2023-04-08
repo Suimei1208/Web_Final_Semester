@@ -65,11 +65,11 @@
         }       
 }
 elseif(isset($_GET['genres'])){
-    if(getFlims_Genre($_GET['genres']) == false){
-        echo'<div class="update content">
-        <strong class="up">Search for: </strong> 
-    </div>';
-    }else{
+    if(getFlims_Genre($_GET['genres']) == false){?>
+        <main style="margin-top: 80px;">
+        <?php include 'component/404.php';?>
+        </main>      
+    <?php }else{
     $search_flim = getFlims_Genre($_GET['genres']);   
     ?>
     <main style="margin-top: 80px;">
