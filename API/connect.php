@@ -26,7 +26,7 @@
     function generateRandomNumbers() {
         $numbers = array();
         while (count($numbers) < 5) {
-            $randNum = rand(1, 12);
+            $randNum = rand(1, 13);
             if (!in_array($randNum, $numbers)) {
                 $numbers[] = $randNum;
             }
