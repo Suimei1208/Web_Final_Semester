@@ -392,7 +392,7 @@ h2{
  
 .pagination{
   text-align: center;
-  margin: 30px 30px -10px;
+  margin: 30px 30px 60px;
   user-select: none;
 }
 .pagination li{
