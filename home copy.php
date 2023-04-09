@@ -127,38 +127,29 @@
     <div class="update content">
         <strong class="up">Upcoming:</strong>
     </div>
-<?php 
-        $rows = 4;
-        $cols = 4;
-        $count = 0;
-        foreach($flims as $p){
-            if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-            if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
-            if ($count % $cols == 0) {
-            echo '<div class="update">';
-            }
-        ?>              
-            <div class="cell">
-                <img src="./assets/img/<?=$p['poster_small']?>"/>
-                <div class="user-info">
-                    <span class="title"><?=$p['name_flim']?></p>
-                    <span class="position">View: <?=number_format($p['view'])?></p>
+    <div class="update">
+        <div class="card-content">
+            <?php foreach($flims as $p){
+                    if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
+                    if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';                
+            ?>
+            <div class="card">
+                <div class="card-image"><img src="assets/img/<?=$p['poster_small']?>" alt=""></div>
+                <div class="card-info">
+                    <h3><?=$p['name_flim']?></h3>
+                    <p>View: <?=number_format($p['view'])?></p>
                 </div>
             </div>
-        <?php
-            $count++;
-            if ($count % $cols == 0) {
-                echo "</div>";
-            }
-            if ($count == $rows * $cols) {
-                break;
-            }
-        }?>
-   
+        <?php }?>
+        </div>
+    </div>
+    <div class="pagination">
+
+    </div>
     </main>
     <?php
         include 'component/footer.php';
-?>
+    ?>
 </body>
 
 <script src="assets/js/script.js">     
