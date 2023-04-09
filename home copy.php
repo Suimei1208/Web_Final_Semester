@@ -143,10 +143,13 @@
         <?php }?>
         </div>
     </div>
+    <div class="pagination">
+
+    </div>
     </main>
     <?php
         include 'component/footer.php';
-?>
+    ?>
 </body>
 
 <script src="assets/js/script.js">     
