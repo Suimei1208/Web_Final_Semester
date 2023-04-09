@@ -13,6 +13,8 @@
     $director = '';
     $genre = getGenres();
     $flims = showFlims();
+    $rand = generateRandomNumbers();
+    $rand_flim = showFilmsRand($rand);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +37,7 @@
         <div class="img-slider" >
             <?php  
                 $count = 0;
-                foreach($flims as $p){
+                foreach($rand_flim as $p){
                     $count++;
                     if($p['actor'] === null) $p['actor'] = "Updating.....";
                     if($p['view'] ===null)  $p['view'] = "0";

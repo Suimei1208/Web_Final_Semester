@@ -392,6 +392,7 @@ h2{
   margin-top: 15px;
   margin-bottom: 25px;
   display: block;
+  width: 350px;
 }
 .cell .user-info .position{
   font-size: 14px;

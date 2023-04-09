@@ -23,6 +23,34 @@
             return false;
         }
     }
+    function generateRandomNumbers() {
+        $numbers = array();
+        while (count($numbers) < 5) {
+            $randNum = rand(1, 12);
+            if (!in_array($randNum, $numbers)) {
+                $numbers[] = $randNum;
+            }
+        }
+        return $numbers;
+    }
+    
+    function showFilmsRand($numbers) {
+        $conn = connect();
+        $items = [];
+        foreach ($numbers as $number) {
+            $sql = "SELECT * FROM films where id = $number";
+            $result = mysqli_query($conn, $sql);
+    
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $items[] = $row;
+                }
+            }
+        }
+        $conn->close();
+        return $items;
+    }
+    
     function getGenres(){
         $conn = connect();
         $sql = "SELECT * FROM genres";

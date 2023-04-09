@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="../assets/css/style.css">
 <body>
     <header>
-    <img src="assets/img/LOGOMOUNT.png" alt="" class="logo">
+    <img src="assets/img/LOGOMOUNT.png" alt="logo" class="logo">
         <nav class="navigation">
             <a href="./home copy.php">HOME</a>
             <div class="dropdown">
