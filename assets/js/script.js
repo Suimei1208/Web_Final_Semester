@@ -49,7 +49,7 @@ var headerHeight = document.querySelector('header').offsetHeight;
 var mainHeight = document.querySelector('main') ? document.querySelector('main').offsetHeight : null;
 var totalHeight = headerHeight + (mainHeight || 0);
 if(mainHeight){
-    document.querySelector('footer').style.marginTop = 100+totalHeight + 'px';
+    document.querySelector('footer').style.marginTop = 1000+totalHeight + 'px';
 }else{
     document.querySelector('footer').style.marginTop = 1500 + 'px';
 }
@@ -78,7 +78,7 @@ function getPageList(totalPages,page,maxLength){
 
 $(function(){
     var numberOfItems = $(".card-content .card").length;
-    var limitPerPage = 4;
+    var limitPerPage = 16;
     var totalPages = Math.ceil(numberOfItems/limitPerPage);
     var paginationSize = 7;
     var currentpage;
