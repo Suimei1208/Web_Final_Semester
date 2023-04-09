@@ -334,51 +334,64 @@ h2{
 .play:hover{
   background-color: rgb(206, 28, 28);
 }
-.update{
+/* .update{
   display: flex;
   margin-left: 10%;
   margin-right: 10%;
   justify-content: center;
-}
-/* .update{
+} */
+.update{
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
+} 
 .card-content{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 30px;
+  /* margin: 30px; */
+  margin-left: 10%;
+  margin-right: 10%;
 }
 .card{
   position: relative;
-  background: #fff;
+  background: #0B2447;
   max-width: 325px;
   width: 325px;
-  height: auto;
-  margin: 25px;
-  box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+  height: 500px;
+  margin: 20px;
   border-radius: 10px;
   overflow: hidden;
  }
-.card-image{
-  max-height: 200px;
-}
+ .card-image{
+  max-height: 500px;
+ }
 .card-image img{
+  border-radius: 10px;
   max-width: 100%;
-  height: auto;
+  /* max-width: 100%; */
 }
 .card-info{
   position: relative;
-  color: #222;
+  color: #ffffff;
   padding: 10px 20px 20px;
-} */
+  text-align: center;
+
+}
+.card-info h3{
+  font-size: 1em;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+.card-info p{
+  font-size: 1em;
+  margin-bottom: 5px;
+}
  
-.cell{  
+/* .cell{  
   padding-bottom: 10px;
   margin-top: 1px;
   text-align: center;
@@ -405,14 +418,12 @@ h2{
   margin-right: 50px;
   width: 300px;
   border-radius: 8px;
-  /* max-height: 700px; */
-  /* max-width: 600%; */
   height: 450px;
   margin: 30px;
 }
 .cell .user-info{
   color: #ffffff;
-}
+} */
 .pagination{
   text-align: center;
   margin: 30px 30px 60px;

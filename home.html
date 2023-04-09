@@ -177,7 +177,7 @@
                 <div class="btn"></div>
             </div>
         </div>
-    <div class="update content">
+    <!-- <div class="update content">
         <strong class="up">Upcoming:</strong>
     </div>
     <div class="update">
@@ -238,41 +238,67 @@
                 <span class="title">Doctor Strange</p>
                 <span class="position">View: 10,000,000</p>
             </div>
-        </div>
-        <!-- <div class="card-content">
-            <div class="card">
-                <div class="card-img">
-                    <img src="img/doctor1.png" alt=""></div>
-                    <div class="card-info">
-                        <h3>Card 01</h3>
-                        <p>DOCTOR HIHIiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
-                    </div>
-            </div>
-            <div class="card">
-                <div class="card-img">
-                    <img src="img/kmrb1.jpg" alt=""></div>
-                    <div class="card-info">
-                        <h3>Card 01</h3>
-                        <p>DOCTOR HIHIiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
-                    </div>
-            </div>
-            <div class="card">
-                <div class="card-img">
-                    <img src="img/doctor1.png" alt=""></div>
-                    <div class="card-info">
-                        <h3>Card 01</h3>
-                        <p>DOCTOR HIHIiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
-                    </div>
-            </div>
-            <div class="card">
-                <div class="card-img">
-                    <img src="img/kmrb1.jpg" alt=""></div>
-                    <div class="card-info">
-                        <h3>Card 01</h3>
-                        <p>DOCTOR HIHIiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
-                    </div>
-            </div>
         </div> -->
+    </div>
+    <div class="update">
+        <div class="card-content">
+            <div class="card">
+                <div class="card-image"><img src="assets/img/kmrb1.jpg" alt=""></div>
+                <div class="card-info">
+                    <h3>Card 01</h3>
+                    <p>OMGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"><img src="assets/img/kmrb1.jpg" alt=""></div>
+                <div class="card-info">
+                    <h3>Card 01</h3>
+                    <p>OMGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"><img src="assets/img/kmrb1.jpg" alt=""></div>
+                <div class="card-info">
+                    <h3>Card 01</h3>
+                    <p>OMGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"><img src="assets/img/kmrb1.jpg" alt=""></div>
+                <div class="card-info">
+                    <h3>Card 01</h3>
+                    <p>OMGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"><img src="assets/img/kmrb1.jpg" alt=""></div>
+                <div class="card-info">
+                    <h3>Card 01</h3>
+                    <p>OMGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"><img src="assets/img/kmrb1.jpg" alt=""></div>
+                <div class="card-info">
+                    <h3>Card 01</h3>
+                    <p>OMGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"><img src="assets/img/kmrb1.jpg" alt=""></div>
+                <div class="card-info">
+                    <h3>Card 01</h3>
+                    <p>OMGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"><img src="assets/img/kmrb1.jpg" alt=""></div>
+                <div class="card-info">
+                    <h3>Card 01</h3>
+                    <p>OMGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG</p>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="pagination">
         <li class="page-item previous-page disable"><a class="page-link" href="#">Prev</a></li>
@@ -330,7 +356,7 @@
         }
 
         $(function(){
-            var numberOfItems = $(".update .cell").length;
+            var numberOfItems = $(".card-content .card").length;
             var limitPerPage = 3;
             var totalPages = Math.ceil(numberOfItems/limitPerPage);
             var paginationSize = 7;
@@ -360,6 +386,15 @@
             );
             $(".update").show();
             showPage(1)
+            $(document).on("click", ".pagination li.curent-page:not(.active)", function(){
+                return showPage(+$(this).text());
+            });
+            $(".next-page").on("click",function(){
+                return showPage(currentpage + 1);
+            });
+            $(".previous-page").on("click",function(){
+                return showPage(currentpage - 1);
+            });
         });
     </script>
     <script src="assets/js/script.js">     
