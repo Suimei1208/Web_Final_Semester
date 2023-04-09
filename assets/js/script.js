@@ -49,7 +49,7 @@ var headerHeight = document.querySelector('header').offsetHeight;
 var mainHeight = document.querySelector('main') ? document.querySelector('main').offsetHeight : null;
 var totalHeight = headerHeight + (mainHeight || 0);
 if(mainHeight){
-    document.querySelector('footer').style.marginTop = 1000+totalHeight + 'px';
+    document.querySelector('footer').style.marginTop = 1500+totalHeight + 'px';
 }else{
     document.querySelector('footer').style.marginTop = 1500 + 'px';
 }

@@ -112,8 +112,8 @@
                     </div>                   
                 </div>
             </div>
-            <!-- <div class="slide">
-                <img src="img/solo3.png" alt="" class="poster">
+            <div class="slide">
+                <img src="assets/img/solo3.png" alt="" class="poster">
                 <div class="info">
                         <h2>DOCTOR STRANGE IN THE MULTIVERSE OF MADNESS</h2>
                         <div class="size">
@@ -137,7 +137,7 @@
                 <input type="button" class="play" class="fa-solid fa-play" value="WATCH">
             </div>
             <div class="slide">
-                <img src="img/doctor3.jpg" alt="" class="poster">
+                <img src="assets/img/valhalla3.jpg" alt="" class="poster">
                 <div class="info">
                     <h2>Doctor Strange</h2>
                     <span style="margin-right: 10px; color: yellow"><i class="fa-solid fa-star"></i> 4.5/5 </span>
@@ -148,7 +148,7 @@
                 <input type="button" class="play" class="fa-solid fa-play" value="WATCH">
             </div>
             <div class="slide">
-                <img src="img/moon3.jpg" alt="" class="poster">
+                <img src="assets/img/sea3.jpg" alt="" class="poster">
                 <div class="info">
                     <h2>Weathering with you</h2>
                     <span style="margin-right: 10px; color: yellow"><i class="fa-solid fa-star"></i> 4.5/5 </span>
@@ -159,7 +159,7 @@
                 <input type="button" class="play" class="fa-solid fa-play" value="WATCH">
             </div>
             <div class="slide">
-                <img src="img/tenkinoko1.png" alt="" class="poster">
+                <img src="assets/img/batman3.jpg" alt="" class="poster">
                 <div class="info">
                     <h2>Weathering with you</h2>
                     <span style="margin-right: 10px; color: yellow"><i class="fa-solid fa-star"></i> 4.5/5 </span>
@@ -168,7 +168,7 @@
                     <p>A high-school boy who has run away to Tokyo befriends a girl who appears to be able to manipulate the weather.</p>
                 </div>
                 <input type="button" class="play" class="fa-solid fa-play" value="WATCH">
-            </div> -->
+            </div>
             <div class="radio-btn">
                 <div class="btn active"></div>
                 <div class="btn"></div>
@@ -455,19 +455,44 @@
                     <p>OMGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG</p>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-image"><img src="assets/img/kmrb1.jpg" alt=""></div>
+                <div class="card-info">
+                    <h3>Card 30</h3>
+                    <p>OMGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"><img src="assets/img/kmrb1.jpg" alt=""></div>
+                <div class="card-info">
+                    <h3>Card 30</h3>
+                    <p>OMGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"><img src="assets/img/kmrb1.jpg" alt=""></div>
+                <div class="card-info">
+                    <h3>Card 30</h3>
+                    <p>OMGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"><img src="assets/img/kmrb1.jpg" alt=""></div>
+                <div class="card-info">
+                    <h3>Card 30</h3>
+                    <p>OMGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"><img src="assets/img/kmrb1.jpg" alt=""></div>
+                <div class="card-info">
+                    <h3>Card 30</h3>
+                    <p>OMGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG</p>
+                </div>
+            </div>
         </div>
     <div>
-    <div class="pagination">
-        <!-- <li class="page-item previous-page disable"><a class="page-link" href="#">Prev</a></li>
-        <li class="page-item current-page active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item dots"><a class="page-link" href="#">...</a></li>
-        <li class="page-item current-page"><a class="page-link" href="#">5</a></li>
-        <li class="page-item current-page"><a class="page-link" href="#">6</a></li>
-        <li class="page-item dots"><a class="page-link" href="#">...</a></li>
-        <li class="page-item current-page"><a class="page-link" href="#">10</a></li>
-        <li class="page-item next-page"><a class="page-link" href="#">Next</a></li> -->
-    </div>
-    
+    <div class="pagination"></div>
     </main>
     <footer>
         <div class="footer">
@@ -489,71 +514,6 @@
                 </div>
         </div> 
 	</footer>
-    <!-- <script type="text/javascript">
-        function getPageList(totalPages,page,maxLength){
-            function range(start,end){
-                return Array.from(Array(end-start + 1),(_,i)=> i +start);
-            }
-            var sideWidth = maxLength < 9 ? 1 : 2;
-            var leftWidth = (maxLength - sideWidth * 2 - 3)>>1;
-            var rightWidth = (maxLength - sideWidth *2 - 3)>>1;
-
-            if(totalPages <= maxLength){
-                return range(1,totalPages);
-            }
-
-            if(page <= maxLength - sideWidth - 1 - rightWidth){
-                return range(1,maxLength - sideWidth - 1).concat(0,range(totalPages - sideWidth + 1,totalPages));
-            }
-
-            if(page >= totalPages - sideWidth - 1 -rightWidth){
-                return range(1,sideWidth).concat(0,range(totalPages - sideWidth - 1 - rightWidth -leftWidth,totalPages));
-            }
-            return range(1,sideWidth).concat(0,range(page- leftWidth,page+rightWidth),0,range(totalPages - sideWidth +1,totalPages));
-        }
-
-        $(function(){
-            var numberOfItems = $(".card-content .card").length;
-            var limitPerPage = 16;
-            var totalPages = Math.ceil(numberOfItems/limitPerPage);
-            var paginationSize = 7;
-            var currentpage;
-
-            function showPage(whichPage){
-                if(whichPage <1 || whichPage > totalPages) return false;
-                
-                currentpage = whichPage;
-
-                $(".card-content .card").hide().slice((currentpage - 1) *limitPerPage,currentpage * limitPerPage).show();
-                $(".pagination li").slice(1,-1).remove();
-                getPageList(totalPages,currentpage,paginationSize).forEach(item =>{
-                    $("<li>").addClass("page-item").addClass(item ? "current-page" : "dots")
-                        .toggleClass("active",item === currentpage).append($("<a>").addClass("page-link")
-                            .attr({href: "javascript:void(0)"}).text(item || "...")).insertBefore(".next-page");
-                });
-
-                $(".previous-page").toggleClass("disable",currentpage ===1);
-                $(".next-page").toggleClass("disable",currentpage ===totalPages);
-                return true;
-            }
-            $(".pagination").append(
-                $("<li>").addClass("page-item").addClass("previous-page").append($("<a>").addClass("page-link").attr({href: "javascript:void(0)"}).text("Prev")),
-                $("<li>").addClass("page-item").addClass("next-page").append($("<a>").addClass("page-link").attr({href: "javascript:void(0)"}).text("Next"))
-
-            );
-            $(".card-content").show();
-            showPage(1);
-            $(document).on("click", ".pagination li.curent-page:not(.active)", function(){
-                return showPage(+$(this).text());
-            });
-            $(".next-page").on("click",function(){
-                return showPage(currentpage + 1);
-            });
-            $(".previous-page").on("click",function(){
-                return showPage(currentpage - 1);
-            });
-        });
-    </script> -->
     <script src="assets/js/script.js">     
     </script>
 </body>

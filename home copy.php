@@ -26,6 +26,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
     <?php
@@ -124,33 +125,31 @@
             </div>
         </div>
     </div>
-    <div class="update content">
+    <div class="update-content1">
         <strong class="up">Upcoming:</strong>
     </div>
     <div class="update">
-        <div class="card-content">
-            <?php foreach($flims as $p){
+        <div class="card-content" style="display: none;">
+        <?php foreach($flims as $p){
                     if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
                     if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';                
             ?>
-            <div class="card">
-                <div class="card-image"><img src="assets/img/<?=$p['poster_small']?>" alt=""></div>
-                <div class="card-info">
-                    <h3><?=$p['name_flim']?></h3>
-                    <p>View: <?=number_format($p['view'])?></p>
+                <div class="card">
+                    <div class="card-image"><img src="assets/img/<?=$p['poster_small']?>" alt=""></div>
+                    <div class="card-info">
+                        <h3><?=$p['name_flim']?></h3>
+                        <p>View: <?=number_format($p['view'])?></p>
+                    </div>
                 </div>
-            </div>
-        <?php }?>
-        </div>
+        <?php } ?>
     </div>
-    <div class="pagination">
-
-    </div>
+    <div class="pagination"></div>
     </main>
     <?php
         include 'component/footer.php';
     ?>
-</body>
-
-<script src="assets/js/script.js">     
+    <script 
+    src="assets/js/script.js">     
     </script>
+</body>
+</html>

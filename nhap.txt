@@ -119,3 +119,20 @@
             }
         }?>
    
+
+
+<div class="update">
+        <div class="card-content" style="display: none;">
+        <?php foreach($flims as $p){
+                    if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
+                    if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';                
+            ?>
+                <div class="card">
+                    <div class="card-image"><img src="assets/img/<?=$p['poster_small']?>" alt=""></div>
+                    <div class="card-info">
+                        <h3><?=$p['name_flim']?></h3>
+                        <p>View: <?=number_format($p['view'])?></p>
+                    </div>
+                </div>
+        <?php } ?>
+    </div>
