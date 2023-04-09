@@ -336,12 +336,9 @@ h2{
 .play:hover{
   background-color: rgb(206, 28, 28);
 }
-/* .update{
-  display: flex;
-  margin-left: 10%;
-  margin-right: 10%;
-  justify-content: center;
-} */
+.update-content{
+  text-align: center;
+}
 .update{
   min-height: 100vh;
   display: flex;
@@ -360,7 +357,8 @@ h2{
 }
 .card{
   position: relative;
-  background: #0B2447;
+  background: #0c0c0c;
+  /* background: #0B2447; */
   max-width: 325px;
   width: 325px;
   height: 500px;
@@ -374,7 +372,6 @@ h2{
 .card-image img{
   border-radius: 10px;
   max-width: 100%;
-  /* max-width: 100%; */
 }
 .card-info{
   position: relative;
@@ -393,42 +390,9 @@ h2{
   margin-bottom: 5px;
 }
  
-/* .cell{  
-  padding-bottom: 10px;
-  margin-top: 1px;
-  text-align: center;
-  border-radius: 8px;
-  line-height: 25px;
-  transition: 0.3s;
-}
-.cell .user-info .title{
-  margin-bottom: 10px;
-  font-weight: bold;
-  margin-top: 15px;
-  margin-bottom: 25px;
-  display: block;
-  width: 350px;
-}
-.cell .user-info .position{
-  font-size: 14px;
-  font-weight: lighter;
-
-}
-.cell img {
-  display: flex;
-  justify-content: space-between;
-  margin-right: 50px;
-  width: 300px;
-  border-radius: 8px;
-  height: 450px;
-  margin: 30px;
-}
-.cell .user-info{
-  color: #ffffff;
-} */
 .pagination{
   text-align: center;
-  margin: 30px 30px 60px;
+  margin: 30px 30px -10px;
   user-select: none;
 }
 .pagination li{
@@ -461,7 +425,7 @@ h2{
   border-radius: 50%;
   cursor: pointer;
 }
-.active{
+.pagination .active{
   background: #50577A;
 }
 .disable{
@@ -484,11 +448,9 @@ h2{
 
 .footer .footer2 a {
   font-size: 25px;
-  /* padding: 20px ; */
   text-decoration: none;
   color: white;
   position: relative;
-  /* border: 1px solid #ffffff; */
   margin: 20px;
 }
 
