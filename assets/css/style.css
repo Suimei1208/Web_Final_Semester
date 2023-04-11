@@ -395,7 +395,23 @@ margin-bottom: 5px;
 font-size: 1em;
 margin-bottom: 5px;
 }
-
+#tooltip{
+  position: fixed;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  color: #000;
+  font-size: 2.5em;
+  font-weight: 700;
+  padding: 5px 20px;
+  box-shadow: 0 8px 10px rgba(0,0,0,0.1);
+}
+.card:hover #tooltip{
+  opacity: 1;
+  visibility: visible;
+  z-index: 9999;
+}
 .pagination{
 text-align: center;
 margin: 30px 30px 60px;

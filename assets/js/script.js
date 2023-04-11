@@ -117,3 +117,12 @@ $(function(){
         return showPage(currentpage - 1);
     });
 });
+//tooltip
+//tooltip
+var spanText = document.getElementById('tooltip');
+window.onmousemove = function(e){
+var x = e.clientX;
+    y = e.clientY;
+spanText.style.top = (y+20) + 'px';
+spanText.style.left = (x+20) + 'px';
+}
