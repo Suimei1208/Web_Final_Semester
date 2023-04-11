@@ -3,7 +3,7 @@
     <header>
     <img src="assets/img/LOGOMOUNT.png" alt="logo" class="logo">
         <nav class="navigation">
-            <a href="./home copy.php">HOME</a>
+            <a href="./index.php">HOME</a>
             <div class="dropdown">
                 <table class="dropdown-table">
                     <tr>

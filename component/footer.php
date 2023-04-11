@@ -9,7 +9,7 @@
             <i class="fa-brands fa-discord" style="color: #ffffff;"></i>
             </div>
             <div class="footer2">
-                <a href="">Home</a>
+                <a href="./index.php">Home</a>
                 <a href="">About</a>
                 <a href="">FAQ</a>
                 <a href="">Terms</a>
