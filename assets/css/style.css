@@ -373,11 +373,37 @@ overflow: hidden;
 .card-image{
 max-height: 500px;
 }
+.card-image .middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  font-size: 5em;
+  cursor: pointer;
+}
+
 .card-image img{
-border-radius: 10px;
-max-width: 100%;
-width: 330px;
+  display: block;
+  border-radius: 10px;
+  max-width: 100%;
+  width: 330px;
   height: 450px;
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  cursor: pointer;
+}
+.card-image:hover .img {
+  opacity: 0.3;
+}
+
+.card-image:hover .middle {
+  opacity: 1;
 }
 .card-info{
 position: relative;
@@ -399,14 +425,14 @@ margin-bottom: 5px;
   /* width: -moz-fit-content;
   width: fit-content; */
   max-width: 600px;
-  height: 30%;
+  max-height: 500px;
   position: fixed;
   display: block;
   opacity: 0;
   visibility: hidden;
   background: #fff;
   padding: 5px 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 8px 10px rgba(0,0,0,0.1);
 }
 #tooltip .item{
