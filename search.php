@@ -50,7 +50,7 @@
                                 <div class="tooltip">
                                     <div class="item">
                                         <div class="NameFilm"><?=$p['name_flim']?></div>
-                                        <div class="Story"><?=$p['content']?> </div>
+                                        <div class="Story"><?=preg_replace("/\r\n|\r|\n/","<br>", $p['content']);?> </div> 
                                         <div class="STD" style="color: #fffb00">
                                                 <span style="margin-right: 10px;">
                                                     <i class="fa-solid fa-star"></i><span class="col-while" style="color: #000000"> <?=$p['rate']?>/5 </span> 
@@ -101,7 +101,7 @@
                                     <div class="tooltip">
                                     <div class="item">
                                         <div class="NameFilm"><?=$p['name_flim']?></div>
-                                        <div class="Story"><?=$p['content']?> </div>
+                                        <div class="Story"><?=preg_replace("/\r\n|\r|\n/","<br>", $p['content']);?> </div> 
                                         <div class="STD" style="color: #fffb00">
                                                 <span style="margin-right: 10px;">
                                                     <i class="fa-solid fa-star"></i><span class="col-while" style="color: #000000"> <?=$p['rate']?>/5 </span> 
