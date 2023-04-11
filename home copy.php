@@ -136,6 +136,27 @@
             ?>
                 <div class="card">
                     <div class="card-image"><img src="assets/img/<?=$p['poster_small']?>" alt=""></div>
+                    <div class="middle">
+                        <div><i class="fa-solid fa-play"></i></div>
+                    </div>
+                </div>
+                <div id="tooltip">
+                    <div class="item">
+                        <div class="NameFilm"><?=$p['name_flim']?></div>
+                        <?php
+                            $words = str_word_count($p['content']);
+                        if ($words > 50) {  
+                            $shortText = implode(' ', array_slice(str_word_count($p['content'], 1), 0, 50)) . '...';
+                            echo '<div class="Story">' . $shortText . '</div>';
+                        } else { ?>
+                        <div class="Story"><?=$p['content']?> </div> <?php } ?>
+                        <div class="STD"><span style="color: #fffb00;"><i class="fa-solid fa-star"></i> <?=$p['rate']?>/5 </span><i class="fa-regular fa-clock" ></i> <?=$p['time']?> minutes <i class="fa-regular fa-calendar"></i> <?=$p['year']?></div>
+                        <div class="AG">
+                            <div class="AU"><span>Director:</span> <?=$p['director']?></div>
+                            <div class="GE"><span>Genres:</span> <?=$p['genre']?></div>
+                        </div>
+                    </div>
+                </div>
                     <div class="card-info">
                         <h3><?=$p['name_flim']?></h3>
                         <p>View: <?=number_format($p['view'])?></p>
