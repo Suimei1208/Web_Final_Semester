@@ -42,7 +42,8 @@
                     <div class="card-content" style="display: none;">
                     <?php foreach($search_flim as $p){
                                 if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-                                if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';                
+                                if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';      
+                                if($p['actor'] == null) $p['actor'] = 'Updating...';             
                         ?>
                             <div class="card">
                                 <div class="card-image"><img src="assets/img/<?=$p['poster_small']?>" alt=""></div>
@@ -61,6 +62,7 @@
                                         </div>
                                         <div class="AG">
                                             <div class="AU"><span>Director:</span> <?=$p['director']?></div>
+                                            <div class="AC"><span>Actor:</span> <?=$p['actor']?></div>
                                             <div class="GE"><span>Genres:</span> <?=$p['genre']?></div>
                                         </div>
                                     </div>
@@ -90,7 +92,8 @@
                         <div class="card-content" style="display: none;">
                         <?php foreach($search_flim as $p){
                                     if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-                                    if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';                
+                                    if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';   
+                                    if($p['actor'] == null) $p['actor'] = 'Updating...';                
                             ?>
                                 <div class="card">
                                     <div class="card-image">
@@ -110,6 +113,7 @@
                                         </div>
                                         <div class="AG">
                                             <div class="AU"><span>Director:</span> <?=$p['director']?></div>
+                                            <div class="AC"><span>Actor:</span> <?=$p['actor']?></div>
                                             <div class="GE"><span>Genres:</span> <?=$p['genre']?></div>
                                         </div>
                                     </div>
