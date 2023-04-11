@@ -123,6 +123,6 @@ var spanText = document.getElementById('tooltip');
 window.onmousemove = function(e){
 var x = e.clientX;
     y = e.clientY;
-spanText.style.top = (y-70) + 'px';
-spanText.style.left = (x-198) + 'px';
+spanText.style.top = (y+20) + 'px';
+spanText.style.left = (x+20) + 'px';
 }

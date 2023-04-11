@@ -396,26 +396,38 @@ font-size: 1em;
 margin-bottom: 5px;
 }
 #tooltip{
+  /* width: -moz-fit-content;
+  width: fit-content; */
+  max-width: 600px;
+  height: 30%;
   position: fixed;
   display: block;
   opacity: 0;
   visibility: hidden;
   background: #fff;
-  color: #000;
-  font-size: 2.5em;
-  font-weight: 700;
   padding: 5px 20px;
   border-radius: 5px;
   box-shadow: 0 8px 10px rgba(0,0,0,0.1);
 }
-#tooltip::before{
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 100%;
-  transform: translateX(-50%);
-  border: 20px solid;
-  border-color: #fff #0000 #0000 #0000;
+#tooltip .item{
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  margin-bottom: 1em;
+}
+#tooltip .item .NameFilm{
+  color: #E91010;
+  font-size: 2.5em;
+}
+#tooltip .item .STD{
+  padding-top: 10px;
+}
+#tooltip .item .AG div{
+  padding-top: 10px;
+}
+#tooltip .item .AG div span{
+  color: #ff0000;
+  font-weight: bold;
 }
 .card:hover #tooltip{
   opacity: 1;
