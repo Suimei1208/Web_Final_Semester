@@ -87,7 +87,6 @@
                     <h2 name="name"><?=$p['name_flim']?></h2>
                     <div class="size">
                         <div style="color: #fffb00">
-                            <div class="main_poster_header">
                                 <span style="margin-right: 10px;">
                                     <i class="fa-solid fa-star"></i> <?=$p['rate']?>/5 
                                 </span>
@@ -95,7 +94,6 @@
                                     <i class="fa-regular fa-clock" ></i> <span class="col-while"><?=$p['time']?> minutes</span> 
                                 </span>                
                                 <i class="fa-regular fa-calendar"></i> <span  class="col-while"><?=$p['year']?></span>
-                            </div>
                         </div>
                         <?php
                             $words = str_word_count($p['content']);
@@ -135,22 +133,21 @@
                     if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';                
             ?>
                 <div class="card">
-                    <div class="card-image"><img src="assets/img/<?=$p['poster_small']?>" alt=""></div>
-                    <div class="middle">
-                        <div><i class="fa-solid fa-play"></i></div>
-                    </div>
-                </div>
-                <div id="tooltip">
+                    <div class="card-image">
+                        <img src="assets/img/<?=$p['poster_small']?>" alt=""></div>
+                    <div class="tooltip">
                     <div class="item">
-                        <div class="NameFilm"><?=$p['name_flim']?></div>
-                        <?php
-                            $words = str_word_count($p['content']);
-                        if ($words > 50) {  
-                            $shortText = implode(' ', array_slice(str_word_count($p['content'], 1), 0, 50)) . '...';
-                            echo '<div class="Story">' . $shortText . '</div>';
-                        } else { ?>
-                        <div class="Story"><?=$p['content']?> </div> <?php } ?>
-                        <div class="STD"><span style="color: #fffb00;"><i class="fa-solid fa-star"></i> <?=$p['rate']?>/5 </span><i class="fa-regular fa-clock" ></i> <?=$p['time']?> minutes <i class="fa-regular fa-calendar"></i> <?=$p['year']?></div>
+                        <div class="NameFilm"><?=$p['name_flim']?></div>                  
+                        <div class="Story"><?=$p['content']?> </div> 
+                        <div class="STD" style="color: #fffb00">
+                                <span style="margin-right: 10px;">
+                                    <i class="fa-solid fa-star"></i><span class="col-while" style="color: #000000"> <?=$p['rate']?>/5 </span> 
+                                </span>
+                                <span style="margin-right: 10px;">
+                                    <i class="fa-regular fa-clock" ></i> <span class="col-while" style="color: #000000"><?=$p['time']?> minutes</span> 
+                                </span>                
+                                <i class="fa-regular fa-calendar"></i> <span  class="col-while" style="color: #000000"><?=$p['year']?></span>
+                        </div>
                         <div class="AG">
                             <div class="AU"><span>Director:</span> <?=$p['director']?></div>
                             <div class="GE"><span>Genres:</span> <?=$p['genre']?></div>
