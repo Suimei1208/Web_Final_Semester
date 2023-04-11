@@ -400,6 +400,8 @@ max-height: 500px;
 }
 .card-image:hover .img {
   opacity: 0.3;
+.card-image:hover img{
+  opacity: 0.5;
 }
 
 .card-image:hover .middle {
