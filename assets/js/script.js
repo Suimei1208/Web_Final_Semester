@@ -118,11 +118,21 @@ $(function(){
     });
 });
 //tooltip
-//tooltip
-var spanText = document.getElementById('tooltip');
+/*var spanText = document.getElementsByClassName('tooltip');
 window.onmousemove = function(e){
 var x = e.clientX;
     y = e.clientY;
 spanText.style.top = (y+20) + 'px';
 spanText.style.left = (x+20) + 'px';
-}
+}*/
+var spanText = document.getElementsByClassName('tooltip');
+
+window.onmousemove = function(e) {
+  var x = e.clientX,
+      y = e.clientY;
+  
+  for (var i = 0; i < spanText.length; i++) {
+    spanText[i].style.top = (y + 20) + 'px';
+    spanText[i].style.left = (x + 20) + 'px';
+  }
+};

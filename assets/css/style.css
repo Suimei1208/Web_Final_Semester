@@ -421,7 +421,7 @@ margin-bottom: 5px;
 font-size: 1em;
 margin-bottom: 5px;
 }
-#tooltip{
+.tooltip{
   /* width: -moz-fit-content;
   width: fit-content; */
   max-width: 600px;
@@ -435,27 +435,27 @@ margin-bottom: 5px;
   border-radius: 10px;
   box-shadow: 0 8px 10px rgba(0,0,0,0.1);
 }
-#tooltip .item{
+.tooltip .item{
   width: -moz-fit-content;
   width: fit-content;
   padding: 5px;
   margin-bottom: 1em;
 }
-#tooltip .item .NameFilm{
+.tooltip .item .NameFilm{
   color: #E91010;
   font-size: 2.5em;
 }
-#tooltip .item .STD{
+.tooltip .item .STD{
   padding-top: 10px;
 }
-#tooltip .item .AG div{
+.tooltip .item .AG div{
   padding-top: 10px;
 }
-#tooltip .item .AG div span{
+.tooltip .item .AG div span{
   color: #ff0000;
   font-weight: bold;
 }
-.card:hover #tooltip{
+.card:hover .tooltip{
   opacity: 1;
   visibility: visible;
   z-index: 9999;
