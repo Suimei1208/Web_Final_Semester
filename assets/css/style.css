@@ -509,7 +509,12 @@ color: white;
 text-align: center;
 border-radius: 5px;
 padding: 40px;
-margin-bottom: -50px;
+/* day la phan t fix co gi chinh sua o day ne */
+position: fixed;
+  bottom: 0;
+  width: 100%;
+/* con day la luc chua sua */
+/* margin-bottom: -50px; */
 }
 
 .footer .footer1 i {
