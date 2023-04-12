@@ -425,7 +425,7 @@ margin-bottom: 5px;
   /* width: -moz-fit-content;
   width: fit-content; */
   max-width: 600px;
-  max-height: 500px;
+  /* max-height: 500px; */
   position: fixed;
   display: block;
   opacity: 0;
