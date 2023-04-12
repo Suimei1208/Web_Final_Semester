@@ -70,6 +70,7 @@
                         <h2 name="name"><?=$p['name_flim']?></h2>
                         <div class="size">
                             <div style="color: #fffb00">
+                                <div class="main_poster_header">
                                     <span style="margin-right: 10px;">
                                         <i class="fa-solid fa-star"></i> <?=$p['rate']?>/5 
                                     </span>
@@ -77,6 +78,7 @@
                                         <i class="fa-regular fa-clock" ></i> <span class="col-while"><?=$p['time']?> minutes</span> 
                                     </span>                
                                     <i class="fa-regular fa-calendar"></i> <span  class="col-while"><?=$p['year']?></span>
+                                </div>
                             </div>
                             <?php
                                 $words = str_word_count($p['content']);
