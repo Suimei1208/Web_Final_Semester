@@ -46,12 +46,14 @@ var repeat = function(activeClass){
 repeat();
 
 var headerHeight = document.querySelector('header').offsetHeight;
-var mainHeight = document.querySelector('main') ? document.querySelector('main').offsetHeight : null;
-var totalHeight = headerHeight + (mainHeight || 0);
-if(mainHeight){
+var mainHeight = document.querySelector('main').offsetHeight;
+var totalHeight = headerHeight + mainHeight ;
+if(mainHeight>1500){
     document.querySelector('footer').style.marginTop = 1500+totalHeight + 'px';
-}else{
-    document.querySelector('footer').style.marginTop = 1500 + 'px';
+}else if(mainHeight<1100 && mainHeight >700){
+    document.querySelector('footer').style.marginTop = 2100 + 'px';
+}else if(mainHeight<700){
+    document.querySelector('footer').style.marginTop = 750 + 'px';
 }
 
 function getPageList(totalPages,page,maxLength){
