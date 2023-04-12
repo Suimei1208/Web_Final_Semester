@@ -1,21 +1,3 @@
-<?php 
-    require_once('API/connect.php');
-    $conn = connect();
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    $name = '';
-    $rate = '';
-    $time = '';
-    $year = '';
-    $content = '';
-    $director = '';
-    $genre = getGenres();
-    $flims = showFlims();
-    $rand = generateRandomNumbers();
-    $rand_flim = showFilmsRand($rand);
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -30,6 +12,7 @@
     </head>
     <body>
         <?php
+            include 'API/setup.php';
             include 'component/header.php';
         ?>
 

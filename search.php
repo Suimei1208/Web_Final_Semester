@@ -12,18 +12,7 @@
 </head>
 <body>
     <?php       
-        require_once('API/connect.php');
-        $conn = connect();
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-        $name = '';
-        $rate = '';
-        $time = '';
-        $year = '';
-        $content = '';
-        $director = '';
-        $genre = getGenres();
+        include 'API/setup.php';
         include 'component/header.php';
 
         if(isset($_POST['search'])){
