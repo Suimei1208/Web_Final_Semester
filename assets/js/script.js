@@ -109,7 +109,7 @@ $(function(){
     );
     $(".card-content").show();
     showPage(1);
-    $(document).on("click", ".pagination li.curent-page:not(.active)", function(){
+    $(document).on("click", ".pagination li.current-page:not(.active)", function(){
         return showPage(+$(this).text());
     });
     $(".next-page").on("click",function(){
