@@ -501,7 +501,7 @@ background: #50577A;
 .disable{
 background: #ccc;
 }
-.footer {
+#footer {
 justify-content: center;
 background-color: #50577A;
 color: white;
@@ -517,14 +517,16 @@ padding: 40px;
 /* con day la luc chua sua */
 margin-bottom: -50px;
 /* position: absolute; */
+left: 0;
+right: 0;
 }
 
-.footer .footer1 i {
+#footer .footer1 i {
 font-size: 25px;
 padding: 5px 10px 20px;
 }
 
-.footer .footer2 a {
+#footer .footer2 a {
 font-size: 25px;
 text-decoration: none;
 color: white;
@@ -532,7 +534,7 @@ position: relative;
 margin: 20px;
 }
 
-.footer .footer2 a::after {
+#footer .footer2 a::after {
 content: '';
 position: absolute;
 left: 0;
@@ -546,7 +548,7 @@ transition: transform .5s;
 transform-origin: right;
 }
 
-.footer .footer2 a:hover::after {
+#footer .footer2 a:hover::after {
 transform-origin: left;
 transform: scaleX(1);
 }
@@ -563,10 +565,11 @@ z-index: 1;
 font-size: 35px;
 color: #ffffff;
 }
-footer{
-font-size: 0.8rem;
-margin-top: auto;
-position: absolute;
+ footer{
+/* font-size: 0.8rem;
+margin-top: auto;*/
+/* position: absolute;  */
+width: 100%;
 left:0;
 right: 0;
-}
+} 
