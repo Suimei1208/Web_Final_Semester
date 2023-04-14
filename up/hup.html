@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Thêm phim</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+	<div class="container">
+		<h2>Thêm phim mới</h2>
+		<form method="POST" action="add_film.php" enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="name_film">Tên phim:</label>
+				<input type="text" class="form-control" id="name_film" name="name_film" required>
+			</div>
+			<div class="form-group">
+				<label for="rate">Đánh giá: auto ghi số 0</label>
+				<input type="number" class="form-control" id="rate" name="rate" step="0.1" min="0" max="10" required>
+			</div>
+			<div class="form-group">
+				<label for="time">Thời lượng (phút):</label>
+				<input type="number" class="form-control" id="time" name="time" min="1" required>
+			</div>
+			<div class="form-group">
+				<label for="year">Năm sản xuất:</label>
+				<input type="number" class="form-control" id="year" name="year" min="1900" max="9999" required>
+			</div>
+			<div class="form-group">
+				<label for="content">Nội dung: Nếu có 2 3 đoạn thì bấm enter xuống dòng bình thường</label>
+				<textarea class="form-control" rows="5" id="content" name="content" required></textarea>
+			</div>
+			<div class="form-group">
+				<label for="director">Đạo diễn:</label>
+				<input type="text" class="form-control" id="director" name="director" required>
+			</div>
+			<div class="form-group">
+				<label for="genre">Thể loại:</label>
+				<input type="text" class="form-control" id="genre" name="genre" required>
+			</div>
+			<div class="form-group">
+				<label for="pg">Độ tuổi:</label>
+				<input type="number" class="form-control" id="pg" name="pg" min="0" required>
+			</div>
+			<div class="form-group">
+				<label for="poster_small">Hình nhỏ 700 x 800: nhớ tìm ảnh đúng kích thước nha riêng cái này thì to hơn 1 tí vẫn được nhưng nó vẫn là hình chữu nhật</label>
+				<input type="file" id="poster_small" name="poster_small" required>
+			</div>
+			<div class="form-group">
+				<label for="poster_big">Hình lớn: 1920 x 1080: 2 cái sau thì tìm đúng kích thước không được thì cắt đúng kích thước</label>
+				<input type="file" id="poster_big" name="poster_big" required>
+			</div>
+			<div class="form-group">
+				<label for="poster_cut">Hình cắt: 1920 x 480</label>
+				<input type="file" id="poster_cut" name="poster_cut" required>
+			</div>
+			<div class="form-group">
+				<label for="pg">Chất lương (2K, HD):</label>
+				<input type="text" class="form-control" id="quality" name="quality" min="0" required>
+			</div>
+            <div class="form-group">
+				<label for="pg">Diễn viên:</label>
+				<input type="text" class="form-control" id="actor" name="actor" min="0" required>
+			</div>
+            <button type="submit" class="btn btn-primary" name = "add_film">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+
+				
