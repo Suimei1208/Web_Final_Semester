@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="../assets/css/style.css">
 <footer>
-        <div class="footer">
+        <div id="footer">
             <div class="footer1">
             <i>Follow us</i>
             <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>

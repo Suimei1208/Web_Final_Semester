@@ -44,7 +44,7 @@
             <a href="#">NEW FILMS</a>
             <a href="#">ADVANCED SEARCH</a>
             <form action="search.php" method="post" class="he">
-                <a class="search">
+                <a class="search" id = "exception">
                     <input type="text" class="search__input" placeholder="Search film name" name="search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </a>
