@@ -120,13 +120,6 @@ $(function(){
     });
 });
 //tooltip
-/*var spanText = document.getElementsByClassName('tooltip');
-window.onmousemove = function(e){
-var x = e.clientX;
-    y = e.clientY;
-spanText.style.top = (y+20) + 'px';
-spanText.style.left = (x+20) + 'px';
-}*/
 var spanText = document.getElementsByClassName('tooltip');
 
 window.onmousemove = function(e) {
