@@ -616,7 +616,7 @@ right: 0;
   cursor: pointer;
 }
 input[type="checkbox"] {
-  display: none;
+  /* display: none; */
 }
 
 label {
