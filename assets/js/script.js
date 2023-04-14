@@ -1,49 +1,35 @@
-var slides = document.getElementsByClassName('slide');
-var btns = document.getElementsByClassName('btn');
-var currentSlide = 1;
 
-// Function for manual navigation
+// Javascript cho image slider
 var manualNav = function(manual){
-    for (var i = 0; i < slides.length; i++) {
-        slides[i].classList.toggle('active', i === manual);
-        btns[i].classList.toggle('active', i === manual);
-    }
-    currentSlide = manual;
-};
 
-// Add event listeners to the buttons
-for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function() {
-        var manual = parseInt(this.getAttribute('data-slide-to'));
-        manualNav(manual);
+        btns.forEach((btn) =>{
     });
 }
-
-// Function for autoplay
+btns.forEach((btn,i) => {
 var repeat = function(activeClass){
-    var active = document.getElementsByClassName('active');
-    var i = 1;
+    let active = document.getElementsByClassName('active');
 
-    var repeater = function() {
+    var repeater = () =>{
         setTimeout(function(){
-            for (var j = 0; j < slides.length; j++) {
                 slides[j].classList.toggle('active', j === i);
                 btns[j].classList.toggle('active', j === i);
             }
             currentSlide = i;
+            slides[i].classList.add('active');
+            btns[i].classList.add('active');
             i++;
             if (i >= slides.length) {
+            if(slides.length == i ){
                 i = 0;
             }
+            }
             repeater();
-        }, 5000);
-    };
-    repeater();
 };
+        },5000);
 
 // Start autoplay
+}
 repeat();
-
 
 // var headerHeight = document.querySelector('header').offsetHeight;
 // var mainHeight = document.querySelector('main').offsetHeight;
@@ -138,7 +124,6 @@ function getPageList(totalPages, page, maxLength) {
       return showPage(currentPage - 1);
     });
   });
-
 //tooltip
 var spanText = document.getElementsByClassName('tooltip');
 
