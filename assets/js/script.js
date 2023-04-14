@@ -1,3 +1,4 @@
+var slides = document.getElementsByClassName('slide');
 var btns = document.getElementsByClassName('btn');
 var currentSlide = 1;
 
