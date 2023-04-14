@@ -615,13 +615,8 @@ right: 0;
   background-color: #331169;
   cursor: pointer;
 }
-<<<<<<< HEAD
 /* input[type="checkbox"] {
   display: none;
-=======
-input[type="checkbox"] {
-  /* display: none; */
->>>>>>> d6116bbc202868890692b4c72a91a01644a43294
 }
 
 label {
