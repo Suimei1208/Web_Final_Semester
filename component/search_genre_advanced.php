@@ -36,14 +36,20 @@
     </div>             
     </form>
 </div>
+
 <?php
     if(isset($_POST['submit'])) {
+        echo "<style>
+        ..advance{
+            margin-bottom: 0px;
+        }
+            </style>";
         if(isset($_POST['genre'])) {
             $selected_genres = $_POST['genre'];
             $name_flim_search = getFlims_Genre_advan($selected_genres); 
             if($name_flim_search == false) require_once('component/404.php');
             else{ ?>     
-                if($name_flim_search ) { ?>
+               <?php if($name_flim_search ) { ?>
                     <div class="update">
                     <div class="card-content" style="display: none;"> <?php
                     foreach($name_flim_search as $p){
@@ -80,8 +86,10 @@
                                 </div>
                             </div>
                 <?php }                             
+            }}}}else{
+                    echo "<style>
+                    .advance{
+                        margin-bottom: 300px;
+                        </style>";
             }
-        }
-    }
-
 ?>

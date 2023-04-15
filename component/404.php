@@ -4,17 +4,17 @@
 		<div class="col-sm-12 ">
 		<div class="col-sm-10 col-sm-offset-1  text-center">
 		<div class="four_zero_four_bg">
-			<h1 class="text-center ">404</h1>
+			<h1 class="text-center ">SORRY</h1>
             
             <div class="four">
                 <img src="assets/gif/hihi-unscreen (1).gif" alt="">
             <h3 class="h2">
-		Look like you're lost
+            It seems like we don't have this movie. 
 		</h3>
 		
-		<p>the page you are looking for not avaible!</p>
+		<p>We will update it as soon as possible!</p>
 		
-		<a href="" class="link_404">Go to Home</a>
+		<a href="./index.php" class="link_404">Go to Home</a>
             </div>
 		
 	</div>
