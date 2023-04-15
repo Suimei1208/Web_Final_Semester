@@ -696,4 +696,8 @@ label:hover:before {
   display:block;
 }
 
-
+.title{
+  font-size: 30px;
+  color: #ffffff;
+  text-align: center;
+}

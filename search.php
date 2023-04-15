@@ -22,7 +22,7 @@
             include 'component/search_genre.php';
         }elseif($_GET['advanced_search'] ==1){?>
             <main>
-                <?php require_once('component/search_genre_advanced.php') ?>
+                <?php include 'component/search_genre_advanced.php' ?>
             <?php }?>              
     </main>
     <?php

@@ -46,6 +46,7 @@
             </style>";
         if(isset($_POST['genre'])) {
             $selected_genres = $_POST['genre'];
+            echo "<h3 class='title'>Search for: " . implode(", ", $selected_genres) . "</h3>";
             $name_flim_search = getFlims_Genre_advan($selected_genres); 
             if($name_flim_search == false) require_once('component/404.php');
             else{ ?>     
