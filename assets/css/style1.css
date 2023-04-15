@@ -223,6 +223,13 @@
   /* .chosen-film .film .card .infor .btn-film span .play-2 button{
     background-color: red;
   } */
+  .cont-star{
+    /* background-color: #333; */
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+  }
   .cont-star .star-widget input{
     display: none;
   }
@@ -243,6 +250,30 @@
   input#rate-5:checked ~ label{
     color: #fe7;
     text-shadow: 0 0 20px #952;
+  }
+  #rate-1:checked ~ form h1:before{
+    content:"i just hate it";
+  }
+  #rate-2:checked ~ form h1:before{
+    content:"i don't like it";
+  }
+  #rate-3:checked ~ form h1:before{
+    content:"It is awesome";
+  }
+  #rate-4:checked ~ form h1:before{
+    content:"i just like it";
+  }
+  #rate-5:checked ~ form h1:before{
+    content:"i just love it";
+  }
+  .cont-star form h1{
+    width: 100%;
+    font-size: 25px;
+    color: #fe7;
+    font-weight: 500;
+    margin: 5px 0 20px 0;
+    text-align: center;
+    transition: all 0.2s ease;
   }
   .part-2{
     position: absolute;
