@@ -176,6 +176,35 @@
   }
   .chosen-film .film .card .infor{
     border: 1px solid black;
-    height: 100px;
-    margin-left: 40px;
+    height: 200px;
+    width: 700px;
+    margin: 5px 40px;
+    color: #ffffff;
+  }
+  .chosen-film .film .card .infor h3{
+    color: rgb(207, 207, 27);
+    text-transform: uppercase;
+  }
+  .chosen-film .film .card .infor .infor-1{
+    margin: 5px 0px 5px 0px;
+  }
+  .chosen-film .film .card .infor .infor-1 .age{
+    /* border: 1px solid black; */
+    background-color: red;
+    padding: 2px;
+  }
+  .chosen-film .film .card .infor .infor-1 .quality{
+    background-color: blue;
+    padding: 2px 15px 2px 15px;
+  }
+  .chosen-film .film .card .infor .AG-1 div{
+
+    margin: 7px 0px 7px 0px;
+  }
+  .chosen-film .film .card .infor .AG-1 span{
+    color: red;
+  }
+  .chosen-film .film .card .infor .btn-film{
+    border: 1px solid black;
+    padding: 5px;
   }
