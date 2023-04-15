@@ -36,8 +36,14 @@
     </div>             
     </form>
 </div>
+
 <?php
     if(isset($_POST['submit'])) {
+        echo "<style>
+        ..advance{
+            margin-bottom: 0px;
+        }
+            </style>";
         if(isset($_POST['genre'])) {
             $selected_genres = $_POST['genre'];
             $name_flim_search = getFlims_Genre_advan($selected_genres); 
@@ -80,5 +86,10 @@
                                 </div>
                             </div>
                 <?php }                             
-            }}}}
+            }}}}else{
+                    echo "<style>
+                    .advance{
+                        margin-bottom: 300px;
+                        </style>";
+            }
 ?>
