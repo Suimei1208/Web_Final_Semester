@@ -43,7 +43,7 @@
             $name_flim_search = getFlims_Genre_advan($selected_genres); 
             if($name_flim_search == false) require_once('component/404.php');
             else{ ?>     
-                if($name_flim_search ) { ?>
+               <?php if($name_flim_search ) { ?>
                     <div class="update">
                     <div class="card-content" style="display: none;"> <?php
                     foreach($name_flim_search as $p){
@@ -80,8 +80,5 @@
                                 </div>
                             </div>
                 <?php }                             
-            }
-        }
-    }
-
+            }}}}
 ?>
