@@ -58,6 +58,7 @@
                                 if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';   
                                 if($p['actor'] == null) $p['actor'] = 'Updating...';                
                         ?>
+                        <a href="info.php?movie_name=<?=$p['name_flim']?>" class = "color_info">
                             <div class="card">
                                 <div class="card-image">
                                     <img src="assets/img/<?=$p['poster_small']?>" alt=""></div>
@@ -86,6 +87,7 @@
                                     <p>View: <?=number_format($p['view'])?></p>
                                 </div>
                             </div>
+                        </a>
                 <?php }                             
             }}}}else{
                     echo "<style>

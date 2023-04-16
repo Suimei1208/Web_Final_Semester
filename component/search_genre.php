@@ -17,6 +17,7 @@
                 if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';   
                 if($p['actor'] == null) $p['actor'] = 'Updating...';                
         ?>
+        <a href="info.php?movie_name=<?=$p['name_flim']?>" class = "color_info">
             <div class="card">
                 <div class="card-image">
                     <img src="assets/img/<?=$p['poster_small']?>" alt=""></div>
@@ -38,13 +39,14 @@
                         <div class="AC"><span>Actor:</span> <?=$p['actor']?></div>
                         <div class="GE"><span>Genres:</span> <?=$p['genre']?></div>
                     </div>
-                </div>
+            </div>
             </div>
                 <div class="card-info">
                     <h3><?=$p['name_flim']?></h3>
                     <p>View: <?=number_format($p['view'])?></p>
                 </div>
             </div>
+        </a>
     <?php } ?>
     </div>
     <div class="pagination"></div>
