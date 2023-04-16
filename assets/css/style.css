@@ -344,7 +344,7 @@ background-color: rgb(206, 28, 28);
 text-align: center;
 }
 .update{
-min-height: 100vh;
+min-height: 50px;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -359,7 +359,7 @@ flex-wrap: wrap;
 margin-left: 10%;
 margin-right: 10%;
 }
-.card{
+.card-content .card{
 position: relative;
 /* background: #0c0c0c; */
 background: #0B2447;
@@ -370,10 +370,10 @@ margin: 20px;
 border-radius: 10px;
 overflow: hidden;
 }
-.card-image{
+.card-content .card .card-image{
 max-height: 500px;
 }
-.card-image .middle {
+.card-content .card .card-image .middle {
   transition: .5s ease;
   opacity: 0;
   position: absolute;
@@ -387,7 +387,7 @@ max-height: 500px;
   cursor: pointer;
 }
 
-.card-image img{
+.card-content .card .card-image img{
   display: block;
   border-radius: 10px;
   max-width: 100%;
@@ -703,4 +703,199 @@ label:hover:before {
 }
 .color_info{
   color:#000000
+}
+.chosen-film{
+  /* border: 1px solid black; */
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+  position: relative;
+}
+.chosen-film .film{
+  width: 100%;
+  height: 650px;
+}
+.chosen-film .film .big-chosen-film{
+width: 100%;
+height: 100%;
+}
+.chosen-film .film .card{
+display: flex;
+/* border: 1px solid black; */
+position: absolute;
+top: 50px;
+left: 20em;
+width: 1000px;
+height: 300px;
+}
+.chosen-film .film .card .infor{
+/* border: 1px solid black; */
+height: 200px;
+width: 700px;
+margin: 5px 40px;
+color: #ffffff;
+}
+.chosen-film .film .card .infor h3{
+color: rgb(207, 207, 27);
+text-transform: uppercase;
+}
+.chosen-film .film .card .infor .infor-1{
+margin: 5px 0px 5px 0px;
+}
+.chosen-film .film .card .infor .infor-1 .age{
+/* border: 1px solid black; */
+background-color: red;
+padding: 2px;
+border-radius: 3px;
+}
+.chosen-film .film .card .infor .infor-1 .quality{
+background-color: blue;
+padding: 2px 15px 2px 15px;
+border-radius: 3px;
+}
+.chosen-film .film .card .infor .AG-1 div{
+
+margin: 7px 0px 7px 0px;
+}
+.chosen-film .film .card .infor .AG-1 span{
+color: rgb(255, 0, 0);
+margin-bottom: 100px;
+font-weight: bold;
+}
+.chosen-film .film .card .infor .btn-film{
+/* border: 1px solid rgb(153, 2, 2); */
+margin-top: 35px;
+}
+.chosen-film .film .card .infor .btn-film .play-2{
+padding: 7px;
+margin-right: 15px;
+border-radius: 3px;
+background: red;
+}
+.chosen-film .film .card .infor .btn-film .play-2:hover,.share:hover,.bookmark:hover{
+opacity: 0.8;
+}
+.chosen-film .film .card .infor .btn-film .share{
+padding: 7px;
+margin-right: 15px;
+border-radius: 3px;
+background:blue;
+}
+.chosen-film .film .card .infor .btn-film .bookmark{
+padding: 7px;
+margin-right: 15px;
+border-radius: 3px;
+background: green;
+}
+/* .chosen-film .film .card .infor .btn-film span .play-2 button{
+background-color: red;
+} */
+.cont-star{
+/* background-color: #333; */
+display: flex;
+align-items: start;
+justify-content: center;
+flex-direction: column;
+}
+.cont-star .star-widget{
+margin-top: 20px;
+display: flex;
+}
+.cont-star .star-widget .rating-logo{
+border: 3px solid #fd4;
+border-radius: 50%;
+width: 50px; 
+height: 50px; 
+display: flex; 
+justify-content: center; 
+align-items: center;
+font-weight: bold;
+color: #fd4;
+}
+.cont-star .star-widget-1{
+/* border: 1px solid white; */
+margin-left: 10px;
+/* padding: 10px; */
+}
+.cont-star .star-widget-1 .vote{
+font-size: 12px;
+}
+.cont-star .star-widget input{
+display: none;
+}
+.star-widget label{
+font-size: 25px;
+color: #444;
+padding: 5px;
+float: right;
+transition: all 0.2s ease;
+}
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label{
+color: #fd4;
+}
+input:checked ~ label{
+color: #fd4;
+}
+input#rate-5:checked ~ label{
+color: #fe7;
+text-shadow: 0 0 20px #952;
+}
+#rate-1:hover ~ form h1:before{
+content:"I just hate it ><";
+}
+#rate-2:hover ~ form h1:before{
+content:"I don't like it ._.";
+}
+#rate-3:hover ~ form h1:before{
+content:"It is awesome :D";
+}
+#rate-4:hover ~ form h1:before{
+content:"I just like it <3";
+}
+#rate-5:hover ~ form h1:before{
+content:"I just love it <333";
+}
+.cont-star form h1{
+width: 100%;
+font-size: 25px;
+color: #fe7;
+font-weight: 500;
+margin: 5px 0 20px 0;
+text-align: center;
+transition: all 0.2s ease;
+}
+.part-2{
+position: absolute;
+/* border:1px solid #c40f0f; */
+width: 100%;
+height: 200px;
+margin-top: 360px;
+color: #ffffff;
+}
+.part-2 .trailer h3{
+/* border: 1px solid #c40f0f; */
+margin: 10px ;
+}
+.part-2 .trailer .trailer-box .trailer-position{
+/* border: 1px solid red; */
+padding: 20px;
+}
+.part-2 .trailer .trailer-box .trailer-position span{
+margin-left: 30px;
+/* border: 1px solid red; */
+padding: 5px 8px;
+border-radius: 3px;
+background: #333;
+}
+.part-2 .trailer .episodes-box .episodes-position{
+/* border: 1px solid red; */
+padding: 20px;
+}
+.part-2 .trailer .episodes-box .episodes-position span{
+margin-left: 30px;
+/* border: 1px solid red; */
+padding: 5px 30px;
+border-radius: 3px;
+background: #333;
 }
