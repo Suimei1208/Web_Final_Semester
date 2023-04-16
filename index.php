@@ -48,14 +48,18 @@
                                 $words = str_word_count($p['content']);
                             if ($words > 50) {  
                                 $shortText = implode(' ', array_slice(str_word_count($p['content'], 1), 0, 50)) . '...';
-                                echo '<p class="col-while">' . $shortText . ' <a href="#">See more</a></p>';
+                                echo '<p class="col-while">' . $shortText . ' <a href="info.php?movie_name=' . $p['name_flim'] . '" class="red_see_more" style="color: red;">See more</a></p>';
                             } else { ?>
                                 <p class="col-while"><?=$p['content']?></p>
                             <?php } ?>
                             <p class="INFO">Author: <span class="col-while"><?=$p['director']?></span></p>
                             <p class="INFO">Actor: <span class="col-while"> <?=$p['actor']?></span></p>
                             <p class="INFO">Genres: <span class="col-while"> <?=$p['genre']?></span></p>
-                            <input type="button" class="play fa-solid fa-play" value="WATCH" onclick="window.location.href='info.php?movie_name=<?= $p['name_flim'] ?>';">  
+                            <span class="play-3">
+                            <i class="fa-solid fa-play" style="color: #ffffff;"></i>
+                            <a href="info.php?movie_name=<?= $p['name_flim'] ?>" class="watch-btn">WATCH</a>
+                            </span>
+
                         </div>             
                     </div>
                     
@@ -84,14 +88,19 @@
                                 $words = str_word_count($p['content']);
                             if ($words > 50) {  
                                 $shortText = implode(' ', array_slice(str_word_count($p['content'], 1), 0, 50)) . '...';
-                                echo '<p class="col-while">' . $shortText . ' <a href="#">See more</a></p>';
+                                echo '<p class="col-while">' . $shortText . ' <a href="info.php?movie_name=' . $p['name_flim'] . '" class="red_see_more" style="color: red;">See more</a></p>';
                             } else { ?>
                                 <p class="col-while"><?=$p['content']?></p>
                             <?php } ?>
                             <p class="INFO">Author: <span class="col-while"><?=$p['director']?></span></p>
                             <p class="INFO">Actor: <span class="col-while"> <?=$p['actor']?></span></p>
-                            <p class="INFO">Genres: <span class="col-while"> <?=$p['genre']?></span></p>
-                            <input type="button" class="play fa-solid fa-play" value="WATCH" onclick="window.location.href='info.php?movie_name=<?= $p['name_flim'] ?>';">
+                            <p class="INFO">Genres: <span class="col-while"> <?=$p['genre']?></span></p>  
+
+                            <span class="play-3">
+                            <i class="fa-solid fa-play" style="color: #ffffff;"></i>
+                            <a href="info.php?movie_name=<?= $p['name_flim'] ?>" class="watch-btn">WATCH</a>
+                            </span>
+
                         </div>               
                     </div>
                 </div>

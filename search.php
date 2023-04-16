@@ -23,7 +23,7 @@
         }elseif($_GET['advanced_search'] ==1){?>
             <main>
                 <?php include 'component/search_genre_advanced.php' ?>
-            <?php }?>              
+            <?php }?>
     </main>
     <?php
         include 'component/footer.php';
