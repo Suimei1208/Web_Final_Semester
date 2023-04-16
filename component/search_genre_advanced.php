@@ -88,7 +88,8 @@
                                 </div>
                             </div>
                         </a>
-                <?php }                             
+                <?php }  
+                echo '<div class="pagination"></div>';                           
             }}}}else{
                     echo "<style>
                     .advance{
