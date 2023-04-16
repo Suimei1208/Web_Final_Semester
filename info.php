@@ -14,8 +14,11 @@
         <?php
             include 'API/setup.php';
             include 'component/header.php';
+            if(isset($_GET['movie_name']){
+                $name_films =$_GET['movie_name'];
+                 
+            }
         ?>
-
 
 
 
