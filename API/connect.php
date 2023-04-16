@@ -169,7 +169,7 @@
     }
     function update_view($name_films){
         $conn = connect();
-        $stmt = $conn->prepare("UPDATE films SET view = view + 1 WHERE name_film = ? ");
+        $stmt = $conn->prepare("UPDATE films SET view = view + 1 WHERE name_flim = ? ");
         $stmt->bind_param("s", $name_films);
         $success = $stmt->execute();
         $conn->close();

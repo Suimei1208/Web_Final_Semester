@@ -55,7 +55,7 @@
                             <p class="INFO">Author: <span class="col-while"><?=$p['director']?></span></p>
                             <p class="INFO">Actor: <span class="col-while"> <?=$p['actor']?></span></p>
                             <p class="INFO">Genres: <span class="col-while"> <?=$p['genre']?></span></p>
-                            <input type="button" class="play" class="fa-solid fa-play" value="WATCH">
+                            <input type="button" class="play fa-solid fa-play" value="WATCH" onclick="window.location.href='info.php?movie_name=<?= $p['name_flim'] ?>';">  
                         </div>             
                     </div>
                     
@@ -91,7 +91,7 @@
                             <p class="INFO">Author: <span class="col-while"><?=$p['director']?></span></p>
                             <p class="INFO">Actor: <span class="col-while"> <?=$p['actor']?></span></p>
                             <p class="INFO">Genres: <span class="col-while"> <?=$p['genre']?></span></p>
-                            <input type="button" class="play" class="fa-solid fa-play" value="WATCH">
+                            <input type="button" class="play fa-solid fa-play" value="WATCH" onclick="window.location.href='info.php?movie_name=<?= $p['name_flim'] ?>';">
                         </div>               
                     </div>
                 </div>

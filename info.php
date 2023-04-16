@@ -16,7 +16,7 @@
             include 'component/header.php';
             if(isset($_GET['movie_name'])){
                 $name_films =$_GET['movie_name'];
-
+                update_view($name_films);
             }
         ?>
 
