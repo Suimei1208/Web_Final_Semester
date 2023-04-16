@@ -163,7 +163,7 @@
     }
     .chosen-film .film{
         width: 100%;
-        height: 600px;
+        height: 650px;
     }
     .chosen-film .film .big-chosen-film{
       width: 100%;
@@ -208,14 +208,15 @@
     margin: 7px 0px 7px 0px;
   }
   .chosen-film .film .card .infor .AG-1 span{
-    color: red;
+    color: rgb(255, 0, 0);
     margin-bottom: 100px;
+    font-weight: bold;
   }
   .chosen-film .film .card .infor .btn-film{
     /* border: 1px solid rgb(153, 2, 2); */
     margin-top: 35px;
   }
-  .chosen-film .film .card .infor .btn-film span{
+  .chosen-film .film .card .infor .btn-film .play-2,.share,.bookmark{
     padding: 7px;
     margin-right: 15px;
     border-radius: 3px;
@@ -229,6 +230,29 @@
     align-items: start;
     justify-content: center;
     flex-direction: column;
+  }
+  .cont-star .star-widget{
+    margin-top: 20px;
+    display: flex;
+  }
+  .cont-star .star-widget .rating-logo{
+    border: 3px solid #fd4;
+    border-radius: 50%;
+    width: 50px; 
+    height: 50px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    font-weight: bold;
+    color: #fd4;
+  }
+  .cont-star .star-widget-1{
+    /* border: 1px solid white; */
+    margin-left: 10px;
+    /* padding: 10px; */
+  }
+  .cont-star .star-widget-1 .vote{
+    font-size: 12px;
   }
   .cont-star .star-widget input{
     display: none;
@@ -252,19 +276,19 @@
     text-shadow: 0 0 20px #952;
   }
   #rate-1:checked ~ form h1:before{
-    content:"i just hate it";
+    content:"I just hate it ><";
   }
   #rate-2:checked ~ form h1:before{
-    content:"i don't like it";
+    content:"I don't like it ._.";
   }
   #rate-3:checked ~ form h1:before{
-    content:"It is awesome";
+    content:"It is awesome :D";
   }
   #rate-4:checked ~ form h1:before{
-    content:"i just like it";
+    content:"I just like it <3";
   }
   #rate-5:checked ~ form h1:before{
-    content:"i just love it";
+    content:"I just love it <333";
   }
   .cont-star form h1{
     width: 100%;
@@ -280,7 +304,7 @@
     /* border:1px solid #c40f0f; */
     width: 100%;
     height: 200px;
-    margin-top: 330px;
+    margin-top: 360px;
     color: #ffffff;
   }
   .part-2 .trailer h3{
