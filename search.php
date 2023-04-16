@@ -15,7 +15,7 @@
         include 'API/setup.php';
         include 'component/header.php';
 
-        if(isset($_POST['search'])){
+        if(isset($_GET['film_name'])){
             include 'component/search_enter.php';
         }
         elseif(isset($_GET['genres'])){

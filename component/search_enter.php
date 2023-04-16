@@ -1,5 +1,5 @@
 <?php
-$search = $_POST['search'];  
+$search =$_GET['film_name'];
 if(getFlims($search) == false){?>
     <main style="margin-top: 80px;">
     <?php include 'component/404.php';?>

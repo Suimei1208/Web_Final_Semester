@@ -43,12 +43,13 @@
             <a href="#">TOP FILMS</a>
             <a href="#">NEW FILMS</a>
             <a href="search.php?advanced_search=1" name="advanced_search">ADVANCED SEARCH</a>
-            <form action="search.php" method="post" class="he">
-                <a class="search" id = "exception">
-                    <input type="text" class="search__input" placeholder="Search film name" name="search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </a>
+            <form action="search.php" method="get" class="he">
+            <a class="search" id="exception">
+                <input type="text" class="search__input" placeholder="Search film name" name="film_name">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
             </form>
+
             <a href="login.php">LOGIN</a>
         </nav>
     </header>
