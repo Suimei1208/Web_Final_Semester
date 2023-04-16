@@ -275,19 +275,19 @@
     color: #fe7;
     text-shadow: 0 0 20px #952;
   }
-  #rate-1:checked ~ form h1:before{
+  #rate-1:hover ~ form h1:before{
     content:"I just hate it ><";
   }
-  #rate-2:checked ~ form h1:before{
+  #rate-2:hover ~ form h1:before{
     content:"I don't like it ._.";
   }
-  #rate-3:checked ~ form h1:before{
+  #rate-3:hover ~ form h1:before{
     content:"It is awesome :D";
   }
-  #rate-4:checked ~ form h1:before{
+  #rate-4:hover ~ form h1:before{
     content:"I just like it <3";
   }
-  #rate-5:checked ~ form h1:before{
+  #rate-5:hover ~ form h1:before{
     content:"I just love it <333";
   }
   .cont-star form h1{
