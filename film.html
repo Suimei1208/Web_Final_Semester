@@ -646,7 +646,23 @@
 
         </div>
     </div>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <div class="pagination"></div>
+    <div class="comment-section">
+		<h2>Comments</h2>
+		<div id="comments-container"></div>
+		<form id="comment-form">
+			<div class="name-author">
+                <label for="name">Name:</label>
+			    <input type="text" id="name" name="name">
+            </div>
+			<div class="cmt-author">
+                <label for="comment">Comment:</label>
+			    <textarea id="comment" name="comment"></textarea>
+                <span><input type="submit" value="Submit"></span>
+            </div>
+		</form>
+	</div>
     </main>
     <footer>
         <div id="footer">

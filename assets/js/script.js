@@ -152,3 +152,65 @@ window.onmousemove = function(e) {
     spanText[i].style.left = (x + 20) + 'px';
   }
 };
+$(document).ready(function() {
+	// load existing comments
+	loadComments();
+
+	// add event listener for form submission
+	$("#comment-form").submit(function(e) {
+		e.preventDefault();
+		var name = $("#name").val();
+		var comment = $("#comment").val();
+		if (name.trim() === "" || comment.trim() === "") {
+			alert("Please enter your name and comment.");
+			return;
+		}
+		var date = new Date();
+		var timestamp = date.getTime();
+		var newComment = {
+			name: name,
+			comment: comment,
+			timestamp: timestamp
+		};
+		var comments = getComments();
+		comments.push(newComment);
+		saveComments(comments);
+		displayComment(newComment);
+		$("#comment-form")[0].reset();
+	});
+
+	// function to load existing comments from localStorage
+	function getComments() {
+		var comments = localStorage.getItem("comments");
+		if (comments === null) {
+			return [];
+		} else {
+			return JSON.parse(comments);
+		}
+	}
+
+	// function to save comments to localStorage
+	function saveComments(comments) {
+		localStorage.setItem("comments", JSON.stringify(comments));
+	}
+
+	// function to display a comment on the page
+	function displayComment(comment) {
+		var date = new Date(comment.timestamp);
+		var dateString = date.toLocaleString();
+		var commentHtml = '<div class="comment">' +
+			'<p><span class="comment-author">' + comment.name + '</span>' +
+			'<span class="comment-date">' + dateString + '</span></p>' +
+			'<p>' + comment.comment + '</p>' +
+			'</div>';
+		$("#comments-container").append(commentHtml);
+	}
+
+	// function to load existing comments and display them on the page
+	function loadComments() {
+		var comments = getComments();
+		for (var i = 0; i < comments.length; i++) {
+			displayComment(comments[i]);
+		}
+	}
+});
