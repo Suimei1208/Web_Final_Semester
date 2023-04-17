@@ -152,65 +152,140 @@ window.onmousemove = function(e) {
     spanText[i].style.left = (x + 20) + 'px';
   }
 };
-$(document).ready(function() {
-	// load existing comments
-	loadComments();
+function scrollToTop(){
+  window.scrollTo(0,0);
+}
+// Lấy ra form comment và các input field
+const commentForm = document.querySelector('#comment-form');
+const nameInput = document.querySelector('#name');
+const commentInput = document.querySelector('#comment');
 
-	// add event listener for form submission
-	$("#comment-form").submit(function(e) {
-		e.preventDefault();
-		var name = $("#name").val();
-		var comment = $("#comment").val();
-		if (name.trim() === "" || comment.trim() === "") {
-			alert("Please enter your name and comment.");
-			return;
-		}
-		var date = new Date();
-		var timestamp = date.getTime();
-		var newComment = {
-			name: name,
-			comment: comment,
-			timestamp: timestamp
-		};
-		var comments = getComments();
-		comments.push(newComment);
-		saveComments(comments);
-		displayComment(newComment);
-		$("#comment-form")[0].reset();
-	});
+// Lấy ra danh sách các bình luận
+const commentList = document.querySelector('#comment-list');
 
-	// function to load existing comments from localStorage
-	function getComments() {
-		var comments = localStorage.getItem("comments");
-		if (comments === null) {
-			return [];
-		} else {
-			return JSON.parse(comments);
-		}
-	}
+// Khi người dùng submit form comment
+commentForm.addEventListener('submit', (event) => {
+  event.preventDefault(); // Ngăn chặn form submit mặc định
 
-	// function to save comments to localStorage
-	function saveComments(comments) {
-		localStorage.setItem("comments", JSON.stringify(comments));
-	}
+  // Lấy giá trị từ input field
+  const nameValue = nameInput.value;
+  const commentValue = commentInput.value;
 
-	// function to display a comment on the page
-	function displayComment(comment) {
-		var date = new Date(comment.timestamp);
-		var dateString = date.toLocaleString();
-		var commentHtml = '<div class="comment">' +
-			'<p><span class="comment-author">' + comment.name + '</span>' +
-			'<span class="comment-date">' + dateString + '</span></p>' +
-			'<p>' + comment.comment + '</p>' +
-			'</div>';
-		$("#comments-container").append(commentHtml);
-	}
+  // Tạo một thẻ li mới chứa nội dung bình luận
+  const commentLi = document.createElement('li');
+  commentLi.classList.add('comment-item');
+  commentLi.innerHTML = `
+    <div class="comment-details">
+      <div class="user-details">
+        <img src="https://via.placeholder.com/50" alt="User avatar">
+        <h3>${nameValue}</h3>
+      </div>
+      <p class="comment-text">${commentValue}</p>
+      <div class="comment-actions">
+        <button class="like-button">Like</button>
+        <button class="dislike-button">Dislike</button>
+        <button class="reply-button">Reply</button>
+      </div>
+      <ul class="comment-replies"></ul>
+    </div>
+  `;
 
-	// function to load existing comments and display them on the page
-	function loadComments() {
-		var comments = getComments();
-		for (var i = 0; i < comments.length; i++) {
-			displayComment(comments[i]);
-		}
-	}
+  // Thêm bình luận vào danh sách
+  commentList.appendChild(commentLi);
+
+  // Reset form
+  commentForm.reset();
+});
+
+// Khi người dùng nhấn nút Reply
+commentList.addEventListener('click', (event) => {
+  if (event.target.classList.contains('reply-button')) {
+    const commentDetails = event.target.closest('.comment-details');
+
+    // Tạo một form reply mới
+    const replyForm = document.createElement('form');
+    replyForm.classList.add('reply-form');
+    replyForm.innerHTML = `
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="comment">Comment</label>
+        <textarea id="comment" name="comment" rows="3" required></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit">Submit</button>
+      </div>
+    `;
+
+    // Tạo một thẻ li mới chứa form reply và thêm vào danh sách reply
+    const replyLi = document.createElement('li');
+    replyLi.classList.add('comment-reply');
+    replyLi.appendChild(replyForm);
+    commentDetails.querySelector('.comment-replies').appendChild(replyLi);
+
+    // Focus vào input field Name của form reply
+    replyForm.querySelector('#name').focus();
+
+    // Xóa nút Reply và hiển thị nút Close form reply
+    event.target.style.display = 'none';
+    const closeReplyButton = document.createElement('button');
+    closeReplyButton.classList.add('close-reply-button');
+    closeReplyButton.innerText = 'Close';
+    commentDetails.querySelector('.comment-actions').appendChild(closeReplyButton);
+
+    // Khi người dùng nhấn nút Close form reply
+closeReplyButton.addEventListener('click', () => {
+  // Xóa form reply
+  replyLi.remove();
+
+  // Hiển thị lại nút Reply
+  event.target.style.display = 'block';
+
+  // Xóa nút Close form reply
+  closeReplyButton.remove();
+});
+}
+});
+
+// Khi người dùng nhấn nút Like hoặc Dislike
+commentList.addEventListener('click', (event) => {
+if (event.target.classList.contains('like-button')) {
+const commentDetails = event.target.closest('.comment-details');
+const likeButton = commentDetails.querySelector('.like-button');
+const dislikeButton = commentDetails.querySelector('.dislike-button');
+const likeCount = commentDetails.querySelector('.like-count');
+const dislikeCount = commentDetails.querySelector('.dislike-count');
+// Tăng số lượt thích và giảm số lượt không thích nếu đã thích trước đó
+if (likeButton.classList.contains('active')) {
+  likeButton.classList.remove('active');
+  likeCount.innerText = parseInt(likeCount.innerText) - 1;
+} else {
+  likeButton.classList.add('active');
+  dislikeButton.classList.remove('active');
+  likeCount.innerText = parseInt(likeCount.innerText) + 1;
+  dislikeCount.innerText = parseInt(dislikeCount.innerText) - 1;
+}
+// Tăng số lượt thích và giảm số lượt không thích nếu đã thích trước đó
+if (likeButton.classList.contains('active')) {
+  likeButton.classList.remove('active');
+  likeCount.innerText = parseInt(likeCount.innerText) - 1;
+} else {
+  likeButton.classList.add('active');
+  dislikeButton.classList.remove('active');
+  likeCount.innerText = parseInt(likeCount.innerText) + 1;
+  dislikeCount.innerText = parseInt(dislikeCount.innerText) - 1;
+}
+// Tăng số lượt không thích và giảm số lượt thích nếu đã không thích trước đó
+if (dislikeButton.classList.contains('active')) {
+  dislikeButton.classList.remove('active');
+  dislikeCount.innerText = parseInt(dislikeCount.innerText) - 1;
+} else {
+  dislikeButton.classList.add('active');
+  likeButton.classList.remove('active');
+  dislikeCount.innerText = parseInt(dislikeCount.innerText) + 1;
+  likeCount.innerText = parseInt(likeCount.innerText) - 1;
+}
+}
 });

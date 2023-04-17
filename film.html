@@ -118,15 +118,15 @@
                                         <span style="font-size: 15px;">100%</span>
                                       </div>
                                     <div class="star-widget-1">
-                                        <input type="radio" name="rate" id="rate-5">
+                                        <input type="checkbox" name="rate" id="rate-5">
                                     <label for="rate-5" class="fas fa-star"></label>
-                                    <input type="radio" name="rate" id="rate-4">
+                                    <input type="checkbox" name="rate" id="rate-4">
                                     <label for="rate-4" class="fas fa-star"></label>
-                                    <input type="radio" name="rate" id="rate-3">
+                                    <input type="checkbox" name="rate" id="rate-3">
                                     <label for="rate-3" class="fas fa-star"></label>
-                                    <input type="radio" name="rate" id="rate-2">
+                                    <input type="checkbox" name="rate" id="rate-2">
                                     <label for="rate-2" class="fas fa-star"></label>
-                                    <input type="radio" name="rate" id="rate-1">
+                                    <input type="checkbox" name="rate" id="rate-1">
                                     <label for="rate-1" class="fas fa-star"></label>
                                     <div class="vote" style="margin-left: 10px;">
                                         (300 votes, rating: 10 out of 10)
@@ -648,21 +648,74 @@
     </div>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <div class="pagination"></div>
-    <div class="comment-section">
-		<h2>Comments</h2>
-		<div id="comments-container"></div>
-		<form id="comment-form">
-			<div class="name-author">
-                <!-- <label for="name">Name:</label> -->
-			    <input type="text" id="name" name="name" placeholder="Name">
-            </div>
-			<div class="cmt-author">
-                <!-- <label for="comment">Comment:</label> -->
-			    <textarea id="comment" name="comment" placeholder="Comments...."></textarea>
-                <span><input type="submit" value="Submit"></span>
-            </div>
-		</form>
-	</div>
+    <!-- Comment System Form -->
+    <div class="comment-box">
+        <div class="comment-form">
+            <h2>Leave a comment</h2>
+            <form action="#" method="post">
+              <!-- <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+              </div> -->
+              <div class="form-group">
+                <!-- <span><img src="assets/gif/user.gif" alt=""></span> -->
+                <label for="comment">Comment</label>
+                <textarea name="comment" id="comment" required></textarea>
+              </div>
+              <div class="form-group">
+                <button type="submit">Post Comment</button>
+              </div>
+            </form>
+          </div>
+          
+          <!-- Comments Section -->
+          <div class="comments">
+            <h2>Comments</h2>
+            <ul class="comment-list">
+              <li>
+                <div class="comment-details">
+                  <div class="user-details">
+                    <img src="assets/gif/user.gif" alt="User Avatar">
+                    <div class="user-meta">
+                      <h3>John Doe</h3>
+                      <span class="comment-date">Apr 15, 2023 at 3:30 pm</span>
+                    </div>
+                  </div>
+                  <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia ligula eu blandit luctus.</p>
+                  <div class="comment-actions">
+                    <button class="like-btn">Like</button>
+                    <button class="dislike-btn">Dislike</button>
+                    <button class="reply-btn">Reply</button>
+                  </div>
+                </div>
+                <ul class="comment-replies">
+                  <li>
+                    <div class="comment-details">
+                      <div class="user-details">
+                        <img src="assets/gif/user.gif" alt="User Avatar">
+                        <div class="user-meta">
+                          <h3>Jane Smith</h3>
+                          <span class="comment-date">Apr 15, 2023 at 3:40 pm</span>
+                        </div>
+                      </div>
+                      <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia ligula eu blandit luctus.</p>
+                      <div class="comment-actions">
+                        <button class="like-btn">Like</button>
+                        <button class="dislike-btn">Dislike</button>
+                        <button class="reply-btn">Reply</button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+    </div>
+  <div onclick="scrollToTop()" class="scrollTop"><img src="assets/icon/go-up.png" alt=""></div>
     </main>
     <footer>
         <div id="footer">
