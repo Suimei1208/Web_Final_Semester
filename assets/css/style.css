@@ -16,7 +16,7 @@ header{
   align-items: center;
   z-index: 9999;
   text-align: center;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
 }
 .header-scrolled {
   background-color: black;
