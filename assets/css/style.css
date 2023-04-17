@@ -744,6 +744,11 @@ color: #ffffff;
 color: rgb(207, 207, 27);
 text-transform: uppercase;
 }
+.chosen-film .film .card .infor p{
+  /* border: 1px solid #331169; */
+  margin: 15px 0px;
+  font-size: 17px;
+}
 .chosen-film .film .card .infor .infor-1{
 margin: 5px 0px 5px 0px;
 }
