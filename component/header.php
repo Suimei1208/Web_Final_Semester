@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="../assets/css/style.css">
 <body>
-    <header style="background-color: black;">
+    <header>
     <img src="assets/img/LOGOMOUNT.png" alt="logo" class="logo">
         <nav class="navigation">
             <a href="./index.php">HOME</a>
