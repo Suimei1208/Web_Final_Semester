@@ -1,8 +1,15 @@
+const header = document.querySelector('.header');        
+  window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+      header.classList.add('header-scrolled');
+  } else {
+      header.classList.remove('header-scrolled');
+  }
+});
 var slides = document.querySelectorAll('.slide');
 var btns = document.querySelectorAll('.btn');
 let currentSlide = 1;
 
-// Javascript cho image slider
 var manualNav = function(manual){
     slides.forEach((slide) =>{
         slide.classList.remove('active');
@@ -46,17 +53,6 @@ var repeat = function(activeClass){
     repeater();
 }
 repeat();
-
-// var headerHeight = document.querySelector('header').offsetHeight;
-// var mainHeight = document.querySelector('main').offsetHeight;
-// var totalHeight = headerHeight + mainHeight ;
-// if(mainHeight>1500){
-//     document.querySelector('footer').style.marginTop = 1500+totalHeight + 'px';
-// }else if(mainHeight<1100 && mainHeight >700){
-//     document.querySelector('footer').style.marginTop = 2100 + 'px';
-// }else if(mainHeight<700){
-//     document.querySelector('footer').style.marginTop = 750 + 'px';
-// }
 
 function getPageList(totalPages, page, maxLength) {
     function range(start, end) {
@@ -307,22 +303,4 @@ window.onclick = function(event) {
     }
   }
 }
-const header = document.querySelector('header');
-      
-      // Đăng ký sự kiện scroll trên trang web
-      window.addEventListener('scroll', function() {
-        // Lấy vị trí hiện tại của thanh cuộn
-        const scrollPosition = window.scrollY;
-        
-        // Lấy vị trí của thanh header trên trang web
-        const headerPosition = header.offsetTop;
-        
-        // Kiểm tra nếu vị trí của thanh cuộn lớn hơn vị trí của thanh header
-        if (scrollPosition > headerPosition) {
-          // Thêm lớp CSS mới vào thanh header để thay đổi màu sắc
-          header.classList.add('scrolled');
-        } else {
-          // Xóa lớp CSS mới khỏi thanh header để đổi trở lại màu ban đầu
-          header.classList.remove('scrolled');
-        }
-      });
+

@@ -14,22 +14,20 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: #000000; */
   z-index: 9999;
   text-align: center;
   transition: background-color 0.3s ease-in-out;
 }
-header .scrolled {
-  background-color: #000;
-
+.header-scrolled {
+  background-color: black;
 }
 
 body{
 display: flex;
 justify-content: center;
 align-items: center; 
-  background-color: #0B2447;
-  flex-direction: column;
+background-color: #0B2447;
+flex-direction: column;
 min-height: 100vh;
 }
 main{
