@@ -24,7 +24,7 @@
                 update_view($name_films);
             }
         ?>
-
+        
 
 
 
