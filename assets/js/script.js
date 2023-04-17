@@ -307,3 +307,22 @@ window.onclick = function(event) {
     }
   }
 }
+const header = document.querySelector('header');
+      
+      // Đăng ký sự kiện scroll trên trang web
+      window.addEventListener('scroll', function() {
+        // Lấy vị trí hiện tại của thanh cuộn
+        const scrollPosition = window.scrollY;
+        
+        // Lấy vị trí của thanh header trên trang web
+        const headerPosition = header.offsetTop;
+        
+        // Kiểm tra nếu vị trí của thanh cuộn lớn hơn vị trí của thanh header
+        if (scrollPosition > headerPosition) {
+          // Thêm lớp CSS mới vào thanh header để thay đổi màu sắc
+          header.classList.add('scrolled');
+        } else {
+          // Xóa lớp CSS mới khỏi thanh header để đổi trở lại màu ban đầu
+          header.classList.remove('scrolled');
+        }
+      });
