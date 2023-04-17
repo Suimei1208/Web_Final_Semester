@@ -921,6 +921,7 @@ background: #333;
 }
 .comment-section{
   margin: 0px 20em;
+  border-radius: 10px;
 }
 .comment-section .name-author{
   padding: 10px;
