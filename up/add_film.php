@@ -23,23 +23,19 @@ if(isset($_POST['add_film'])) {
     $actor = $_POST['actor'];
     $view = null;
 
-    // Upload poster images
     $target_dir = "../assets/img/";
     $poster_small = basename($_FILES["poster_small"]["name"]);
     $poster_big = basename($_FILES["poster_big"]["name"]);
     $poster_cut = basename($_FILES["poster_cut"]["name"]);
 
-    // Di chuyển tệp đến thư mục đích
     move_uploaded_file($_FILES["poster_small"]["tmp_name"], $target_dir . $poster_small);
     move_uploaded_file($_FILES["poster_big"]["tmp_name"], $target_dir . $poster_big);
     move_uploaded_file($_FILES["poster_cut"]["tmp_name"], $target_dir . $poster_cut);
 
-    // Get the current number of rows in the table and increment by 1 to generate the new ID
     $result = mysqli_query($conn, "SELECT COUNT(*) as count FROM films");
     $row = mysqli_fetch_assoc($result);
     $id = $row['count'] + 1;
 
-    // Insert the data into the table
     $query = "INSERT INTO films (id, name_flim, rate, time, year, content, director, genre, pg, poster_small, poster_big, poster_cut, quality, actor, view) 
               VALUES ('$id', '$name_flim', '$rate', '$time', '$year', '$content', '$director', '$genre', '$pg', '$poster_small', '$poster_big', '$poster_cut', '$quality', '$actor', '$view')";
     if(mysqli_query($conn, $query)) {
