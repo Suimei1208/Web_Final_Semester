@@ -86,13 +86,16 @@
                 </form>
             <!-- <a href="login.php"> LOGIN</a> -->
             <div class="dropdown-Log">
-                <button onclick="myFunction()" class="dropbtn-Log">Dropdown</button>
-                <div id="myDropdown" class="dropdown-content-Log" style="padding: 0px;">
-                  <a href="#home">Home</a>
-                  <a href="#about">About</a>
-                  <a href="#contact">Contact</a>
+                <button onclick="myFunction()" class="dropbtn-Log" style="background-color: transparent;"><img src="assets/img/ei.jpg" alt="" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 9px;"> Admin</button>
+                <div id="myDropdown" class="dropdown-content-Log" >
+                  <a href="#home">Your profile</a>
+                  <a href="#about">Notification</a>
+                  <a href="#contact">Library</a>
+                  <a href="#contact">Help</a>
+                  <a href="#contact">Change password</a>
+                  <a href="#contact">Logout</a>
                 </div>
-              </div>
+            </div>
         </nav>
     </header>
     <main>
@@ -125,7 +128,11 @@
                         <div class="btn-film">
                             <span class="play-2"><i class="fa-solid fa-play" style="color: #ffffff;"></i> <button style="background: red; color: #ffffff; cursor: pointer;">WATCH</button></span>
                             <span class="share"><i class="fa-solid fa-share" style="color: #ffffff;"></i> <button style="background: blue; color: #ffffff; cursor: pointer;">SHARE</button></span>
-                            <span class="bookmark"><i class="fa-solid fa-bookmark" style="color: #ffffff;"></i> <button style="background: green; color: #ffffff; cursor: pointer;">BOOKMARK</button></span>
+                            <span class="bookmark">
+                                <i class="fa-solid fa-bookmark" onclick="changeIcon(this)" style="color: #ffffff;cursor: pointer;"></i>
+                                <button id="bookmark-button" style="background: green; color: #ffffff; cursor: pointer;">BOOKMARK</button>
+                              </span>
+                              
                             <span class="cont-star">
                     
                                 <span class="star-widget">
@@ -676,9 +683,11 @@
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" required>
               </div> -->
+              <label for="comment">Comment</label>
               <div class="form-group">
                 <!-- <span><img src="assets/gif/user.gif" alt=""></span> -->
-                <label for="comment">Comment</label>
+                
+                <img src="assets/img/ei.jpg" alt="">
                 <textarea name="comment" id="comment" required></textarea>
               </div>
               <div class="form-group">
@@ -702,8 +711,8 @@
                   </div>
                   <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia ligula eu blandit luctus.</p>
                   <div class="comment-actions">
-                    <button class="like-btn">Like</button>
-                    <button class="dislike-btn">Dislike</button>
+                    <button class="like-btn"><i class="fa-solid fa-thumbs-up" style="color: #ffffff;"></i></button>
+                    <button class="dislike-btn"><i class="fa-solid fa-thumbs-down" style="color: #ffffff;"></i></button>
                     <button class="reply-btn">Reply</button>
                   </div>
                 </div>
@@ -719,8 +728,8 @@
                       </div>
                       <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia ligula eu blandit luctus.</p>
                       <div class="comment-actions">
-                        <button class="like-btn">Like</button>
-                        <button class="dislike-btn">Dislike</button>
+                        <button class="like-btn"><i class="fa-solid fa-thumbs-up" style="color: #ffffff;"></i></button>
+                        <button class="dislike-btn"><i class="fa-solid fa-thumbs-down" style="color: #ffffff;"></i></button>
                         <button class="reply-btn">Reply</button>
                       </div>
                     </div>

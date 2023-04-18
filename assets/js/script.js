@@ -303,4 +303,17 @@ window.onclick = function(event) {
     }
   }
 }
+function changeIcon(icon) {
+  if (icon.classList.contains('fa-bookmark')) {
+    icon.classList.remove('fa-bookmark');
+    icon.classList.add('fa-times-circle');
+    icon.parentElement.classList.add('clicked');
+    document.getElementById('bookmark-button').textContent = 'REMOVE BOOKMARK';
+  } else {
+    icon.classList.remove('fa-times-circle');
+    icon.classList.add('fa-bookmark');
+    icon.parentElement.classList.remove('clicked');
+    document.getElementById('bookmark-button').textContent = 'BOOKMARK';
+  }
+}
 
