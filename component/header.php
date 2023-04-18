@@ -70,7 +70,7 @@
             <?php if ($loggedIn): ?>
         <section id="user-section">
             <div class="dropdown-Log">
-                <button onclick="myFunction()" class="dropbtn-Log" style="background-color: transparent;"><img src="assets/img/ei.jpg" alt="" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 9px;"><?php echo $_SESSION['username']; ?></button>
+            <button onclick="myFunction()" class="dropbtn-Log" style="background-color: transparent;"><img src="assets/img/ei.jpg" alt="" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 9px;"><?php echo $_SESSION['username']; ?> <i class="fa-solid fa-caret-down" style="margin-left: 5px;font-size: 30px;"></i></button>
                 <div id="myDropdown" class="dropdown-content-Log" >
                     <a href="#home">Your profile</a>
                     <a href="#about">Notification</a>

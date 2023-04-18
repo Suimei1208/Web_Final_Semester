@@ -182,6 +182,21 @@
         $success = $stmt->execute();
         $conn->close();
         return $success;
-    }   
+    }  
+    function get_film($name){
+        $conn = connect();
+        $stmt = $conn->prepare("SELECT * FROM films WHERE name_flim = ?");
+        $stmt->bind_param("s", $name);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $films = array();
+        while ($row = $result->fetch_assoc()) {
+            $films[] = $row;
+        }
+        $stmt->close();
+        $conn->close();
+        return $films;
+    }
+    
     
 ?>
