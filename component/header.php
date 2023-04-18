@@ -1,3 +1,20 @@
+<?php 
+    session_start();
+    if(isset($_SESSION['username'])) {
+        $loggedIn = true;
+    } else {
+        $loggedIn = false;
+    }
+
+    if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
+        $savedUsername = $_COOKIE['username'];
+        $savedPassword = $_COOKIE['password'];
+        $loggedIn = true;
+        $_SESSION['username'] = $savedUsername;
+    }
+?>
+
+
 <link rel="stylesheet" href="../assets/css/style.css">
 <body>
     <header class="header">
@@ -50,7 +67,23 @@
             </a>
             </form>
 
-            <a href="login.php">LOGIN</a>
+            <?php if ($loggedIn): ?>
+        <section id="user-section">
+            <div class="dropdown-Log">
+                <button onclick="myFunction()" class="dropbtn-Log" style="background-color: transparent;"><img src="assets/img/ei.jpg" alt="" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 9px;"><?php echo $_SESSION['username']; ?></button>
+                <div id="myDropdown" class="dropdown-content-Log" >
+                    <a href="#home">Your profile</a>
+                    <a href="#about">Notification</a>
+                    <a href="#contact">Library</a>
+                    <a href="#contact">Help</a>
+                    <a href="#contact">Change password</a>
+                    <a href="logout.php">Logout</a>
+                </div>
+            </div>
+        </section>
+    <?php else: ?>
+        <a href="login.php">LOGIN</a>
+    <?php endif; ?>
         </nav>
     </header>
 </body>

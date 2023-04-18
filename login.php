@@ -1,4 +1,5 @@
 <?php   
+    session_start();
     if(isset($_POST['submit'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -16,6 +17,13 @@
         $result = $stmt->get_result();
 
         if ($result->num_rows == 1) {
+            $loggedIn = true;
+            $_SESSION['username'] = $username;
+    
+            if (isset($_POST['remember_me']) && $_POST['remember_me'] == '1') {
+                setcookie('username', $username, time() + 86400 * 30, '/');
+                setcookie('password', $password, time() + 86400 * 30, '/');
+            }
             header('Location: ./index.php');
             exit();
         } else {
@@ -25,6 +33,7 @@
         $conn->close();
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,6 +74,10 @@
                 ?>
                 <div class="error"><?php echo $error; ?></div>
             <?php } ?>
+            <div class="form-group">
+                <input type="checkbox" name="remember_me" id="remember_me">
+                <label for="remember_me">Remember Me</label>
+            </div>
 
             <div class="form-group">
                 <div class="main_div">

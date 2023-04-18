@@ -175,5 +175,13 @@
         $conn->close();
         return $success;
     }    
+    function update_avatar($avatar, $username){
+        $conn = connect();
+        $stmt = $conn->prepare("UPDATE account SET avatar= ? WHERE UserName = ?");
+        $stmt->bind_param("ss", $avatar, $username);
+        $success = $stmt->execute();
+        $conn->close();
+        return $success;
+    }   
     
 ?>
