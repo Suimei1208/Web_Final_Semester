@@ -304,6 +304,12 @@ window.onclick = function(event) {
   }
 }
 function changeIcon(icon) {
+  // Check if user is logged in
+  if (!isLoggedIn()) {
+    alert('Please log in to perform this action.');
+    return;
+  }
+
   if (icon.classList.contains('fa-bookmark')) {
     icon.classList.remove('fa-bookmark');
     icon.classList.add('fa-times-circle');
@@ -316,4 +322,10 @@ function changeIcon(icon) {
     document.getElementById('bookmark-button').textContent = 'BOOKMARK';
   }
 }
+
+function isLoggedIn() {
+  // Replace this with your own logic to check if the user is logged in
+  return true; // Return true if the user is logged in, false otherwise
+}
+
 
