@@ -25,7 +25,7 @@
                 $error1 = "Username already exists. Please try again!";
             } else {
                 if (isset($_POST['terms'])) {
-                    $stmt_1 = $conn->prepare("INSERT INTO account VALUES (?, ?, ?, ?)");
+                    $stmt_1 = $conn->prepare("INSERT INTO account (UserName, Password, Email, Phone)VALUES (?, ?, ?, ?)");
                     $stmt_1->bind_param("ssss", $username_dk, $password_dk, $email, $phone);
                     $stmt_1->execute();
                     

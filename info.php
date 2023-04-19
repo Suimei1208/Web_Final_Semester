@@ -39,7 +39,7 @@
                                 <div class="infor">
                                     <h3><?=$p['name_flim']?></h3>
                                     <div class="infor-1">
-                                        <span class="age">PG<?=$p['pg']?></span>
+                                        <span class="age">PG <?=$p['pg']?></span>
                                         <span class="quality"><?=$p['quality']?></span>
                                         <span><i class="fa-regular fa-calendar" style="color: yellow;"></i> <?=$p['year']?></span>
                                         <span><i class="fa-regular fa-clock" style="color: yellow;"></i> <?=$p['time']?> minutes</span>
@@ -54,37 +54,50 @@
                                     <div class="btn-film">
                                         <span class="play-2"><i class="fa-solid fa-play" style="color: #ffffff;"></i> <button style="background: red; color: #ffffff; cursor: pointer;">WATCH</button></span>
                                         <span class="share"><i class="fa-solid fa-share" style="color: #ffffff;"></i> <button style="background: blue; color: #ffffff; cursor: pointer;">SHARE</button></span>
-                                        <span class="bookmark">
-                                            <i class="fa-solid fa-bookmark" onclick="changeIcon(this)" style="color: #ffffff;cursor: pointer;"></i>
-                                            <button id="bookmark-button" style="background: green; color: #ffffff; cursor: pointer;">BOOKMARK</button>
-                                        </span>
                                         
+                                        
+                                        <?php 
+                                        
+                                        ?>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        <span class="bookmark">
+                                            <i id="bookmark-icon" class="fa-solid fa-bookmark" style="color: #ffffff;cursor: pointer;"></i>
+                                            <button id="bookmark-button" style="background: green; color: #ffffff; cursor: pointer;" onclick="changeIcon()"> BOOKMARK</button>
+                                         </span>
+                                        
+                                          
                                         <span class="cont-star">
-                                
-                                            <span class="star-widget">
-                                                <div class="rating-logo">
-                                                    <span style="font-size: 15px;"><?=$p['rate']?>%</span>
-                                                </div>
-                                                <div class="star-widget-1">
-                                                <input type="radio" name="rate" id="rate-5">
-                                                <label for="rate-5" class="fas fa-star"></label>
-                                                <input type="radio" name="rate" id="rate-4">
-                                                <label for="rate-4" class="fas fa-star"></label>
-                                                <input type="radio" name="rate" id="rate-3">
-                                                <label for="rate-3" class="fas fa-star"></label>
-                                                <input type="radio" name="rate" id="rate-2">
-                                                <label for="rate-2" class="fas fa-star"></label>
-                                                <input type="radio" name="rate" id="rate-1">
-                                                <label for="rate-1" class="fas fa-star"></label>
-                                                <div class="vote" style="margin-left: 10px;">
-                                                    (300 votes, rating: 10 out of 10)
-                                                </div>
-                                                <form action="#">
-                                                    <h1></h1>
-                                                </form>
-                                                </div>
-                                            </span>
+                                        
+                                        <span class="star-widget">
+                                            <div class="rating-logo">
+                                                <span style="font-size: 20px;">100%</span>
+                                            </div>
+                                            <div class="star-widget-1">
+                                            <input type="radio" name="rate" id="rate-5">
+                                            <label for="rate-5" class="fas fa-star"></label>
+                                            <input type="radio" name="rate" id="rate-4">
+                                            <label for="rate-4" class="fas fa-star"></label>
+                                            <input type="radio" name="rate" id="rate-3">
+                                            <label for="rate-3" class="fas fa-star"></label>
+                                            <input type="radio" name="rate" id="rate-2">
+                                            <label for="rate-2" class="fas fa-star"></label>
+                                            <input type="radio" name="rate" id="rate-1">
+                                            <label for="rate-1" class="fas fa-star"></label>
+                                            <div class="vote" style="margin-left: 10px;">
+                                                (300 votes, rating: 10 out of 10)
+                                            </div>
+                                            </div>
                                         </span>
+                                    </span>
                                     </div>
                                 </div>
                                 <div class="part-2">
