@@ -15,4 +15,5 @@
     $flims = showFlims();
     $rand = generateRandomNumbers();
     $rand_flim = showFilmsRand($rand);
+    $flims_des = showFlims_des();
 ?>

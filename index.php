@@ -127,7 +127,7 @@
         </div>
         <div class="update">
             <div class="card-content" style="display: none;">
-            <?php foreach($flims as $p){
+            <?php foreach($flims_des as $p){
                         if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
                         if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';  
                         if($p['actor'] == null) $p['actor'] = 'Updating...';                

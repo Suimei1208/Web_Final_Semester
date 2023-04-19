@@ -23,6 +23,24 @@
             return false;
         }
     }
+    function showFlims_des(){
+        $conn = connect();
+        $sql = "SELECT * FROM films ORDER BY id DESC";
+        $result = mysqli_query($conn, $sql);
+    
+        if(mysqli_num_rows($result)>0){
+            $items = [];
+            while($row = mysqli_fetch_assoc($result)){
+                $items[] = $row;
+            }
+            $conn->close();
+            return $items;
+        }else{
+            $conn->close();
+            return false;
+        }
+    }
+    
     function generateRandomNumbers() {
         $numbers = array();
         while (count($numbers) < 5) {
