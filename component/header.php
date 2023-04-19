@@ -72,7 +72,10 @@
             <?php if ($loggedIn): ?>
         <section id="user-section">
             <div class="dropdown-Log">
-            <button onclick="myFunction()" class="dropbtn-Log" style="background-color: transparent;"><img src="assets/img/ei.jpg" alt="" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 9px;"><?php echo $_SESSION['username']; ?> <i class="fa-solid fa-caret-down" style="margin-left: 5px;font-size: 30px;"></i></button>
+            <?php $avatar = get_avatar($_SESSION['username']); 
+            foreach ($avatar as $a) {
+                if($a['avatar'] == null) $a['avatar'] = "user.png";?>
+            <button onclick="myFunction()" class="dropbtn-Log" style="background-color: transparent;"><img src="assets/avatar/<?=$a['avatar']?>" alt="" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 9px;"><?php echo $_SESSION['username']; ?> <i class="fa-solid fa-caret-down" style="margin-left: 5px;font-size: 30px;"></i></button>
                 <div id="myDropdown" class="dropdown-content-Log" >
                     <a href="#home">Your profile</a>
                     <a href="#about">Notification</a>
@@ -83,7 +86,7 @@
                 </div>
             </div>
         </section>
-    <?php else: ?>
+    <?php } else: ?>
         <a href="login.php">LOGIN</a>
     <?php endif; ?>
         </nav>

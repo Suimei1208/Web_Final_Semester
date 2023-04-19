@@ -44,7 +44,7 @@
     function generateRandomNumbers() {
         $numbers = array();
         while (count($numbers) < 5) {
-            $randNum = rand(1, 13);
+            $randNum = rand(1, 17);
             if (!in_array($randNum, $numbers)) {
                 $numbers[] = $randNum;
             }
@@ -215,6 +215,19 @@
         $conn->close();
         return $films;
     }
-    
+    function get_avatar($name){
+        $conn = connect();
+        $stmt = $conn->prepare("SELECT * FROM account WHERE UserName = ?");
+        $stmt->bind_param("s", $name);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $films = array();
+        while ($row = $result->fetch_assoc()) {
+            $films[] = $row;
+        }
+        $stmt->close();
+        $conn->close();
+        return $films;
+    }
     
 ?>

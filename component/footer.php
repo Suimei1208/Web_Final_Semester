@@ -10,12 +10,10 @@
             </div>
             <div class="footer2">
                 <a href="./index.php">Home</a>
-                <a href="">About</a>
-                <a href="">FAQ</a>
-                <a href="">Terms</a>
-                <a href="">Authors</a>
-                <a href="">Login</a>
-                <a href="">Register</a>
+                <a href="#">About</a>
+                <a href="#">FAQ</a>
+                <a href="#">Terms</a>
+                <a href="#">Authors</a>
                 </div>
         </div>       
 </footer>
