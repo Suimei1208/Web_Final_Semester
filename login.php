@@ -1,5 +1,6 @@
 <?php   
     session_start();
+    $current_url = $_SESSION['current_url']; 
     if(isset($_POST['submit'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -24,7 +25,7 @@
                 setcookie('username', $username, time() + 86400 * 30, '/');
                 setcookie('password', $password, time() + 86400 * 30, '/');
             }
-            header('Location: ./index.php');
+            header('Location: '.$current_url); 
             exit();
         } else {
             $error = "Error Username or Password. Please try again!";
