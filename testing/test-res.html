@@ -5,36 +5,249 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./test-style.css">
 </head>
+
+<style>
+  .comment-section {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .comment-section h2 {
+    margin-top: 0;
+  }
+  .comment {
+    margin-bottom: 20px;
+  }
+  .comment p {
+    margin: 0;
+  }
+  .comment-author {
+    font-weight: bold;
+  }
+  .comment-date {
+    font-style: italic;
+    font-size: 0.8em;
+    color: #999;
+    margin-left: 10px;
+  }
+  .comment-form {
+    margin-bottom: 20px;
+  }
+  .comment-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .comment-form input[type="text"], .comment-form textarea {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  .comment-form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  .comment-form input[type="submit"]:hover {
+    background-color: #555;
+  }
+</style>
+</head>
 <body>
-
-<header>
-  <div class="topnav" id="myTopnav">
-    <a href="#home" class="active">Home</a>
-    <a href="#news">Genres</a>
-    <a href="#contact">TV SERIES</a>
-    <a href="#about">MOVIE</a>
-    <a href="#about">TOP FILMS</a>
-    <a href="#about">ADVANCE SEARCH</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-</header>
-
-<div style="padding-left:16px">
-  <h2>Responsive Topnav Example</h2>
-  <p>Resize the browser window to see how it works.</p>
+<div class="comment-section">
+  <h2>Comments</h2>
+  <div id="comments-container"></div>
+  <form id="comment-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <label for="comment">Comment:</label>
+    <textarea id="comment" name="comment"></textarea>
+    <input type="submit" value="Submit">
+  </form>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="comment.js"></script>
+</body>
+</html>
+
+
 <script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
+$(document).ready(function() {
+	// load existing comments
+	loadComments();
+
+	// add event listener for form submission
+$("#comment-form").submit(function(e) {
+	e.preventDefault();
+	var name = $("#name").val();
+	var comment = $("#comment").val();
+	if (name.trim() === "" || comment.trim() === "") {
+		alert("Please enter your name and comment.");
+		return;
+	}
+	var date = new Date();
+	var timestamp = date.getTime();
+	var newComment = {
+		name: name,
+		comment: comment,
+		timestamp: timestamp,
+		likes: 0,
+		dislikes: 0,
+		replies: []
+	};
+	var comments = getComments();
+	comments.push(newComment);
+	saveComments(comments);
+	displayComment(newComment);
+	$("#comment-form")[0].reset();
+});
+
+// function to load existing comments from localStorage
+function getComments() {
+	var comments = localStorage.getItem("comments");
+	if (comments === null) {
+		return [];
+	} else {
+		return JSON.parse(comments);
+	}
 }
+
+// function to save comments to localStorage
+function saveComments(comments) {
+	localStorage.setItem("comments", JSON.stringify(comments));
+}
+
+// function to display a comment on the page
+function displayComment(comment) {
+	var date = new Date(comment.timestamp);
+	var dateString = date.toLocaleString();
+	var commentHtml = '<div class="comment">' +
+		'<p><span class="comment-author">' + comment.name + '</span>' +
+		'<span class="comment-date">' + dateString + '</span></p>' +
+		'<p>' + comment.comment + '</p>' +
+		'<div class="comment-buttons">' +
+		'<button class="like-button">Like</button>' +
+		'<span class="like-count">' + comment.likes + '</span>' +
+		'<button class="dislike-button">Dislike</button>' +
+		'<span class="dislike-count">' + comment.dislikes + '</span>' +
+		'<button class="reply-button">Reply</button>' +
+		'</div>' +
+		'</div>';
+	$("#comments-container").append(commentHtml);
+	
+	// add event listener for like button
+	$(".like-button").last().click(function() {
+		comment.likes++;
+		saveComments(getComments());
+		$(this).siblings(".like-count").text(comment.likes);
+	});
+	
+	// add event listener for dislike button
+	$(".dislike-button").last().click(function() {
+		comment.dislikes++;
+		saveComments(getComments());
+		$(this).siblings(".dislike-count").text(comment.dislikes);
+	});
+	
+	// add event listener for reply button
+	$(".reply-button").last().click(function() {
+    var replyFormHtml = '<form class="reply-form">' +
+        '<label for="name">Name:</label>' +
+        '<input type="text" class="reply-name" name="name">' +
+        '<label for="comment">Comment:</label>' +
+        '<textarea class="reply-comment" name="comment"></textarea>' +
+        '<input type="submit" value="Submit">' +
+        '</form>';
+    var replyContainer = $(this).parent().parent();
+    if (!replyContainer.children(".reply-form").length) {
+        replyContainer.append(replyFormHtml);
+        replyContainer.children(".reply-form").submit(function(e) {
+            e.preventDefault();
+            var name = $(this).find(".reply-name").val();
+            var replyComment = $(this).find(".reply-comment").val();
+            if (name.trim() === "" || replyComment.trim() === "") {
+                alert("Please enter your name and comment.");
+                return;
+            }
+            var date = new Date();
+            var timestamp = date.getTime();
+            var newReply = {
+                name: name,
+                comment: replyComment,
+                timestamp: timestamp,
+                likes: 0,
+                dislikes: 0
+            };
+            var comment = $(this).closest(".comment").data("comment");
+            comment.replies.push(newReply);
+            saveComments(getComments());
+            displayReply(newReply, $(this).parent().siblings(".replies-container"));
+            $(this).remove();
+        });
+    } else {
+        replyContainer.children(".reply-form").remove();
+    }
+});
+
+	// add replies container if it doesn't exist
+	if (!$("#comments-container").children(".comment").last().children(".replies-container").length) {
+		$("#comments-container").children(".comment").last().append('<div class="replies-container"></div>');
+	}
+	
+	// display existing replies
+	if (comment.replies.length > 0) {
+		comment.replies.forEach(function(reply) {
+			displayReply(reply, $("#comments-container").children(".comment").last().children(".replies-container"));
+		});
+	}
+}
+
+// function to display a reply on the page
+function displayReply(reply, container) {
+	var date = new Date(reply.timestamp);
+	var dateString = date.toLocaleString();
+	var replyHtml = '<div class="reply">' +
+		'<p><span class="reply-author">' + reply.name + '</span>' +
+		'<span class="reply-date">' + dateString + '</span></p>' +
+		'<p>' + reply.comment + '</p>' +
+		'<div class="reply-buttons">' +
+		'<button class="like-button">Like</button>' +
+		'<span class="like-count">' + reply.likes + '</span>' +
+		'<button class="dislike-button">Dislike</button>' +
+		'<span class="dislike-count">' + reply.dislikes + '</span>' +
+		'</div>' +
+		'</div>';
+	container.append(replyHtml);
+	
+	// add event listener for like button
+	container.children(".reply").last().children(".reply-buttons").children(".like-button").click(function() {
+		reply.likes++;
+		saveComments(getComments());
+		$(this).siblings(".like-count").text(reply.likes);
+	});
+	
+	// add event listener for dislike button
+	container.children(".reply").last().children(".reply-buttons").children(".dislike-button").click(function() {
+		reply.dislikes++;
+		saveComments(getComments());
+		$(this).siblings(".dislike-count").text(reply.dislikes);
+	});
+}
+
+// function to load existing comments on page load
+function loadComments() {
+	var comments = getComments();
+	if (comments.length > 0) {
+		comments.forEach(function(comment) {
+			displayComment(comment);
+		});
+	}
+}
+});
 </script>
 
 </body>

@@ -61,3 +61,35 @@ body {
       text-align: left;
     }
   }
+  .comment-actions {
+    margin-top: 10px;
+    }
+    
+    .comment-actions a {
+    margin-right: 10px;
+    }
+    
+    .comment-reply-form label {
+    display: block;
+    margin-bottom: 5px;
+    }
+    
+    .comment-reply-form input[type="text"], .comment-reply-form textarea {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    }
+    
+    .comment-reply-form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    }
+    
+    .comment-reply-form input[type="submit"]:hover {
+    background-color: #555;
+    }
