@@ -1037,6 +1037,9 @@ font-size: 22px;
   
   .comments {
   margin-top: 30px;
+  border: 1px solid black;
+  /* background-color: white; */
+  padding: 15px;
   }
   
   .comments h2 {
@@ -1090,7 +1093,7 @@ font-size: 22px;
   }
   
   .comment-actions button {
-    background-color: #0B2447;
+    background-color: transparent;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -1153,7 +1156,7 @@ font-size: 22px;
   }
   .dropdown-Log button{
     background-color: black;
-    padding: 10px 25px;
+    padding: 5px 25px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
