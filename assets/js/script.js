@@ -327,5 +327,12 @@ function isLoggedIn() {
   // Replace this with your own logic to check if the user is logged in
   return true; // Return true if the user is logged in, false otherwise
 }
-
+function myresponsive() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "navigation") {
+    x.className += " responsive";
+  } else {
+    x.className = "navigation";
+  }
+}
 

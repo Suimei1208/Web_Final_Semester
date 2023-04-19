@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <img src="assets/img/LOGOMOUNT.png" alt="" class="logo">
+        <img src="assets/img/LOGOMOUNT.png" alt="" class="logo" id="myTopnav">
         <nav class="navigation">
             <a href="./home.html">HOME</a>
             <div class="dropdown">
@@ -84,6 +84,9 @@
                 </a>
             </form>
             <a  href="login.php"> LOGIN</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+              </a>
         </nav>
     </header>
     <main>
@@ -597,6 +600,17 @@
                 </div>
         </div> 
 	</footer>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "navigation") {
+            x.className += " responsive";
+          } else {
+            x.className = "navigation";
+          }
+        }
+        </script>
+        
         <script src="assets/js/script.js">     
         </script>
     
