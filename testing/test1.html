@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Blog</title>
+    <script src="blog.js"></script>
+  </head>
+  <body>
+    <h1>My Blog</h1>
+    <h2>Latest Post</h2>
+    <p id="post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis hendrerit vulputate dolor, vel laoreet ipsum varius in.</p>
+    <button onclick="addLike()">Like</button>
+    <button onclick="removeLike()">Remove Like</button>
+    <button onclick="addDislike()">Dislike</button>
+    <button onclick="removeDislike()">Remove Dislike</button>
+    <div id="likes">0 likes, 0 dislikes</div>
+    <h2>Comments</h2>
+    <form>
+      <input type="text" id="comment">
+      <button type="submit" onclick="addComment()">Add Comment</button>
+    </form>
+    <form id="comment-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="comment">Comment:</label><br>
+        <textarea id="comment" name="comment" rows="4" cols="50"></textarea><br><br>
+        
+        <button type="submit">Submit Comment</button>
+      </form>
+      
+    <div id="comments"></div>
+  </body>
+  <script>
+    let likes = 0;
+let dislikes = 0;
+
+function addLike() {
+  likes++;
+  updateLikes();
+}
+
+function removeLike() {
+  if (likes > 0) {
+    likes--;
+    updateLikes();
+  }
+}
+
+function addDislike() {
+  dislikes++;
+  updateLikes();
+}
+
+function removeDislike() {
+  if (dislikes > 0) {
+    dislikes--;
+    updateLikes();
+  }
+}
+
+function updateLikes() {
+  const likesDiv = document.getElementById("likes");
+  likesDiv.innerHTML = likes + " likes, " + dislikes + " dislikes";
+}
+
+function addComment() {
+  const commentInput = document.getElementById("comment");
+  const comment = commentInput.value;
+  if (comment.trim() !== "") {
+    const commentsDiv = document.getElementById("comments");
+    const commentDiv = document.createElement("div");
+    commentDiv.innerHTML = comment;
+    commentsDiv.appendChild(commentDiv);
+    commentInput.value = "";
+  }
+}
+
+window.onload = function () {
+  updateLikes();
+};
+document.getElementById("comment-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // prevent the default form submission behavior
+
+  // Get the values of the name and comment fields
+  var name = document.getElementById("name").value;
+  var comment = document.getElementById("comment").value;
+
+  // Call the addComment() function to add the comment to the list
+  addComment(name, comment);
+  
+  // Reset the form fields
+  document.getElementById("name").value = "";
+  document.getElementById("comment").value = "";
+});
+
+  </script>
+</html>
