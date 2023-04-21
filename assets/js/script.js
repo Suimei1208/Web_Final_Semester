@@ -286,9 +286,6 @@ if (dislikeButton.classList.contains('active')) {
 }
 });
 //Dropdown Login
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
@@ -335,6 +332,24 @@ function myresponsive() {
     x.className = "navigation";
   }
 }
+function myFunction() {
+  console.log("Button clicked!");
+  var caretIcon = document.querySelector('.fa-solid');
+  var dropdownMenu = document.getElementById("myDropdown");
+  
+  if (caretIcon.classList.contains('fa-caret-up')) {
+    caretIcon.classList.remove('fa-caret-up');
+    caretIcon.classList.add('fa-caret-down');
+    dropdownMenu.classList.remove('show');
+  } else {
+    caretIcon.classList.remove('fa-caret-down');
+    caretIcon.classList.add('fa-caret-up');
+    dropdownMenu.classList.toggle('show');
+  }
+}
+
+
+
 
 
 
