@@ -1,3 +1,8 @@
+//daynight
+const modeSwitch = document.getElementById('mode-switch');
+modeSwitch.addEventListener('change', () => {
+  document.body.classList.toggle('dark');
+});
 const header = document.querySelector('.header');        
   window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
@@ -347,8 +352,6 @@ function myFunction() {
     dropdownMenu.classList.toggle('show');
   }
 }
-
-
 
 
 
