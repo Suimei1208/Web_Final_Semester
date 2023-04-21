@@ -1,7 +1,46 @@
 <?php
-    if(isset($_GET['movie_name'])){
-        $name_films =$_GET['movie_name'];
+    include 'API/setup.php';
+    // if (isset($_GET['movie_name'])){
+    //     $name_film1 = $_GET['movie_name'];
+    //     $name_film = trim($_GET['movie_name']);
+    //     $cookie_name = str_replace(array('=', ',', ';', ' ', "\t", "\r", "\n", "\013", "\014"), '', $name_film); 
+    //     if (!isset($_COOKIE[$cookie_name])) {
+    //         $currentTime = time();
+    //         update_view($name_film);
+    //         setcookie($cookie_name, 'true', $currentTime + 86400); 
+    //         $_SESSION[$name_film1] = $currentTime; 
+    //     } else {
+    //         $currentTime = time();
+    //         $lastUpdateTime = isset($_SESSION[$name_film1]) ? $_SESSION[$name_film1] : 0; 
+    //         if ($currentTime - $lastUpdateTime >= 120) { 
+    //             update_view($name_film);
+    //             setcookie($cookie_name, 'true', $currentTime + 86400); 
+    //             $_SESSION[$name_film1] = $currentTime; 
+    //         }
+    //     }
+    // } else {
+    //     if (isset($name_film1) && isset($_SESSION[$name_film1])) { 
+    //         unset($_SESSION[$name_film1]); 
+    //     }
+    // }
+
+    if (isset($_GET['movie_name'])){
+        $name_film1 = $_GET['movie_name'];
+        $name_film = trim($_GET['movie_name']);
+        $currentTime = time();
+        $lastUpdateTime = isset($_SESSION[$name_film1]) ? $_SESSION[$name_film1] : 0;
+        if ($currentTime - $lastUpdateTime >= 120) { 
+            update_view($name_film); 
+            $_SESSION[$name_film1] = $currentTime; 
+        }
+    } else {
+        if (isset($name_film1) && isset($_SESSION[$name_film1])) { 
+            unset($_SESSION[$name_film1]); 
+        }
+    }
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +49,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><?=$name_films?><?php } ?></title>
+        <title><?=$name_film1?></title>
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -18,20 +57,21 @@
     <body>
     <main>
         <?php
-            include 'API/setup.php';
             include 'component/header.php';
             if (isset($_POST['submit'])) {
-                $rating = $_POST['rate'];
-                // echo "<script>alert('Giá trị đánh giá: " . $rating . "');</script>";
-                if(get_rate_username($_SESSION['username'], $name_films) == false) 
-                    insert_rate($_SESSION['username'], $_GET['movie_name'], $rating);
-                else update_rates($rating, $_SESSION['username'], $name_films);
-                update_rate_all_flims();
+                if(isset($_SESSION['username'])){
+                    $rating = $_POST['rate'];
+                    if(get_rate_username($_SESSION['username'], $name_films) == false) 
+                        insert_rate($_SESSION['username'], $_GET['movie_name'], $rating);
+                    else update_rates($rating, $_SESSION['username'], $name_films);
+                    update_rate_all_flims();
+                }else {
+                    echo "<script>alert('Vui lòng đăng nhập để thực hiện chức năng này!!!!');</script>";
+                }
             }
             
-            if(isset($_GET['movie_name'])){
-                $name_films =$_GET['movie_name'];
-                update_view($name_films);
+            if (isset($_GET['movie_name'])) {
+                $name_films = $_GET['movie_name'];             
                 $p  =  get_film($name_films); 
                 foreach ($p as $p) {
                     if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
@@ -107,15 +147,15 @@
                                                 <label for="rate-1" class="fas fa-star"></label>
                                             
                                                 <div class="vote" style="margin-left: 10px;">
-                                                    (<?=$count?> votes, rating: <?=$rate_flim?> out of 5)
+                                                    (<?=$count?> votes, Rating: <?=$rate_flim?> out of 5)
                                                 </div>
                                                 </div>
                                             </span>
-                                            <input type="submit" name="submit" value="Gửi đánh giá">
+                                            <input type="submit" name="submit" value="Submit Rating">
                                         </span>
                                         </form>
                                         <script>
-                                            const ratingInputs = document.getElementsByName('rate'); // Lấy tất cả các input đánh giá
+                                            const ratingInputs = document.getElementsByName('rate');
                                             for (let i = 0; i < ratingInputs.length; i++) {
                                                 ratingInputs[i].addEventListener('change', function() {
                                                     const rating = this.value;  
