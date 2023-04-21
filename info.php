@@ -59,11 +59,17 @@
         <?php
             include 'component/header.php';
             if (isset($_POST['submit'])) {
+                $name_films = $_GET['movie_name'];
                 if(isset($_SESSION['username'])){
                     $rating = $_POST['rate'];
-                    if(get_rate_username($_SESSION['username'], $name_films) == false) 
+                    $check = get_rate_username($_SESSION['username'], $name_films);
+                    if( $check == true){
+                        update_rates($rating, $_SESSION['username'], $name_films);
+                    } 
+                    else {
                         insert_rate($_SESSION['username'], $_GET['movie_name'], $rating);
-                    else update_rates($rating, $_SESSION['username'], $name_films);
+
+                    }
                     update_rate_all_flims();
                 }else {
                     echo "<script>alert('Vui lòng đăng nhập để thực hiện chức năng này!!!!');</script>";
@@ -132,7 +138,7 @@
                                             ?>
                                             <span class="star-widget">
                                                 <div class="rating-logo">
-                                                    <span style="font-size: 20px;"><?=$rate_flim * 100 / 5?>%</span>
+                                                    <span style="font-size: 20px;"><?=round($rate_flim * 100 / 5, 2)?>%</span>
                                                 </div>
                                                 <div class="star-widget-1">
                                                 <input type="radio" name="rate" id="rate-5" value="5">

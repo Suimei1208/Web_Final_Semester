@@ -259,18 +259,16 @@
         $result = $stmt->get_result();
         
         if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $rate = $row['rate'];
-            
             $stmt->close();
             $conn->close();
-            return $rate;
+            return true;
         } else {
             $stmt->close();
             $conn->close();
             return false;
         }
     }
+    
     
     function get_rate_by_film($film) {
         $conn = connect();
