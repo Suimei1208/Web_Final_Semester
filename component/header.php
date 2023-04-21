@@ -1,5 +1,5 @@
 <?php 
-    session_start();
+    
     $_SESSION['current_url'] = $_SERVER['REQUEST_URI'];
 
     if(isset($_SESSION['username'])) {

@@ -251,10 +251,10 @@
             return false;
         }
     }
-    function get_rate_username($username) {
+    function get_rate_username($username, $flims) {
         $conn = connect();
-        $stmt = $conn->prepare("SELECT rate FROM rate WHERE userName = ?");
-        $stmt->bind_param("s", $username);
+        $stmt = $conn->prepare("SELECT rate FROM rate WHERE userName = ? AND name_flim = ?");
+        $stmt->bind_param("ss", $username, $flims);
         $stmt->execute();
         $result = $stmt->get_result();
         
@@ -291,16 +291,26 @@
             return false; 
         }
     }
-    
-    
-    function update_rates($rate, $username){
+    function insert_rate($username, $name_films, $rate){
         $conn = connect();
-        $stmt = $conn->prepare("UPDATE rate SET rate = ? WHERE name_flim = ? ");
-        $stmt->bind_param("ss", $rate , $name_films);
+        $stmt = $conn->prepare("INSERT INTO rate (username, name_flim, rate) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $username, $name_films, $rate);
         $success = $stmt->execute();
+        $stmt->close();
+        $conn->close();
+        return $success;
+    }   
+    
+    function update_rates($rate, $username, $film){
+        $conn = connect();
+        $stmt = $conn->prepare("UPDATE rate SET rate = ? WHERE name_flim = ? AND username = ?");
+        $stmt->bind_param("sss", $rate , $film, $username);
+        $success = $stmt->execute();
+        $stmt->close();
         $conn->close();
         return $success;
     }
+    
     function update_rate_all_flims() {
         $conn = connect();
         $sql = "UPDATE films f
@@ -309,16 +319,15 @@
                     FROM rate
                     GROUP BY name_flim
                 ) r ON f.name_flim = r.name_flim
-                SET f.rate = ?";
+                SET f.rate = avg_rate";
         $stmt = $conn->prepare($sql);
-        $avg_rate = null;
-        $stmt->bind_param("s", $avg_rate);
         $result = $stmt->execute();
         $stmt->close();
         $conn->close();
         return $result;
     }
-
+    
+    
     function count_rate_users($name_flim) {
         $conn = connect();
         $sql = "SELECT COUNT(DISTINCT username) AS count_users
