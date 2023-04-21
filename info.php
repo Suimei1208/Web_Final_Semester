@@ -156,9 +156,11 @@
                                                     (<?=$count?> votes, Rating: <?=$rate_flim?> out of 5)
                                                 </div>
                                                 </div>
-                                            </span>
-                                            <input type="submit" name="submit" value="Submit Rating">
-                                        </span>
+                                            <?php if(isset($_SESSION['username'])){ ?>
+                                                 </span>
+                                                 <input type="submit" name="submit" value="Submit Rating" class="smt-rate">
+                                                 </span>
+                                            <?php } ?>                    
                                         </form>
                                         <script>
                                             const ratingInputs = document.getElementsByName('rate');
@@ -169,37 +171,38 @@
                                             }
                                         </script>
                                 </div>
-                                <div class="part-2">
-                                    <div class="trailer">
-                                        <h3>Trailer:</h3>
-                                        <div class="trailer-box">
-                                            <div class="trailer-position">
-                                                <span><a href="" style="text-decoration: none; color: #ffffff;">Trailer 1</a></span>
-                                            <span><a href="" style="text-decoration: none; color: #ffffff;">Trailer 2</a></span>
-                                            </div>
-                                        </div>
-                                        <h3>Episodes:</h3>
-                                        <div class="episodes-box">
-                                            <div class="episodes-position">
-                                                <span><a href="" style="text-decoration: none; color: #ffffff;">1</a></span>
-                                            <span><a href="" style="text-decoration: none; color: #ffffff;">2</a></span>
-                                            <span><a href="" style="text-decoration: none; color: #ffffff;">3</a></span>
-                                            <span><a href="" style="text-decoration: none; color: #ffffff;">4</a></span>
-                                            <span><a href="" style="text-decoration: none; color: #ffffff;">5</a></span>
-                                            <span><a href="" style="text-decoration: none; color: #ffffff;">6</a></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+                </div>
+                <div class="part-2">
+                    <div class="trailer">
+                        <h3>Trailer:</h3>
+                        <div class="trailer-box">
+                            <div class="trailer-position">
+                                <span><a href="" style="text-decoration: none; color: #ffffff;">Trailer 1</a></span>
+                            <span><a href="" style="text-decoration: none; color: #ffffff;">Trailer 2</a></span>
+                            </div>
+                        </div>
+                        <h3>Episodes:</h3>
+                        <div class="episodes-box">
+                            <div class="episodes-position">
+                                <span><a href="" style="text-decoration: none; color: #ffffff;">1</a></span>
+                            <span><a href="" style="text-decoration: none; color: #ffffff;">2</a></span>
+                            <span><a href="" style="text-decoration: none; color: #ffffff;">3</a></span>
+                            <span><a href="" style="text-decoration: none; color: #ffffff;">4</a></span>
+                            <span><a href="" style="text-decoration: none; color: #ffffff;">5</a></span>
+                            <span><a href="" style="text-decoration: none; color: #ffffff;">6</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                     <div class="update" style="margin-top: 200px;">
                         <div class="card-content">          
                         </div>
                     </div>
-                </div>
-                
+                </div>  
             <?php }}
         ?>
         <div>

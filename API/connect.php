@@ -44,7 +44,7 @@
     function generateRandomNumbers() {
         $numbers = array();
         while (count($numbers) < 5) {
-            $randNum = rand(1, 17);
+            $randNum = rand(1, 19);
             if (!in_array($randNum, $numbers)) {
                 $numbers[] = $randNum;
             }

@@ -123,7 +123,7 @@
             </div>
         </div>
         <div class="update-content1">
-            <strong class="up">Upcoming:</strong>
+            <strong class="up">NEW FILMS</strong>
         </div>
         <div class="update">
             <div class="card-content" style="display: none;">

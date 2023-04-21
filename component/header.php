@@ -60,7 +60,6 @@
             <a href="#">TV SERIES</a>
             <a href="#">MOVIE</a>
             <a href="#">TOP FILMS</a>
-            <a href="#">NEW FILMS</a>
             <a href="search.php?advanced_search=1" name="advanced_search">ADVANCED SEARCH</a>
             <form action="search.php" method="get" class="he">
             <a class="search" id="exception">
