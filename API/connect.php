@@ -8,7 +8,7 @@
     }
     function showFlims(){
         $conn = connect();
-        $sql = "SELECT * FROM films";
+        $sql = "SELECT * FROM films ORDER BY id ASC;";
         $result = mysqli_query($conn, $sql);
 
         if(mysqli_num_rows($result)>0){
@@ -229,5 +229,28 @@
         $conn->close();
         return $films;
     }
+    function get_fa_film($username){
+        $conn = connect();
+        $sql = "SELECT f.* FROM films f INNER JOIN library l ON f.name_flim = l.flims_name WHERE l.username = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    
+        if($result->num_rows > 0){
+            $items = [];
+            while($row = $result->fetch_assoc()){
+                $items[] = $row;
+            }
+            $stmt->close();
+            $conn->close();
+            return $items;
+        }else{
+            $stmt->close();
+            $conn->close();
+            return false;
+        }
+    }
+    
     
 ?>
