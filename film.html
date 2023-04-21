@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+
+  
 </head>
 <body>
     <header class ="header">
@@ -670,72 +673,85 @@
     <div class="pagination"></div>
     <!-- Comment System Form -->
     <div class="comment-box">
-        <div class="comment-form">
-            <h2 style="color: #ffffff;">Leave a comment</h2>
-            <form action="#" method="post">
-              <!-- <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" required>
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required>
-              </div> -->
-              <label for="comment" style="color: #ffffff;">Comment</label>
-              <div class="form-group">
-                <!-- <span><img src="assets/gif/user.gif" alt=""></span> -->
-                
-                <img src="assets/img/ei.jpg" alt="">
-                <textarea name="comment" id="comment" required></textarea>
-              </div>
-              <div class="form-group post-cmt">
-                <button type="submit">Post Comment</button>
-              </div>
-            </form>
-          </div>
-          
-          <!-- Comments Section -->
-          <div class="comments">
-            <h2 style="color: #ffffff;">Comments</h2>
-            <ul class="comment-list">
-              <li>
-                <div class="comment-details">
-                  <div class="user-details">
-                    <img src="assets/img/ei.jpg" alt="User Avatar">
-                    <div class="user-meta">
-                      <h3 style="color: #ffffff;">John Doe</h3>
-                      <span class="comment-date">Apr 15, 2023 at 3:30 pm</span>
-                    </div>
-                  </div>
-                  <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia ligula eu blandit luctus.</p>
-                  <div class="comment-actions">
-                    <button class="like-btn"><i class="fa-solid fa-thumbs-up" style="color: #ffffff;"></i></button>
-                    <button class="dislike-btn"><i class="fa-solid fa-thumbs-down" style="color: #ffffff;"></i></button>
-                    <button class="reply-btn">Reply</button>
-                  </div>
-                </div>
-                <ul class="comment-replies">
-                  <li>
-                    <div class="comment-details">
-                      <div class="user-details">
-                        <img src="assets/img/ei.jpg" alt="User Avatar">
-                        <div class="user-meta">
-                          <h3 style="color: #ffffff;">Jane Smith</h3>
-                          <span class="comment-date">Apr 15, 2023 at 3:40 pm</span>
+        <h3>Comments</h3>
+        @if(Auth::guard('cus')->check())
+        <form action="" method="post" role="form">
+            <div class="form-group">
+                <label for="">Noi dung binh luan</label>
+                <input type="hidden" value="{{$blog->id}}" name="blog_id">
+                <textarea name="content"  class="form-control" rows="3" required="required" 
+                placeholder="Nhap noi dung"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Gui binh luan</button>
+        </form>
+        @else
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modelId"></button>
+        @endif
+          <h3>Cac binh luan</h3>
+          <div class="comment">
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="./assets/img/batman1.jpg" alt="Image" style="width: 200px
+                    ;">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">Nguyen Huy Hoang</h4>
+                    <p>Ten years ago, "the Gate" appeared and connected the real world with the realm of magic and monsters. To combat these vile beasts, ordinary people received superhuman powers and became known as "Hunters." Twenty-year-old Sung Jin-Woo is one such Hunter, but he is known as the "World's Weakest," owing to his pathetic power compared to even a measly E-Rank. Still, he hunts monsters tirelessly in low-rank Gates to pay for his mother's medical bills.
+                        However, this miserable lifestyle changes when Jin-Woo believing himself to be the only one left to die in a mission gone terribly wrong—awakens in a hospital three days later to find a mysterious screen floating in front of him. This "Quest Log" demands that Jin-Woo completes an unrealistic and intense training program, or face an appropriate penalty. Initially reluctant to comply because of the quest's rigor, Jin-Woo soon finds that it may just transform him into one of the world's most fearsome Hunters.</p>
+                        <p>
+                            <a href="" class="reply">Tra loi</a>
+                        </p>
+                        <form action="" method="post" style="display: none;">
+                            <div class="form-group">
+                                <label for="">Noi dung binh luan</label>
+                                <input type="hidden" value="{{$blog->id}}" name="blog_id">
+                                <textarea name="content"  class="form-control" rows="3" required="required" 
+                                placeholder="Nhap noi dung"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Gui noi dung tra loi</button>
+                        </form>
+                        <!-- cac binh luan con -->
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="./assets/img/batman1.jpg" alt="Image" style="width: 200px
+                                ;">
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">Nguyen Huy Hoang</h4>
+                                <p>Ten years ago, "the Gate" appeared and connected the real world with the realm of magic and monsters. To combat these vile beasts, ordinary people received superhuman powers and became known as "Hunters." Twenty-year-old Sung Jin-Woo is one such Hunter, but he is known as the "World's Weakest," owing to his pathetic power compared to even a measly E-Rank. Still, he hunts monsters tirelessly in low-rank Gates to pay for his mother's medical bills.
+                                    However, this miserable lifestyle changes when Jin-Woo believing himself to be the only one left to die in a mission gone terribly wrong—awakens in a hospital three days later to find a mysterious screen floating in front of him. This "Quest Log" demands that Jin-Woo completes an unrealistic and intense training program, or face an appropriate penalty. Initially reluctant to comply because of the quest's rigor, Jin-Woo soon finds that it may just transform him into one of the world's most fearsome Hunters.</p>
+                                    <p>
+                                        <a href="" class="reply">Tra loi</a>
+                                    </p>
+                                    <form action="" method="post" style="display: none;">
+                                        <div class="form-group">
+                                            <label for="">Noi dung binh luan</label>
+                                            <input type="hidden" value="{{$blog->id}}" name="blog_id">
+                                            <textarea name="content"  class="form-control" rows="3" required="required" 
+                                            placeholder="Nhap noi dung"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Gui noi dung tra loi</button>
+                                    </form>
+                                </div>
                         </div>
-                      </div>
-                      <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia ligula eu blandit luctus.</p>
-                      <div class="comment-actions">
-                        <button class="like-btn"><i class="fa-solid fa-thumbs-up" style="color: #ffffff;"></i></button>
-                        <button class="dislike-btn"><i class="fa-solid fa-thumbs-down" style="color: #ffffff;"></i></button>
-                        <button class="reply-btn">Reply</button>
-                      </div>
                     </div>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+            </div>
           </div>
+    </div>
+    <button type="button" class="btn-lg" data-toggle="modal" data-target="#modelId">
+        Launch
+    </button>
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
   <div onclick="scrollToTop()" class="scrollTop"><img src="assets/icon/go-up.png" alt=""></div>
     </main>
