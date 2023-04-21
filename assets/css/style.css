@@ -940,11 +940,11 @@ transition: all 0.2s ease;
 }
 .part-2{
 position: absolute;
-width: 100%;
+width: 50%;
 height: 240px;
 margin-top: -75px;
-margin-left: 10em;
 color: #ffffff;
+margin-left: 10em;
 /* border: 1px solid black; */
 }
 .part-2 .trailer h3{

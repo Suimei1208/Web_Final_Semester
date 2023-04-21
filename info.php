@@ -208,7 +208,7 @@
         <div>
         <h3 class="update-content1" style="color: #ffffff; font-size: 50px;">Similar Movies</h3>
         </div>
-        <div class="update">
+        <div class="update" >
             <div class="card-content" style="display: none;">
             <?php foreach($flims as $p){
                         if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
