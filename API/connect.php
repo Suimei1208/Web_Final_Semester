@@ -251,6 +251,93 @@
             return false;
         }
     }
+    function get_rate_username($username) {
+        $conn = connect();
+        $stmt = $conn->prepare("SELECT rate FROM rate WHERE userName = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $rate = $row['rate'];
+            
+            $stmt->close();
+            $conn->close();
+            return $rate;
+        } else {
+            $stmt->close();
+            $conn->close();
+            return false;
+        }
+    }
+    
+    function get_rate_by_film($film) {
+        $conn = connect();
+        $stmt = $conn->prepare("SELECT rate FROM films WHERE name_flim = ?");
+        $stmt->bind_param("s", $film);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $rate = $row['rate'];
+            
+            $stmt->close();
+            $conn->close();
+            return $rate; 
+        } else {
+            $stmt->close();
+            $conn->close();
+            return false; 
+        }
+    }
+    
+    
+    function update_rates($rate, $username){
+        $conn = connect();
+        $stmt = $conn->prepare("UPDATE rate SET rate = ? WHERE name_flim = ? ");
+        $stmt->bind_param("ss", $rate , $name_films);
+        $success = $stmt->execute();
+        $conn->close();
+        return $success;
+    }
+    function update_rate_all_flims() {
+        $conn = connect();
+        $sql = "UPDATE films f
+                JOIN (
+                    SELECT name_flim, AVG(rate) AS avg_rate
+                    FROM rate
+                    GROUP BY name_flim
+                ) r ON f.name_flim = r.name_flim
+                SET f.rate = ?";
+        $stmt = $conn->prepare($sql);
+        $avg_rate = null;
+        $stmt->bind_param("s", $avg_rate);
+        $result = $stmt->execute();
+        $stmt->close();
+        $conn->close();
+        return $result;
+    }
+
+    function count_rate_users($name_flim) {
+        $conn = connect();
+        $sql = "SELECT COUNT(DISTINCT username) AS count_users
+                FROM rate
+                WHERE name_flim = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $name_flim);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $count_users = $row['count_users'];
+        } else {
+            $count_users = 0;
+        }
+        $stmt->close();
+        $conn->close();  
+        return $count_users;
+    }
     
     
 ?>

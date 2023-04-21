@@ -76,10 +76,14 @@
                                         
                                           
                                         <span class="cont-star">
-                                        
+                                        <?php 
+                                            $count_users = count_rate_users($name_films);
+                                            $count = count_rate_users($name_films); 
+                                            $rate_flim = get_rate_by_film($name_films);
+                                        ?>
                                         <span class="star-widget">
                                             <div class="rating-logo">
-                                                <span style="font-size: 20px;">100%</span>
+                                                <span style="font-size: 20px;"><?=$rate_flim * 100 / 5?>%</span>
                                             </div>
                                             <div class="star-widget-1">
                                             <input type="radio" name="rate" id="rate-5">
@@ -92,8 +96,9 @@
                                             <label for="rate-2" class="fas fa-star"></label>
                                             <input type="radio" name="rate" id="rate-1">
                                             <label for="rate-1" class="fas fa-star"></label>
+                                           
                                             <div class="vote" style="margin-left: 10px;">
-                                                (300 votes, rating: 10 out of 10)
+                                                (<?=$count?> votes, rating: <?=$rate_flim?> out of 5)
                                             </div>
                                             </div>
                                         </span>
