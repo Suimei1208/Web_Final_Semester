@@ -1,8 +1,8 @@
 <?php
-    // session_start();
     if(isset($_GET['movie_name'])){
         $name_films =$_GET['movie_name'];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,6 +20,15 @@
         <?php
             include 'API/setup.php';
             include 'component/header.php';
+            if (isset($_POST['submit'])) {
+                $rating = $_POST['rate'];
+                // echo "<script>alert('Giá trị đánh giá: " . $rating . "');</script>";
+                if(get_rate_username($_SESSION['username'], $name_films) == false) 
+                    insert_rate($_SESSION['username'], $_GET['movie_name'], $rating);
+                else update_rates($rating, $_SESSION['username'], $name_films);
+                update_rate_all_flims();
+            }
+            
             if(isset($_GET['movie_name'])){
                 $name_films =$_GET['movie_name'];
                 update_view($name_films);
@@ -74,36 +83,45 @@
                                             <button id="bookmark-button" style="background: green; color: #ffffff; cursor: pointer;" onclick="changeIcon()"> BOOKMARK</button>
                                          </span>
                                         
-                                          
+                                         <form method="post">
                                         <span class="cont-star">
-                                        <?php 
-                                            $count_users = count_rate_users($name_films);
-                                            $count = count_rate_users($name_films); 
-                                            $rate_flim = get_rate_by_film($name_films);
-                                        ?>
-                                        <span class="star-widget">
-                                            <div class="rating-logo">
-                                                <span style="font-size: 20px;"><?=$rate_flim * 100 / 5?>%</span>
-                                            </div>
-                                            <div class="star-widget-1">
-                                            <input type="radio" name="rate" id="rate-5">
-                                            <label for="rate-5" class="fas fa-star"></label>
-                                            <input type="radio" name="rate" id="rate-4">
-                                            <label for="rate-4" class="fas fa-star"></label>
-                                            <input type="radio" name="rate" id="rate-3">
-                                            <label for="rate-3" class="fas fa-star"></label>
-                                            <input type="radio" name="rate" id="rate-2">
-                                            <label for="rate-2" class="fas fa-star"></label>
-                                            <input type="radio" name="rate" id="rate-1">
-                                            <label for="rate-1" class="fas fa-star"></label>
-                                           
-                                            <div class="vote" style="margin-left: 10px;">
-                                                (<?=$count?> votes, rating: <?=$rate_flim?> out of 5)
-                                            </div>
-                                            </div>
+                                            <?php 
+                                                $count_users = count_rate_users($name_films);
+                                                $count = count_rate_users($name_films); 
+                                                $rate_flim = get_rate_by_film($name_films);
+                                            ?>
+                                            <span class="star-widget">
+                                                <div class="rating-logo">
+                                                    <span style="font-size: 20px;"><?=$rate_flim * 100 / 5?>%</span>
+                                                </div>
+                                                <div class="star-widget-1">
+                                                <input type="radio" name="rate" id="rate-5" value="5">
+                                                <label for="rate-5" class="fas fa-star"></label>
+                                                <input type="radio" name="rate" id="rate-4" value="4">
+                                                <label for="rate-4" class="fas fa-star"></label>
+                                                <input type="radio" name="rate" id="rate-3" value="3">
+                                                <label for="rate-3" class="fas fa-star"></label>
+                                                <input type="radio" name="rate" id="rate-2" value="2"> 
+                                                <label for="rate-2" class="fas fa-star"></label>
+                                                <input type="radio" name="rate" id="rate-1" value="1">
+                                                <label for="rate-1" class="fas fa-star"></label>
+                                            
+                                                <div class="vote" style="margin-left: 10px;">
+                                                    (<?=$count?> votes, rating: <?=$rate_flim?> out of 5)
+                                                </div>
+                                                </div>
+                                            </span>
+                                            <input type="submit" name="submit" value="Gửi đánh giá">
                                         </span>
-                                    </span>
-                                    </div>
+                                        </form>
+                                        <script>
+                                            const ratingInputs = document.getElementsByName('rate'); // Lấy tất cả các input đánh giá
+                                            for (let i = 0; i < ratingInputs.length; i++) {
+                                                ratingInputs[i].addEventListener('change', function() {
+                                                    const rating = this.value;  
+                                                });
+                                            }
+                                        </script>
                                 </div>
                                 <div class="part-2">
                                     <div class="trailer">
