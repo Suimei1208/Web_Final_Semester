@@ -132,6 +132,14 @@ margin: 0px 80px;
   .navigation ul li a{
     font-size: 20px;
   }
+  .navigation ul li .dropdown-content{
+    position: relative;
+    width: 100%;
+  }
+  .navigation ul li .dropdown-content td{
+    background: #eee;
+    
+  }
   #check:checked ~ ul{
     left: 0px;
   }
