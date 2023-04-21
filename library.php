@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search</title>
+    <title>My Library</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,7 +22,7 @@
         $flims_user = get_fa_film("admin"); ?>
         <main style="margin-top: 80px;">
             <div class="update-content1">
-        <strong class="up">Your Library:</strong>
+        <strong class="up">My Library:</strong>
             </div>
             <div class="update">
                 <div class="card-content" style="display: none;">
