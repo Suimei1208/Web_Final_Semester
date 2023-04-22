@@ -219,9 +219,7 @@
                     </a>
             <?php } ?>
         </div>
-        <div class="pagination"></div>
-        
-        
+        <div class="pagination"></div>     
         <div onclick="scrollToTop()" class="scrollTop"><img src="assets/icon/go-up.png" alt=""></div>
     </main>
     <?php
