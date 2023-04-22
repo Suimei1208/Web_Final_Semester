@@ -1,29 +1,5 @@
 <?php
     include 'API/setup.php';
-    // if (isset($_GET['movie_name'])){
-    //     $name_film1 = $_GET['movie_name'];
-    //     $name_film = trim($_GET['movie_name']);
-    //     $cookie_name = str_replace(array('=', ',', ';', ' ', "\t", "\r", "\n", "\013", "\014"), '', $name_film); 
-    //     if (!isset($_COOKIE[$cookie_name])) {
-    //         $currentTime = time();
-    //         update_view($name_film);
-    //         setcookie($cookie_name, 'true', $currentTime + 86400); 
-    //         $_SESSION[$name_film1] = $currentTime; 
-    //     } else {
-    //         $currentTime = time();
-    //         $lastUpdateTime = isset($_SESSION[$name_film1]) ? $_SESSION[$name_film1] : 0; 
-    //         if ($currentTime - $lastUpdateTime >= 120) { 
-    //             update_view($name_film);
-    //             setcookie($cookie_name, 'true', $currentTime + 86400); 
-    //             $_SESSION[$name_film1] = $currentTime; 
-    //         }
-    //     }
-    // } else {
-    //     if (isset($name_film1) && isset($_SESSION[$name_film1])) { 
-    //         unset($_SESSION[$name_film1]); 
-    //     }
-    // }
-
     if (isset($_GET['movie_name'])){
         $name_film1 = $_GET['movie_name'];
         $name_film = trim($_GET['movie_name']);
@@ -39,9 +15,6 @@
         }
     }
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -176,24 +149,23 @@
                     </div>
                 </div>
                 </div>
+            <?php $ep_tr = select_tr_ep($name_films);?>             
                 <div class="part-2">
                     <div class="trailer">
                         <h3>Trailer:</h3>
                         <div class="trailer-box">
                             <div class="trailer-position">
-                                <span><a href="" style="text-decoration: none; color: #ffffff;">Trailer 1</a></span>
-                            <span><a href="" style="text-decoration: none; color: #ffffff;">Trailer 2</a></span>
+                         <?php foreach($ep_tr as $p){ 
+                            if($p['trailer'] == null) continue; ?>
+                                <span><a href="" style="text-decoration: none; color: #ffffff;">Trailer <?=$p['trailer']?></a></span> <?php } ?>
                             </div>
                         </div>
                         <h3>Episodes:</h3>
                         <div class="episodes-box">
                             <div class="episodes-position">
-                                <span><a href="" style="text-decoration: none; color: #ffffff;">1</a></span>
-                            <span><a href="" style="text-decoration: none; color: #ffffff;">2</a></span>
-                            <span><a href="" style="text-decoration: none; color: #ffffff;">3</a></span>
-                            <span><a href="" style="text-decoration: none; color: #ffffff;">4</a></span>
-                            <span><a href="" style="text-decoration: none; color: #ffffff;">5</a></span>
-                            <span><a href="" style="text-decoration: none; color: #ffffff;">6</a></span>
+                            <?php foreach($ep_tr as $p){ 
+                                if($p['Episodes'] == null) continue;?>
+                                <span><a href="" style="text-decoration: none; color: #ffffff;"><?=$p['Episodes']?></a></span> <?php } ?>
                             </div>
                         </div>
                     </div>

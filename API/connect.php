@@ -360,6 +360,18 @@
         $conn->close();
         return $films;
     }
-    
-    
+    function select_tr_ep($name){
+        $conn = connect();
+        $stmt = $conn->prepare("SELECT trailer, Episodes FROM video WHERE name_flim = ?");
+        $stmt->bind_param("s", $name);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $films = array();
+        while ($row = $result->fetch_assoc()) {
+            $films[] = $row;
+        }
+        $stmt->close();
+        $conn->close();
+        return $films;
+    }
 ?>
