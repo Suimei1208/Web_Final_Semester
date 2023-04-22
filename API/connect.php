@@ -346,5 +346,20 @@
         return $count_users;
     }
     
+    function get_type($type){
+        $conn = connect();
+        $stmt = $conn->prepare("SELECT f.* FROM films f JOIN video v ON f.name_flim = v.name_flim WHERE v.type = ?");
+        $stmt->bind_param("s", $type);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $films = array();
+        while ($row = $result->fetch_assoc()) {
+            $films[] = $row;
+        }
+        $stmt->close();
+        $conn->close();
+        return $films;
+    }
+    
     
 ?>

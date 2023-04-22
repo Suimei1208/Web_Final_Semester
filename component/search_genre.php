@@ -4,11 +4,12 @@
         <?php include 'component/404.php';?>
         </main>      
     <?php }else{
+    $name = $_GET['genres'];
     $search_flim = getFlims_Genre($_GET['genres']);   
     ?>
     <main style="margin-top: 80px;">
     <div class="update-content1">
-        <strong class="up">Upcoming:</strong>
+        <strong class="up"><?=$name ?></strong>
     </div>
     <div class="update">
     <div class="card-content" style="display: none;">

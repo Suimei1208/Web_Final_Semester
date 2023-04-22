@@ -251,10 +251,12 @@
         </div>
         <div class="pagination"></div>
         
-        <?php
+        
+        <div onclick="scrollToTop()" class="scrollTop"><img src="assets/icon/go-up.png" alt=""></div>
+    </main>
+    <?php
             include 'component/footer.php';
         ?>
-    </main>
         <script 
         src="assets/js/script.js">     
         </script>

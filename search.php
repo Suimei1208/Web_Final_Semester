@@ -25,10 +25,14 @@
         }
         elseif(isset($_GET['genres'])){
             include 'component/search_genre.php';
+        }elseif(isset($_GET['type'])){
+            include 'component/type.php';
         }elseif($_GET['advanced_search'] ==1){?>
-            <main>
-                <?php include 'component/search_genre_advanced.php' ?>
-            <?php }?>
+            <main> <?php include 'component/search_genre_advanced.php';
+        }
+        ?>
+        
+    <div onclick="scrollToTop()" class="scrollTop"><img src="assets/icon/go-up.png" alt=""></div>
     </main>
     <?php
         include 'component/footer.php';
