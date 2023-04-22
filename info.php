@@ -44,8 +44,6 @@
 
                     }
                     update_rate_all_flims();
-                }else {
-                    echo "<script>alert('Vui lòng đăng nhập để thực hiện chức năng này!!!!');</script>";
                 }
             }
             
