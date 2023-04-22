@@ -178,7 +178,7 @@
             <?php }}
         ?>
         <div>
-        <h3 class="update-content1" style="color: #ffffff; font-size: 50px;">Similar Movies</h3>
+        <h3 class="update-content1" style="color: #ffffff; font-size: 50px;">Other Movies</h3>
         </div>
         <div class="update" >
             <div class="card-content" style="display: none;">
