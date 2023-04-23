@@ -676,88 +676,6 @@
     </div>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <div class="pagination"></div>
-    <!-- Comment System Form -->
-    <div class="comment-box">
-        <h3>Comments</h3>
-        @if(Auth::guard('cus')->check())
-        <form action="" method="post" role="form">
-            <div class="form-group">
-                <label for="">Noi dung binh luan</label>
-                <input type="hidden" value="{{$blog->id}}" name="blog_id">
-                <textarea name="content"  class="form-control" rows="3" required="required" 
-                placeholder="Nhap noi dung"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Gui binh luan</button>
-        </form>
-        @else
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modelId"></button>
-        @endif
-          <h3>Cac binh luan</h3>
-          <div class="comment">
-            <div class="media">
-                <a class="pull-left" href="#">
-                    <img class="media-object" src="./assets/img/batman1.jpg" alt="Image" style="width: 200px
-                    ;">
-                </a>
-                <div class="media-body">
-                    <h4 class="media-heading">Nguyen Huy Hoang</h4>
-                    <p>Ten years ago, "the Gate" appeared and connected the real world with the realm of magic and monsters. To combat these vile beasts, ordinary people received superhuman powers and became known as "Hunters." Twenty-year-old Sung Jin-Woo is one such Hunter, but he is known as the "World's Weakest," owing to his pathetic power compared to even a measly E-Rank. Still, he hunts monsters tirelessly in low-rank Gates to pay for his mother's medical bills.
-                        However, this miserable lifestyle changes when Jin-Woo believing himself to be the only one left to die in a mission gone terribly wrong—awakens in a hospital three days later to find a mysterious screen floating in front of him. This "Quest Log" demands that Jin-Woo completes an unrealistic and intense training program, or face an appropriate penalty. Initially reluctant to comply because of the quest's rigor, Jin-Woo soon finds that it may just transform him into one of the world's most fearsome Hunters.</p>
-                        <p>
-                            <a href="" class="reply">Tra loi</a>
-                        </p>
-                        <form action="" method="post" style="display: none;">
-                            <div class="form-group">
-                                <label for="">Noi dung binh luan</label>
-                                <input type="hidden" value="{{$blog->id}}" name="blog_id">
-                                <textarea name="content"  class="form-control" rows="3" required="required" 
-                                placeholder="Nhap noi dung"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Gui noi dung tra loi</button>
-                        </form>
-                        <!-- cac binh luan con -->
-                        <div class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="./assets/img/batman1.jpg" alt="Image" style="width: 200px
-                                ;">
-                            </a>
-                            <div class="media-body">
-                                <h4 class="media-heading">Nguyen Huy Hoang</h4>
-                                <p>Ten years ago, "the Gate" appeared and connected the real world with the realm of magic and monsters. To combat these vile beasts, ordinary people received superhuman powers and became known as "Hunters." Twenty-year-old Sung Jin-Woo is one such Hunter, but he is known as the "World's Weakest," owing to his pathetic power compared to even a measly E-Rank. Still, he hunts monsters tirelessly in low-rank Gates to pay for his mother's medical bills.
-                                    However, this miserable lifestyle changes when Jin-Woo believing himself to be the only one left to die in a mission gone terribly wrong—awakens in a hospital three days later to find a mysterious screen floating in front of him. This "Quest Log" demands that Jin-Woo completes an unrealistic and intense training program, or face an appropriate penalty. Initially reluctant to comply because of the quest's rigor, Jin-Woo soon finds that it may just transform him into one of the world's most fearsome Hunters.</p>
-                                    <p>
-                                        <a href="" class="reply">Tra loi</a>
-                                    </p>
-                                    <form action="" method="post" style="display: none;">
-                                        <div class="form-group">
-                                            <label for="">Noi dung binh luan</label>
-                                            <input type="hidden" value="{{$blog->id}}" name="blog_id">
-                                            <textarea name="content"  class="form-control" rows="3" required="required" 
-                                            placeholder="Nhap noi dung"></textarea>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Gui noi dung tra loi</button>
-                                    </form>
-                                </div>
-                        </div>
-                    </div>
-            </div>
-          </div>
-    </div>
-    <!-- <button type="button" class="btn-lg" data-toggle="modal" data-target="#modelId">
-        Launch
-    </button>
-    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div> -->
   <div onclick="scrollToTop()" class="scrollTop"><img src="assets/icon/go-up.png" alt=""></div>
     </main>
     <footer>
@@ -786,6 +704,10 @@
                 </div>
         </div> 
 	</footer>
+    <script>const modeSwitch = document.getElementById('mode-switch');
+        modeSwitch.addEventListener('change', () => {
+          document.body.classList.toggle('dark');
+        });</script>
     <script src="assets/js/script.js">     
     </script>   
 </body>
