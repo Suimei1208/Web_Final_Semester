@@ -374,4 +374,44 @@
         $conn->close();
         return $films;
     }
+    function get_bookmark($name, $name_film){
+        $conn = connect();
+        $stmt = $conn->prepare("SELECT * FROM library WHERE username = ? and flims_name = ?");
+        $stmt->bind_param("ss", $name, $name_film); 
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+            $stmt->close();
+            $conn->close();
+            return true; 
+        } else if ($result->num_rows === 0) { 
+            $stmt->close();
+            $conn->close();
+            return false;
+        } else { 
+            $stmt->close();
+            $conn->close();
+            return false; 
+        }
+    }
+    function add_bookmark($username, $name_film){
+        $conn = connect(); 
+        $stmt = $conn->prepare("INSERT INTO library (username, flims_name) VALUES (?, ?)");
+        $stmt->bind_param("ss", $username, $name_film); 
+        $success = $stmt->execute(); 
+        $stmt->close(); 
+        $conn->close(); 
+        return $success;
+    }
+    
+    function del_bookmark($username, $name_film){
+        $conn = connect();
+        $stmt = $conn->prepare("DELETE FROM library WHERE username = ? AND flims_name = ?"); 
+        $stmt->bind_param("ss", $username, $name_film);
+        $success = $stmt->execute();
+        $stmt->close();
+        $conn->close();
+        return $success;
+    }
+    
 ?>

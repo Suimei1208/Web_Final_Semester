@@ -305,44 +305,7 @@ window.onclick = function(event) {
     }
   }
 }
-function changeIcon() {
-  // Check if user is logged in
-  if (isLoggedIn()) {
-    // Add bookmark logic here
-    showAlert('Page bookmarked!', 'success');
-  } else {
-    showAlert('Please log in to bookmark this page.', 'error');
-    return;
-  }
-  
-  var icon = document.getElementById('bookmark-icon');
 
-  if (icon.classList.contains('fa-bookmark')) {
-    icon.classList.remove('fa-bookmark');
-    icon.classList.add('fa-times-circle');
-    document.getElementById('bookmark-button').textContent = 'REMOVE BOOKMARK';
-  } else {
-    icon.classList.remove('fa-times-circle');
-    icon.classList.add('fa-bookmark');
-    document.getElementById('bookmark-button').textContent = 'BOOKMARK';
-  }
-}
-function showAlert(message, type) {
-  const alertDiv = document.createElement('div');
-  alertDiv.classList.add('alert', `alert-${type}`);
-  alertDiv.textContent = message;
-
-  document.body.appendChild(alertDiv);
-
-  setTimeout(() => {
-    alertDiv.remove();
-  }, 2000);
-}
-
-function isLoggedIn() {
-  // Replace this with your own logic to check if the user is logged in
-  return true; // Return true if the user is logged in, false otherwise
-}
 function myresponsive() {
   var x = document.getElementById("myTopnav");
   if (x.className === "navigation") {

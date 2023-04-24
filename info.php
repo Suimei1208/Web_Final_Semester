@@ -80,26 +80,84 @@
                                     <div class="btn-film">
                                         <span class="play-2"><i class="fa-solid fa-play" style="color: #ffffff;"></i> <button style="background: red; color: #ffffff; cursor: pointer;">WATCH</button></span>
                                         <span class="share"><i class="fa-solid fa-share" style="color: #ffffff;"></i> <button style="background: blue; color: #ffffff; cursor: pointer;">SHARE</button></span>
-                                        
-                                        
-                                        <?php 
-                                        
-                                        ?>
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
                                         <span class="bookmark">
-                                            <i id="bookmark-icon" class="fa-solid fa-bookmark" style="color: #ffffff;cursor: pointer;"></i>
-                                            <button id="bookmark-button" style="background: green; color: #ffffff; cursor: pointer;" onclick="changeIcon()"> BOOKMARK</button>
-                                         </span>
-                                        
+                                        <?php 
+                                            if(isset($_SESSION['username'])) { 
+                                                if(get_bookmark($_SESSION['username'], $_GET['movie_name']) == false){
+                                        ?>
+                                                    <i id="bookmark-icon" class="fa-solid fa-bookmark" style="color: #ffffff;cursor: pointer;"></i>
+                                                    <button id="bookmark-button" style="background: green; color: #ffffff; cursor: pointer;" onclick="changeIcon()"> BOOKMARK</button>
+                                        <?php 
+                                                } else { 
+                                        ?>
+                                                    <i id="bookmark-icon" class="fa-solid fa-times-circle" style="color: #ffffff;cursor: pointer;"></i>
+                                                    <button id="bookmark-button" style="background: green; color: #ffffff; cursor: pointer;" onclick="changeIcon()"> REMOVE BOOKMARK</button>
+                                        <?php 
+                                                } 
+                                            } else{ 
+                                        ?>
+                                                    <i id="bookmark-icon" class="fa-solid fa-bookmark" style="color: #ffffff;cursor: pointer;"></i>
+                                                    <button id="bookmark-button" style="background: green; color: #ffffff; cursor: pointer;" onclick="changeIcon()"> BOOKMARK</button>
+                                        <?php 
+                                            } 
+                                        ?>                                  
+                                        </span>
+                                        <?php 
+                                        if (isset($_POST['action'])) {if ($_POST['action'] == 'add') {
+                                                add_bookmark($_POST['username'], $_POST['movie_name']);
+                                                echo "Bookmark added!";
+                                            }
+                                        }?>
+                                        <script>
+                                        let alertDiv;
+
+                                        function changeIcon() {
+                                            <?php if(isset($_SESSION['username']) && isset($_GET['movie_name'])) { ?>
+                                                var icon = document.getElementById('bookmark-icon');
+                                                if (icon.classList.contains('fa-bookmark')) {
+                                                    icon.classList.remove('fa-bookmark');
+                                                    icon.classList.add('fa-times-circle');
+                                                    document.getElementById('bookmark-button').textContent = 'REMOVE BOOKMARK';
+
+                                                    var movieName = "<?php echo $_GET['movie_name']; ?>";
+                                                    var xhr = new XMLHttpRequest();
+                                                    xhr.open("POST", "bookmark.php", true);
+                                                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                                                    xhr.onreadystatechange = function() {
+                                                        if (xhr.readyState === 4 && xhr.status === 200) {
+                                                            showAlert('Page bookmarked!', 'success');
+                                                        }
+                                                    };
+                                                    xhr.send("action=add&username=<?php echo $_SESSION['username']; ?>&movie_name=" + movieName); 
+                                                } else {
+                                                    icon.classList.remove('fa-times-circle');
+                                                    icon.classList.add('fa-bookmark');
+                                                    document.getElementById('bookmark-button').textContent = 'ADD BOOKMARK';
+                                                    <?php del_bookmark($_SESSION['username'], $_GET['movie_name']); ?>
+                                                    showAlert('Page bookmark removed!', 'success');   
+                                                }
+                                            <?php } else { ?>
+                                                showAlert('Please log in to bookmark this page.', 'error');
+                                            <?php } ?>
+                                        }
+
+                                        function showAlert(message, type) {
+                                            if (alertDiv) {
+                                                alertDiv.remove();
+                                            }
+                                            alertDiv = document.createElement('div');
+                                            alertDiv.classList.add('alert', `alert-${type}`);
+                                            alertDiv.textContent = message;
+
+                                            document.body.appendChild(alertDiv);
+
+                                            setTimeout(() => {
+                                                alertDiv.remove();
+                                            }, 5000);
+   
+                                        }
+                                        </script>
+
                                          <form method="post">
                                         <span class="cont-star">
                                             <?php 

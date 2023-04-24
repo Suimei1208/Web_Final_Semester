@@ -1,176 +1,38 @@
-<div class="update">
-    <?php
-        $count = 0;
-        foreach($flims as $p){
-            $count++;
-            if($count===5) break;
-            if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-            if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
-    ?>     
-            <div class="cell">
-                <img src="./assets/img/<?=$p['poster_small']?>"/>
-                <div class="user-info">
-                    <span class="title"><?=$p['name_flim']?></p>
-                    <span class="position">View: <?=number_format($p['view'])?></p>
-                </div>
-            </div>
-        
-        <?php             
-        }
-        ?>
-    </div>
-    
-    <div class="update">
-    <?php
-        $count = 0;
-        foreach($flims as $p){
-            $count++;
-            if($count <5) continue;
-            if($count===9) break;
-            if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-            if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
-    ?>     
-            <div class="cell">
-                <img src="./assets/img/<?=$p['poster_small']?>"/>
-                <div class="user-info">
-                    <span class="title"><?=$p['name_flim']?></p>
-                    <span class="position">View: <?=number_format($p['view'])?></p>
-                </div>
-            </div>
-        
-        <?php             
-        }
-        ?>
-    </div>
-
-    <div class="update">
-    <?php
-        $count = 0;
-        foreach($flims as $p){
-            $count++;
-            if($count <9) continue;
-            if($count===13) break;
-            if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-            if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
-    ?>     
-            <div class="cell">
-                <img src="./assets/img/<?=$p['poster_small']?>"/>
-                <div class="user-info">
-                    <span class="title"><?=$p['name_flim']?></p>
-                    <span class="position">View: <?=number_format($p['view'])?></p>
-                </div>
-            </div>
-        
-        <?php             
-        }
-        ?>
-    </div>
-
-    <div class="update">
-    <?php
-        $count = 0;
-        foreach($flims as $p){
-            $count++;
-            if($count <13) continue;
-            if($count===17) break;
-            if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-            if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
-    ?>     
-            <div class="cell">
-                <img src="./assets/img/<?=$p['poster_small']?>"/>
-                <div class="user-info">
-                    <span class="title"><?=$p['name_flim']?></p>
-                    <span class="position">View: <?=number_format($p['view'])?></p>
-                </div>
-            </div>
-        
-        <?php             
-        }
-        ?>
-    </div>
-
-
-
 <?php 
-        $rows = 4;
-        $cols = 4;
-        $count = 0;
-        foreach($flims as $p){
-            if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-            if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';
-            if ($count % $cols == 0) {
-            echo '<div class="update">';
-            }
-        ?>              
-            <div class="cell">
-                <img src="./assets/img/<?=$p['poster_small']?>"/>
-                <div class="user-info">
-                    <span class="title"><?=$p['name_flim']?></p>
-                    <span class="position">View: <?=number_format($p['view'])?></p>
-                </div>
-            </div>
-        <?php
-            $count++;
-            if ($count % $cols == 0) {
-                echo "</div>";
-            }
-            if ($count == $rows * $cols) {
-                break;
-            }
-        }?>
-   
+                                        if (isset($_POST['action'])) {if ($_POST['action'] == 'add') {
+                                                add_bookmark($_POST['username'], $_POST['movie_name']);
+                                                echo "Bookmark added!";
+                                            }
+                                        }?>
+                                        <script>
+                                        let alertDiv;
 
+                                        function changeIcon() {
+                                            <?php if(isset($_SESSION['username']) && isset($_GET['movie_name'])) { ?>
+                                                var icon = document.getElementById('bookmark-icon');
+                                                if (icon.classList.contains('fa-bookmark')) {
+                                                    icon.classList.remove('fa-bookmark');
+                                                    icon.classList.add('fa-times-circle');
+                                                    document.getElementById('bookmark-button').textContent = 'REMOVE BOOKMARK';
 
-<div class="update">
-        <div class="card-content" style="display: none;">
-        <?php foreach($flims as $p){
-                    if($p['poster_small'] == null) $p['poster_small'] = 'fake.png';
-                    if($p['name_flim'] == null) $p['name_flim'] = 'Updating...';                
-            ?>
-                <div class="card">
-                    <div class="card-image"><img src="assets/img/<?=$p['poster_small']?>" alt=""></div>
-                    <div class="card-info">
-                        <h3><?=$p['name_flim']?></h3>
-                        <p>View: <?=number_format($p['view'])?></p>
-                    </div>
-                </div>
-        <?php } ?>
-    </div>
-
-
-
-     <div id="tooltip">
-                    <div class="item">
-                        <div class="NameFilm"><?=$p['name_flim']?></div>
-                        <?php
-                            $words = str_word_count($p['content']);
-                        if ($words > 50) {  
-                            $shortText = implode(' ', array_slice(str_word_count($p['content'], 1), 0, 50)) . '...';
-                            echo '<div class="Story">' . $shortText . '</div>';
-                        } else { ?>
-                        <div class="Story"><?=$p['content']?> </div> <?php } ?>
-                        <div class="STD"><span style="color: #fffb00;"><i class="fa-solid fa-star"></i> <?=$p['rate']?>/5 </span><i class="fa-regular fa-clock" ></i> <?=$p['time']?> minutes <i class="fa-regular fa-calendar"></i> <?=$p['year']?></div>
-                        <div class="AG">
-                            <div class="AU"><span>Director:</span> <?=$p['director']?></div>
-                            <div class="GE"><span>Genres:</span> <?=$p['genre']?></div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-                <input type="radio" name="rate" id="rate-5" c>
-                                            <label for="rate-5" class="fas fa-star"></label>
-                                            <input type="radio" name="rate" id="rate-4" value="4">
-                                            <label for="rate-4" class="fas fa-star"></label>
-                                            <input type="radio" name="rate" id="rate-3" value="3">
-                                            <label for="rate-3" class="fas fa-star"></label>
-                                            <input type="radio" name="rate" id="rate-2" value="2"> 
-                                            <label for="rate-2" class="fas fa-star"></label>
-                                            <input type="radio" name="rate" id="rate-1" value="1">
-                                            <label for="rate-1" class="fas fa-star"></label>
-                                           
-                                            <div class="vote" style="margin-left: 10px;">
-                                                (<?=$count?> votes, rating: <?=$rate_flim?> out of 5)
-                                            </div>
+                                                    var movieName = "<?php echo $_GET['movie_name']; ?>";
+                                                    var xhr = new XMLHttpRequest();
+                                                    xhr.open("POST", "bookmark.php", true);
+                                                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                                                    xhr.onreadystatechange = function() {
+                                                        if (xhr.readyState === 4 && xhr.status === 200) {
+                                                            showAlert('Page bookmarked!', 'success');
+                                                        }
+                                                    };
+                                                    xhr.send("action=add&username=<?php echo $_SESSION['username']; ?>&movie_name=" + movieName); 
+                                                } else {
+                                                    icon.classList.remove('fa-times-circle');
+                                                    icon.classList.add('fa-bookmark');
+                                                    document.getElementById('bookmark-button').textContent = 'ADD BOOKMARK';
+                                                    <?php del_bookmark($_SESSION['username'], $_GET['movie_name']); ?>
+                                                    showAlert('Page bookmark removed!', 'success');   
+                                                }
+                                            <?php } else { ?>
+                                                showAlert('Please log in to bookmark this page.', 'error');
+                                            <?php } ?>
+                                        }
