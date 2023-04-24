@@ -1130,12 +1130,6 @@ input:checked + .slider:before {
   background-color: #333;
   color: #872828;
 }
-.image-container {
-  position: relative;
-  display: inline-block;
-  border-radius: 50%;
-  overflow: hidden;
-}
 
 #image {
   width: 200px;
@@ -1163,30 +1157,36 @@ input:checked + .slider:before {
 #file-input {
   display: none;
 }
-
-label {
+.information-page label {
   font-size: 24px;
   color: #fff;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
 }
 
-label:hover {
+.information-page label:hover {
   transform: scale(1.1);
 }
 
 i {
   margin-right: 8px;
 }
+.information-page .image-container{
+  margin-left: 13%;
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+}
 .information-page h3{
+  font-size: 30px;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.information-page .change-avatar {
-}
 .information-page .profile {
+  margin: 10px;
   border: 1px solid #ccc;
   padding: 20px;
   border-radius: 5px;
@@ -1241,5 +1241,37 @@ i {
 .information-page button:hover {
   background-color: #0069d9;
 }
+.information-page form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.information-page label {
+  margin-bottom: 10px;
+}
+
+.information-page input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.information-page button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.information-page button:hover {
+  background-color: #0069d9;
+}
+
 
     

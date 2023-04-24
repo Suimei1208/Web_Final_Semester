@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Film Sex</title>
+    <title>Information</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -107,22 +107,26 @@
     <div class="information-page">
         <h3>Your Info</h3>
         <div class="image-container">
-            <div class="change-avatar">
                 <img src="assets/img/dg1.jpg" alt="Default Image" id="image">
                 <div class="overlay">
                 <input type="file" id="file-input" accept="image/*">
                 <label for="file-input"><i class="fas fa-camera"></i></label>
                 </div>
-            </div>
           </div>
-          <div class="profile">
-            <h2>Profile Information</h2>
-            <ul>
-              <li><strong>Username:</strong> johndoe</li>
-              <li><strong>Email:</strong> john.doe@example.com</li>
-              <li><strong>Phone:</strong> (123) 456-7890</li>
-            </ul>
-          </div>
+          <h3>Your Profile</h3>
+          <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+          
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+          
+            <button type="submit">Update Profile</button>
+          </form>
+          
         <h3>Change password</h3>
         <form>
             <label for="old-password">Old Password:</label>
