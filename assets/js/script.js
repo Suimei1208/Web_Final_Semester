@@ -307,8 +307,11 @@ window.onclick = function(event) {
 }
 function changeIcon() {
   // Check if user is logged in
-  if (!isLoggedIn()) {
-    alert('Please log in to perform this action.');
+  if (isLoggedIn()) {
+    // Add bookmark logic here
+    showAlert('Page bookmarked!', 'success');
+  } else {
+    showAlert('Please log in to bookmark this page.', 'error');
     return;
   }
   
@@ -323,6 +326,17 @@ function changeIcon() {
     icon.classList.add('fa-bookmark');
     document.getElementById('bookmark-button').textContent = 'BOOKMARK';
   }
+}
+function showAlert(message, type) {
+  const alertDiv = document.createElement('div');
+  alertDiv.classList.add('alert', `alert-${type}`);
+  alertDiv.textContent = message;
+
+  document.body.appendChild(alertDiv);
+
+  setTimeout(() => {
+    alertDiv.remove();
+  }, 2000);
 }
 
 function isLoggedIn() {
@@ -352,6 +366,21 @@ function myFunction() {
     dropdownMenu.classList.toggle('show');
   }
 }
+function changeImage() {
+  const fileInput = document.getElementById('file-input');
+  const image = document.getElementById('image');
+
+  fileInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      image.src = event.target.result;
+    }
+    reader.readAsDataURL(file);
+  });
+}
+
+
 
 
 

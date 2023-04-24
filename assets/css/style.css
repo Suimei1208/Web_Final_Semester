@@ -742,7 +742,7 @@ opacity: 0.5;
 display: flex;
 /* border: 1px solid black; */
 position: absolute;
-top: 50px;
+top: 90px;
 left: 11em;
 width: 1500px;
 height: 300px;
@@ -1075,65 +1075,11 @@ font-size: 22px;
   } */
   
   .show {display: block;}
-  .switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.switch input {display:none;}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-.dark {
-  background-color: #333;
-  color: #872828;
-}
 
 #image {
   width: 300px;
   height: 300px;
+  object-fit: cover;
 }
 
 .overlay {
@@ -1155,8 +1101,33 @@ input:checked + .slider:before {
 }
 
 #file-input {
+  width: 300px;
+  height: 300px;
   display: none;
 }
+
+.overlay label {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.overlay label:hover {
+  cursor: pointer;
+}
+
+.overlay i {
+  color: black;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
 .information-page{
   /* border: 1px solid black; */
   margin-top: 5%;
@@ -1189,6 +1160,11 @@ input:checked + .slider:before {
   justify-content: start;
   align-items: center;
 }
+.information-page a {
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 20%;
+}
 .information-page form {
   /* border: 1px solid black; */
   display: flex;
@@ -1220,6 +1196,29 @@ input:checked + .slider:before {
   width: 300px;
   margin-bottom: 20px;
   background: transparent;
+}
+.alert {
+  position: fixed;
+  top: 60px;
+  left: 94%;
+  transform: translateX(-50%);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 9999;
+  width: 200px;
+}
+
+.alert-success {
+  background-color: #8bc34a;
+  color: #fff;
+}
+
+.alert-error {
+  background-color: #f44336;
+  color: #fff;
 }
 
 
