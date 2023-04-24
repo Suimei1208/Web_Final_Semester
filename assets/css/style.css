@@ -1184,42 +1184,44 @@ i {
   justify-content: center;
   align-items: center;
 }
-.profile {
+.information-page .change-avatar {
+}
+.information-page .profile {
   border: 1px solid #ccc;
   padding: 20px;
   border-radius: 5px;
 }
 
-h2 {
+.information-page h2 {
   font-size: 24px;
   margin-bottom: 10px;
 }
 
-ul {
+.information-page ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-li {
+.information-page li {
   margin-bottom: 10px;
 }
 
-strong {
+.information-page strong {
   font-weight: bold;
 }
-form {
+.information-page form {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 20px;
 }
 
-label {
+.information-page label {
   margin-bottom: 10px;
 }
 
-input[type="password"] {
+.information-page input[type="password"] {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -1227,7 +1229,7 @@ input[type="password"] {
   margin-bottom: 20px;
 }
 
-button {
+.information-page button {
   background-color: #007bff;
   color: #fff;
   padding: 10px 20px;
@@ -1236,7 +1238,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.information-page button:hover {
   background-color: #0069d9;
 }
 
