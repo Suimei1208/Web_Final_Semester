@@ -903,8 +903,8 @@ padding: 9px;
 float: right;
 transition: all 0.2s ease;
 }
-input:not(:checked) ~ label:hover,
-input:not(:checked) ~ label:hover ~ label{
+.star-widget input:not(:checked) ~ label:hover,
+.star-widget input:not(:checked) ~ label:hover ~ label{
 color: #fd4;
 }
 input:checked ~ label{
@@ -1157,11 +1157,18 @@ input:checked + .slider:before {
 #file-input {
   display: none;
 }
+.information-page{
+  border: 1px solid black;
+  margin-top: 5%;
+  width: 600px;
+}
 .information-page label {
   font-size: 24px;
   color: #fff;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
+  margin-bottom: 10px;
+  margin-left: 0px;
 }
 
 .information-page label:hover {
@@ -1172,7 +1179,7 @@ i {
   margin-right: 8px;
 }
 .information-page .image-container{
-  margin-left: 13%;
+  margin-left: 34%;
   position: relative;
   display: inline-block;
   border-radius: 50%;
@@ -1182,33 +1189,8 @@ i {
   font-size: 30px;
   color: #fff;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-}
-.information-page .profile {
-  margin: 10px;
-  border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 5px;
-}
-
-.information-page h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.information-page ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.information-page li {
-  margin-bottom: 10px;
-}
-
-.information-page strong {
-  font-weight: bold;
 }
 .information-page form {
   display: flex;
@@ -1216,58 +1198,30 @@ i {
   align-items: center;
   margin: 20px;
 }
-
-.information-page label {
-  margin-bottom: 10px;
-}
-
-.information-page input[type="password"] {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
 .information-page button {
-  background-color: #007bff;
+  background-color: black;
   color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  width: 300px;
 }
 
 .information-page button:hover {
   background-color: #0069d9;
 }
-.information-page form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px;
-}
 
-.information-page label {
-  margin-bottom: 10px;
-}
 
 .information-page input {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 100%;
+  width: 300px;
   margin-bottom: 20px;
+  background: transparent;
 }
 
-.information-page button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
 
 .information-page button:hover {
   background-color: #0069d9;
