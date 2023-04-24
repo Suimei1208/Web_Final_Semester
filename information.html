@@ -110,11 +110,11 @@
                 <img src="assets/img/dg1.jpg" alt="Default Image" id="image">
                 <div class="overlay">
                 <input type="file" id="file-input" accept="image/*">
-                <label for="file-input"><i class="fas fa-camera"></i></label>
+                <label for="file-input"><i class="fas fa-camera" style="color: white; font-size: 30px; cursor: pointer;"></i></label>
                 </div>
           </div>
           <h3>Your Profile</h3>
-          <form class="Show-Profile">
+          <form class="Show-Profile" style="flex-direction: column;">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
           
@@ -128,7 +128,7 @@
           </form>
           
         <h3>Change password</h3>
-        <form class="change-password">
+        <form class="change-password" style="flex-direction: column;">
             <label for="old-password">Old Password:</label>
             <input type="password" id="old-password" name="old-password" required>
           
@@ -140,5 +140,35 @@
           
         <h3>Library</h3>
     </div>
+    <div onclick="scrollToTop()" class="scrollTop"><img src="assets/icon/go-up.png" alt=""></div>
+    </main>
+    <footer>
+        <div id="footer">
+            <div>
+                <label class="switch">
+                    <input type="checkbox" id="mode-switch">
+                    <span class="slider round"></span>
+                  </label>
+            </div>
+            <div class="footer1">
+            <i>Follow us</i>
+            <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
+            <i class="fa-brands fa-youtube" style="color: #ffffff;"></i>
+            <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+            <i class="fa-brands fa-discord" style="color: #ffffff;"></i>
+            </div>
+            <div class="footer2">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">FAQ</a>
+                <a href="">Terms</a>
+                <a href="">Authors</a>
+                <a href="">Login</a>
+                <a href="">Register</a>
+                </div>
+        </div> 
+	</footer>
+    <script src="assets/js/script.js">     
+    </script>   
 </body>
 </html>
