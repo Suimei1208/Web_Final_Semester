@@ -467,5 +467,75 @@
         $conn->close();
         return $success;
     }
+
+    function desc_view(){
+        $conn = connect();
+        $sql = "SELECT * FROM films ORDER BY view desc;";
+        $result = mysqli_query($conn, $sql);
+
+        if(mysqli_num_rows($result)>0){
+            $items = [];
+            while($row = mysqli_fetch_assoc($result)){
+                $items[] = $row;
+            }
+            $conn->close();
+            return $items;
+        }else{
+            $conn->close();
+            return false;
+        }
+    }
+    function asc_view(){
+        $conn = connect();
+        $sql = "SELECT * FROM films ORDER BY view asc;";
+        $result = mysqli_query($conn, $sql);
+
+        if(mysqli_num_rows($result)>0){
+            $items = [];
+            while($row = mysqli_fetch_assoc($result)){
+                $items[] = $row;
+            }
+            $conn->close();
+            return $items;
+        }else{
+            $conn->close();
+            return false;
+        }
+    }
+
+    function desc_rate(){
+        $conn = connect();
+        $sql = "SELECT * FROM films ORDER BY rate desc;";
+        $result = mysqli_query($conn, $sql);
+
+        if(mysqli_num_rows($result)>0){
+            $items = [];
+            while($row = mysqli_fetch_assoc($result)){
+                $items[] = $row;
+            }
+            $conn->close();
+            return $items;
+        }else{
+            $conn->close();
+            return false;
+        }
+    }
+    function asc_rate(){
+        $conn = connect();
+        $sql = "SELECT * FROM films ORDER BY rate asc;";
+        $result = mysqli_query($conn, $sql);
+
+        if(mysqli_num_rows($result)>0){
+            $items = [];
+            while($row = mysqli_fetch_assoc($result)){
+                $items[] = $row;
+            }
+            $conn->close();
+            return $items;
+        }else{
+            $conn->close();
+            return false;
+        }
+    }
     
 ?>
