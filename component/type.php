@@ -7,7 +7,7 @@ if(get_type($search) == false){?>
 <?php }else{       
 $search_flim = get_type($search);?>
 <main style="margin-top: 80px;">
-            <div class="update-content1">
+            <div class="update-content1" style="margin-top: 40px;">
         <strong class="up"><?=$search?></strong>
     </div>
     <div class="update">
