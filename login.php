@@ -63,12 +63,12 @@
             <label for="username">Username:</label1>
             <div class="form-group">
                     <img src="assets/gif/user.gif" alt="">
-                    <input class ="lg" name="username" id="username" type="text">
+                    <input class ="lg" name="username" id="username" type="text" required>
             </div>
             <label for="password">Password:</label>
             <div class="form-group">
                 <img src="assets/gif/pass.gif" alt="">
-                <input class ="lg" name="password" id="password" type="password">
+                <input class ="lg" name="password" id="password" type="password" required>
             </div>
             <?php 
                     if(isset($error) && !empty($error)){ 

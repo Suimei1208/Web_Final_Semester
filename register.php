@@ -67,23 +67,23 @@
             <label for="username">Username:</label1>
                 <div class="form-group">
                         <img src="assets/gif/user.gif" alt="">
-                        <input  name="username_dk" id="username" type="text">
+                        <input  name="username_dk" id="username" type="text" required>
                 </div>
 
                 <label for="password">Password:</label>
                 <div class="form-group">
                     <img src="assets/gif/pass.gif" alt="">
-                    <input name="password_dk" id="password" type="password">
+                    <input name="password_dk" id="password" type="password" required>
                 </div>
             <label>Email:</label>
             <div class="form-group">
                 <img src="assets/gif/email.gif" alt="">
-                <input name="email" id="email" type="text">
+                <input name="email" id="email" type="text" required>
             </div>
             <label>Phone number:</label>
             <div class="form-group">
                 <img src="assets/gif/phone.gif" alt="">
-                <input  name="phone" id="phone" type="text">
+                <input  name="phone" id="phone" type="text" required>
             </div>
             <?php 
                     if(isset($error1) && !empty($error1)){ 
