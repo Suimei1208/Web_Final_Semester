@@ -28,6 +28,7 @@
                     $count = 0;
                     foreach($rand_flim as $p){
                         $count++;
+                        if($p['director'] === null) $p['director'] = "Updating.....";
                         if($p['actor'] === null) $p['actor'] = "Updating.....";
                         if($p['view'] ===null)  $p['view'] = "0";
                         if ($count >= 6) break;

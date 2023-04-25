@@ -137,7 +137,7 @@
                                                     showAlert('Page bookmark removed!', 'success');   
                                                 }
                                             <?php } else { ?>
-                                                showAlert('Please log in to bookmark this page.', 'error');
+                                                showAlert('Please log in to use bookmark this page.', 'error');
                                             <?php } ?>
                                         }
 
