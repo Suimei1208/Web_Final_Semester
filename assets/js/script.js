@@ -23,7 +23,7 @@ var manualNav = function(manual){
             btn.classList.remove('active');
         });
     });
-    slide[manual].classList.add('active');
+    slides[manual].classList.add('active');
     btns[manual].classList.add('active');
 }
 btns.forEach((btn,i) => {
