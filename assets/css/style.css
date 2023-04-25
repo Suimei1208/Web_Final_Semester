@@ -1082,6 +1082,7 @@ font-size: 22px;
   width: 300px;
   height: 300px;
   object-fit: cover;
+  margin-top: -25px;
 }
 
 .overlay {
@@ -1154,6 +1155,8 @@ font-size: 22px;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid white;
+  width: 300px;
+  height: 300px;
 }
 .information-page h3{
   font-size: 30px;
@@ -1173,7 +1176,7 @@ font-size: 22px;
   /* flex-direction: column; */
   align-items: start;
   justify-content: center;
-  margin: 20px 148px;
+  margin: 20px 100px;
 }
 .information-page button {
   background-color: black;
@@ -1195,7 +1198,7 @@ font-size: 22px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 300px;
+  width: 400px;
   margin-bottom: 20px;
   background: transparent;
 }
@@ -1225,6 +1228,7 @@ font-size: 22px;
 
 .col{
   color:#ffff ;
+  font-size: 20px;
 }
 
 #file-name{
@@ -1233,5 +1237,12 @@ font-size: 22px;
   margin-bottom: 20px
 }
 
-
-    
+.bu{
+  margin: 5% 25% 5% 25%;
+}
+.bu2{
+  margin: 0% 10% 5% 13%;
+}
+.bu3{
+  margin: auto;
+}
