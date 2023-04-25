@@ -76,11 +76,10 @@
                 if($a['avatar'] == null) $a['avatar'] = "user.png";?>
             <button onclick="myFunction()" class="dropbtn-Log" style="background-color: transparent;"><img src="assets/avatar/<?=$a['avatar']?>" alt="" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 9px;"><?php echo $_SESSION['username']; ?> <i class="fa-solid fa-caret-down" style="margin-left: 5px;font-size: 30px;"></i></button>
                 <div id="myDropdown" class="dropdown-content-Log" >
-                    <a href="#home">Your profile</a>
-                    <a href="#about">Notification</a>
-                    <a href="#contact">Library</a>
-                    <a href="#contact">Help</a>
-                    <a href="#contact">Change password</a>
+                    <a href="your_info.php?username=<?=$_SESSION['username']?>">Your profile</a>
+                    <a href="library.php?username=<?=$_SESSION['username']?>">Library</a>
+                    <a href="#">Help</a>
+                    <a href="your_info.php?username=<?=$_SESSION['username']?>#change-password">Change password</a>
                     <a href="logout.php">Logout</a>
                 </div>
             </div>

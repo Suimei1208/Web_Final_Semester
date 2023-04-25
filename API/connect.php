@@ -413,5 +413,59 @@
         $conn->close();
         return $success;
     }
+    function get_info($username){
+        $conn = connect();
+        $stmt = $conn->prepare("SELECT * FROM account WHERE UserName = ? ");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if(mysqli_num_rows($result)>0){
+            $items = [];
+            while($row = mysqli_fetch_assoc($result)){
+                $items[] = $row;
+            }
+            $conn->close();
+            return $items;
+        }else{
+            $conn->close();
+            return false;
+        }
+    }
+    function update_pro($username, $email, $tel){
+        $conn = connect();
+        $stmt = $conn->prepare("UPDATE account SET Email = ?, Phone = ? WHERE UserName = ?");
+        $stmt->bind_param("sss", $email, $tel, $username);
+        $success = $stmt->execute();
+        $stmt->close();
+        $conn->close();
+        return $success;
+    }
+    function get_old_password($username){
+        $conn = connect();
+        $stmt = $conn->prepare("SELECT Password FROM account WHERE userName = ? ");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if ($result->num_rows > 0) {
+            $stmt->close();
+            $conn->close();
+            return true;
+        } else {
+            $stmt->close();
+            $conn->close();
+            return false;
+        }
+    }
+    function update_pass($username, $pass){
+        $conn = connect();
+        $stmt = $conn->prepare("UPDATE account SET Password = ? WHERE UserName = ?");
+        $stmt->bind_param("ss", $pass, $username);
+        $success = $stmt->execute();
+        $stmt->close();
+        $conn->close();
+        return $success;
+    }
     
 ?>

@@ -36,3 +36,48 @@
                                                 showAlert('Please log in to bookmark this page.', 'error');
                                             <?php } ?>
                                         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          <h3>Your Profile</h3>
+          <form class="Show-Profile" style="flex-direction: column;">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" class ="col" required disabled value="<?=$p['UserName']?>">
+          
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class ="col" required value="<?=$p['Email']?>">
+          
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" class ="col" required value="<?=$p['Phone']?>">
+          
+            <button type="submit_info">Update Profile</button>
+          </form>
+          
+        <h3>Change password</h3>
+        <form class="change-password" style="flex-direction: column;">
+            <label for="old-password">Old Password:</label>
+            <input type="password" id="old-password" name="old-password" required >
+          
+            <label for="new-password">New Password:</label>
+            <input type="password" id="new-password" name="new-password" required>
+          
+            <button type="submit_passs">Update Password</button>
+          </form>
+          
+        <h3><a href="library.php?username=<?=$_SESSION['username']?>">Library</a></h3>
+    </div>

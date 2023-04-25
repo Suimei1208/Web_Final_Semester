@@ -19,10 +19,10 @@
     <?php       
         include 'API/setup.php';
         include 'component/header.php';
-        $flims_user = get_fa_film("admin"); ?>
+        $flims_user = get_fa_film($_GET['username']); ?>
         <main style="margin-top: 80px;">
-            <div class="update-content1">
-        <strong class="up">My Library:</strong>
+            <div class="update-content1" style="margin-top: 40px;">
+        <strong class="up" >My Library:</strong>
             </div>
             <div class="update">
                 <div class="card-content" style="display: none;">

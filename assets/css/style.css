@@ -1223,7 +1223,15 @@ font-size: 22px;
   color: #fff;
 }
 
+.col{
+  color:#ffff ;
+}
 
+#file-name{
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px
+}
 
 
     
