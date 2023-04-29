@@ -12,7 +12,6 @@ if (strpos($current_url, 'username=') !== false) {
     header('Location: index.php');
     exit();
 } else {
-    header('Location: '.$current_url);
+    header('Location: ' . $current_url);
     exit();
 }
-?>
