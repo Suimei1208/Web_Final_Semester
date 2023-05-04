@@ -20,6 +20,7 @@
   text-align: center;
   transition: background-color 0.5s ease-in-out;
 } */
+
 .header-scrolled {
   background-color: black;
 }
@@ -142,6 +143,9 @@ margin: 0px 80px;
   }
   #check:checked ~ ul{
     left: 0px;
+  }
+  td{
+    display: none;
   }
 }
 /*menu của genres*/
