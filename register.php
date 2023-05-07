@@ -4,6 +4,7 @@ if (isset($_POST['submit'])) {
     $password_dk = $_POST['password_dk'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
+    $confirm = $_POST['Confirm'];
 
     require_once('API/connect.php');
     $conn = connect();
@@ -23,16 +24,20 @@ if (isset($_POST['submit'])) {
         if ($result->num_rows == 1) {
             $error1 = "Username already exists. Please try again!";
         } else {
-            if (isset($_POST['terms'])) {
-                $stmt_1 = $conn->prepare("INSERT INTO account (UserName, Password, Email, Phone)VALUES (?, ?, ?, ?)");
-                $stmt_1->bind_param("ssss", $username_dk, $password_dk, $email, $phone);
-                $stmt_1->execute();
-
-                header('Location: action.html');
-                exit();
-            } else {
-                $error1 = "You must agree to the terms and conditions to register";
-            }
+            if($confirm =="" || $password_dk != $confirm){
+                $error1 = "Incorrect password.";
+            }else{
+                if (isset($_POST['terms'])) {
+                    $stmt_1 = $conn->prepare("INSERT INTO account (UserName, Password, Email, Phone)VALUES (?, ?, ?, ?)");
+                    $stmt_1->bind_param("ssss", $username_dk, $password_dk, $email, $phone);
+                    $stmt_1->execute();
+    
+                    header('Location: action.html');
+                    exit();
+                } else {
+                    $error1 = "You must agree to the terms and conditions to register";
+                }
+            }           
         }
         $stmt->close();
         $conn->close();
@@ -75,6 +80,11 @@ if (isset($_POST['submit'])) {
                 <div class="form-group">
                     <img src="assets/gif/pass.gif" alt="">
                     <input name="password_dk" id="password" type="password" required>
+                </div>
+                <label for="password">Confirm Password:</label>
+                <div class="form-group">
+                    <img src="assets/gif/pass.gif" alt="">
+                    <input name="Confirm" id="Confirm" type="password" required>
                 </div>
                 <label>Email:</label>
                 <div class="form-group">

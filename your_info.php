@@ -27,9 +27,14 @@ if (isset($_POST['submit_pass'])) {
     $old_password = $_POST['old-password'];
     $new_password = $_POST['new-password'];
     $username = $_GET['username'];
+    $confirm = $_POST['Confirm-password'];
     if (get_old_password($username) == $old_password) {
-        update_pass($username, $new_password);
-        $content = "Update Password Successful";
+        if($new_password === $confirm){
+            update_pass($username, $new_password);
+            $content = "Update Password Successful"; 
+        }else{
+            $content = "Confirm Error!!!";
+        }            
     } else {
         $content = "Error password!!!";
     }
@@ -101,6 +106,9 @@ if (isset($_POST['submit_pass'])) {
 
             <label for="new-password">New Password:</label>
             <input type="password" id="new-password" name="new-password" class="col" required>
+
+            <label for="new-password">Confirm Password:</label>
+            <input type="password" id="Confirm-password" name="Confirm-password" class="col" required>
 
             <button type="submit" name="submit_pass" class="bu2">Update Password</button>
             <?php if (isset($_POST['submit_pass']))
