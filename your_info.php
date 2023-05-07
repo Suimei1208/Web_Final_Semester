@@ -85,7 +85,7 @@ if (isset($_POST['submit_pass'])) {
             <h3>Your Profile</h3>
             <form class="Show-Profile" style="flex-direction: column;" method="post">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" class="col" required disabled value="<?= $p['UserName'] ?>">
+                <input type="text" id="username" name="username" class="col" required disabled value="<?= $p['UserName'] ?>" readonly = "readonly">
 
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" class="col" required value="<?= $p['Email'] ?>">
